@@ -15,6 +15,7 @@ namespace api_csvc.Models
     public partial class Account
     {
         public int id_account { get; set; }
+        public string name { get; set; }
         public string email { get; set; }
         public Nullable<int> id_role { get; set; }
     

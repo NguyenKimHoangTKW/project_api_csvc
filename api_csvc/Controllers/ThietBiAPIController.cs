@@ -72,6 +72,5 @@ namespace api_csvc.Controllers
             }
             return Ok(list_data);
         }
-
     }
 }

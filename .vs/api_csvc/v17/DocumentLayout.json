@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\LapTrinhUDDD\\Project_api_CSVC\\api_csvc\\",
+  "WorkspaceRootPath": "D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\api_csvc\\models\\dbcsvcmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\models\\dbcsvcmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\ltmb\\project_cuoi_ky\\project_api_csvc\\api_csvc\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\api_csvc\\controllers\\thietbiapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\controllers\\thietbiapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\api_csvc\\controllers\\accountapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\controllers\\accountapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,26 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "dbCSVCModel.edmx [Diagram1]",
-              "DocumentMoniker": "D:\\LapTrinhUDDD\\Project_api_CSVC\\api_csvc\\api_csvc\\Models\\dbCSVCModel.edmx",
-              "RelativeDocumentMoniker": "api_csvc\\Models\\dbCSVCModel.edmx",
-              "ToolTip": "D:\\LapTrinhUDDD\\Project_api_CSVC\\api_csvc\\api_csvc\\Models\\dbCSVCModel.edmx [Diagram1]",
-              "RelativeToolTip": "api_csvc\\Models\\dbCSVCModel.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2024-11-19T08:21:43.241Z",
-              "EditorCaption": " [Diagram1]"
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\api_csvc\\Web.config",
+              "RelativeDocumentMoniker": "api_csvc\\Web.config",
+              "ToolTip": "D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\api_csvc\\Web.config",
+              "RelativeToolTip": "api_csvc\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-11-29T13:05:48.04Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ThietBiAPIController.cs",
-              "DocumentMoniker": "D:\\LapTrinhUDDD\\Project_api_CSVC\\api_csvc\\api_csvc\\Controllers\\ThietBiAPIController.cs",
-              "RelativeDocumentMoniker": "api_csvc\\Controllers\\ThietBiAPIController.cs",
-              "ToolTip": "D:\\LapTrinhUDDD\\Project_api_CSVC\\api_csvc\\api_csvc\\Controllers\\ThietBiAPIController.cs",
-              "RelativeToolTip": "api_csvc\\Controllers\\ThietBiAPIController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
+              "Title": "AccountAPIController.cs",
+              "DocumentMoniker": "D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\api_csvc\\Controllers\\AccountAPIController.cs",
+              "RelativeDocumentMoniker": "api_csvc\\Controllers\\AccountAPIController.cs",
+              "ToolTip": "D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\api_csvc\\Controllers\\AccountAPIController.cs",
+              "RelativeToolTip": "api_csvc\\Controllers\\AccountAPIController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T03:40:52.785Z",
+              "WhenOpened": "2024-11-27T12:55:10.365Z",
               "EditorCaption": ""
             }
           ]

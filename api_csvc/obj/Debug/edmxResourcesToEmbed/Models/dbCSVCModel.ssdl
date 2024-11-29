@@ -4,7 +4,8 @@
     <Key>
       <PropertyRef Name="id_account" />
     </Key>
-    <Property Name="id_account" Type="int" Nullable="false" />
+    <Property Name="id_account" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
     <Property Name="email" Type="nvarchar(max)" Nullable="false" />
     <Property Name="id_role" Type="int" />
   </EntityType>

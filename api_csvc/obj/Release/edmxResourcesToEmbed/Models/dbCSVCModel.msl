@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_api_csvcModelStoreContainer" CdmEntityContainer="db_api_csvcEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="db_api_csvcModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="id_role" ColumnName="id_role" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id_account" ColumnName="id_account" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dblCBVCs">
+      <EntityTypeMapping TypeName="db_api_csvcModel.dblCBVC">
+        <MappingFragment StoreEntitySet="dblCBVC">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="name_CBVC" ColumnName="name_CBVC" />
+          <ScalarProperty Name="id_CBVC" ColumnName="id_CBVC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dblDanhSachMuons">
+      <EntityTypeMapping TypeName="db_api_csvcModel.dblDanhSachMuon">
+        <MappingFragment StoreEntitySet="dblDanhSachMuon">
+          <ScalarProperty Name="ngay_tra" ColumnName="ngay_tra" />
+          <ScalarProperty Name="ngay_muon" ColumnName="ngay_muon" />
+          <ScalarProperty Name="yeu_cau" ColumnName="yeu_cau" />
+          <ScalarProperty Name="so_luong_muon" ColumnName="so_luong_muon" />
+          <ScalarProperty Name="id_don_vi_tinh" ColumnName="id_don_vi_tinh" />
+          <ScalarProperty Name="id_thiet_bi" ColumnName="id_thiet_bi" />
+          <ScalarProperty Name="id_phong_su_dung" ColumnName="id_phong_su_dung" />
+          <ScalarProperty Name="id_cbvc" ColumnName="id_cbvc" />
+          <ScalarProperty Name="id_danh_sach_muon" ColumnName="id_danh_sach_muon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dblDonViTinhs">
+      <EntityTypeMapping TypeName="db_api_csvcModel.dblDonViTinh">
+        <MappingFragment StoreEntitySet="dblDonViTinh">
+          <ScalarProperty Name="ten_don_vi_tinh" ColumnName="ten_don_vi_tinh" />
+          <ScalarProperty Name="id_don_vi_tinh" ColumnName="id_don_vi_tinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dblPhanLoais">
+      <EntityTypeMapping TypeName="db_api_csvcModel.dblPhanLoai">
+        <MappingFragment StoreEntitySet="dblPhanLoai">
+          <ScalarProperty Name="ten_phan_loai" ColumnName="ten_phan_loai" />
+          <ScalarProperty Name="id_phan_loai" ColumnName="id_phan_loai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dblPhongHocs">
+      <EntityTypeMapping TypeName="db_api_csvcModel.dblPhongHoc">
+        <MappingFragment StoreEntitySet="dblPhongHoc">
+          <ScalarProperty Name="ten_phong_hoc" ColumnName="ten_phong_hoc" />
+          <ScalarProperty Name="id_phong_hoc" ColumnName="id_phong_hoc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dblRoles">
+      <EntityTypeMapping TypeName="db_api_csvcModel.dblRole">
+        <MappingFragment StoreEntitySet="dblRole">
+          <ScalarProperty Name="ten_role" ColumnName="ten_role" />
+          <ScalarProperty Name="id_role" ColumnName="id_role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dblThietBis">
+      <EntityTypeMapping TypeName="db_api_csvcModel.dblThietBi">
+        <MappingFragment StoreEntitySet="dblThietBi">
+          <ScalarProperty Name="id_trang_thai" ColumnName="id_trang_thai" />
+          <ScalarProperty Name="id_phan_loai" ColumnName="id_phan_loai" />
+          <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
+          <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+          <ScalarProperty Name="id_thuong_hieu" ColumnName="id_thuong_hieu" />
+          <ScalarProperty Name="thong_so" ColumnName="thong_so" />
+          <ScalarProperty Name="ten_thiet_bi" ColumnName="ten_thiet_bi" />
+          <ScalarProperty Name="id_thiet_bi" ColumnName="id_thiet_bi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dblThuongHieux">
+      <EntityTypeMapping TypeName="db_api_csvcModel.dblThuongHieu">
+        <MappingFragment StoreEntitySet="dblThuongHieu">
+          <ScalarProperty Name="ten_thuong_hieu" ColumnName="ten_thuong_hieu" />
+          <ScalarProperty Name="id_thuong_hieu" ColumnName="id_thuong_hieu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dblTrangThais">
+      <EntityTypeMapping TypeName="db_api_csvcModel.dblTrangThai">
+        <MappingFragment StoreEntitySet="dblTrangThai">
+          <ScalarProperty Name="ten_trang_thaii" ColumnName="ten_trang_thaii" />
+          <ScalarProperty Name="id_trang_thai" ColumnName="id_trang_thai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="db_api_csvcModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

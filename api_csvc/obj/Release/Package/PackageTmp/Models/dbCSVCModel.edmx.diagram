@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="19df9a84dcad4abb96ffda588cc31bc6" Name="Diagram1">
+        <EntityTypeShape EntityType="db_api_csvcModel.Account" Width="1.5" PointX="8" PointY="5.875" />
+        <EntityTypeShape EntityType="db_api_csvcModel.dblCBVC" Width="1.5" PointX="3" PointY="5.25" />
+        <EntityTypeShape EntityType="db_api_csvcModel.dblDanhSachMuon" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="db_api_csvcModel.dblDonViTinh" Width="1.5" PointX="3" PointY="7.875" />
+        <EntityTypeShape EntityType="db_api_csvcModel.dblPhanLoai" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="db_api_csvcModel.dblPhongHoc" Width="1.5" PointX="3" PointY="10.125" />
+        <EntityTypeShape EntityType="db_api_csvcModel.dblRole" Width="1.5" PointX="5.75" PointY="6.125" />
+        <EntityTypeShape EntityType="db_api_csvcModel.dblThietBi" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="db_api_csvcModel.dblThuongHieu" Width="1.5" PointX="0.75" PointY="8.125" />
+        <EntityTypeShape EntityType="db_api_csvcModel.dblTrangThai" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="db_api_csvcModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" />
+        <AssociationConnector Association="db_api_csvcModel.FK_Account_dblRole" />
+        <AssociationConnector Association="db_api_csvcModel.FK_dblDanhSachMuon_dblCBVC" />
+        <AssociationConnector Association="db_api_csvcModel.FK_dblDanhSachMuon_dblDonViTinh" />
+        <AssociationConnector Association="db_api_csvcModel.FK_dblDanhSachMuon_dblPhongHoc" />
+        <AssociationConnector Association="db_api_csvcModel.FK_dblDanhSachMuon_dblThietBi" />
+        <AssociationConnector Association="db_api_csvcModel.FK_dblThietBi_dblPhanLoai" />
+        <AssociationConnector Association="db_api_csvcModel.FK_dblThietBi_dblThuongHieu" />
+        <AssociationConnector Association="db_api_csvcModel.FK_dblThietBi_dblTrangThai" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
