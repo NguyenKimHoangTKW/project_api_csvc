@@ -135,9 +135,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountAPIController.cs" />
+    <Compile Include="Controllers\CBVCApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhanLoaiAPIController.cs" />
     <Compile Include="Controllers\PhongHocAPIController.cs" />
+    <Compile Include="Controllers\QuanLyMuonTraAPIController.cs" />
     <Compile Include="Controllers\ThietBiAPIController.cs" />
     <Compile Include="Controllers\ThuongHieuAPIController.cs" />
     <Compile Include="Global.asax.cs">
@@ -191,6 +193,9 @@
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>dbCSVCModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ThemMoiThietBi.cs" />
+    <Compile Include="Models\UpdateAccount.cs" />
+    <Compile Include="Models\UserMuonThietBi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -235,6 +240,7 @@
     <Content Include="Models\dbCSVCModel.edmx.diagram">
       <DependentUpon>dbCSVCModel.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\kimhoangapi - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />

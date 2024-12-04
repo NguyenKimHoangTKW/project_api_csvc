@@ -25,9 +25,12 @@
         <MappingFragment StoreEntitySet="dblDanhSachMuon">
           <ScalarProperty Name="ngay_tra" ColumnName="ngay_tra" />
           <ScalarProperty Name="ngay_muon" ColumnName="ngay_muon" />
+          <ScalarProperty Name="ngay_huy" ColumnName="ngay_huy" />
+          <ScalarProperty Name="ngay_dang_ky_muon" ColumnName="ngay_dang_ky_muon" />
+          <ScalarProperty Name="id_trang_thai" ColumnName="id_trang_thai" />
+          <ScalarProperty Name="ly_do_huy" ColumnName="ly_do_huy" />
           <ScalarProperty Name="yeu_cau" ColumnName="yeu_cau" />
           <ScalarProperty Name="so_luong_muon" ColumnName="so_luong_muon" />
-          <ScalarProperty Name="id_don_vi_tinh" ColumnName="id_don_vi_tinh" />
           <ScalarProperty Name="id_thiet_bi" ColumnName="id_thiet_bi" />
           <ScalarProperty Name="id_phong_su_dung" ColumnName="id_phong_su_dung" />
           <ScalarProperty Name="id_cbvc" ColumnName="id_cbvc" />
@@ -72,6 +75,7 @@
         <MappingFragment StoreEntitySet="dblThietBi">
           <ScalarProperty Name="id_trang_thai" ColumnName="id_trang_thai" />
           <ScalarProperty Name="id_phan_loai" ColumnName="id_phan_loai" />
+          <ScalarProperty Name="id_don_vi_tinh" ColumnName="id_don_vi_tinh" />
           <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
           <ScalarProperty Name="so_luong" ColumnName="so_luong" />
           <ScalarProperty Name="id_thuong_hieu" ColumnName="id_thuong_hieu" />

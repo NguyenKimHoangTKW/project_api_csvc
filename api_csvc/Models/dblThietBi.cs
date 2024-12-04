@@ -26,11 +26,13 @@ namespace api_csvc.Models
         public Nullable<int> id_thuong_hieu { get; set; }
         public int so_luong { get; set; }
         public string mo_ta { get; set; }
+        public Nullable<int> id_don_vi_tinh { get; set; }
         public int id_phan_loai { get; set; }
         public int id_trang_thai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<dblDanhSachMuon> dblDanhSachMuons { get; set; }
+        public virtual dblDonViTinh dblDonViTinh { get; set; }
         public virtual dblPhanLoai dblPhanLoai { get; set; }
         public virtual dblThuongHieu dblThuongHieu { get; set; }
         public virtual dblTrangThai dblTrangThai { get; set; }

@@ -40,16 +40,16 @@ namespace api_csvc.Controllers
         {
             if (string.IsNullOrEmpty(phongHoc.ten_phong_hoc))
             {
-                return BadRequest("Bạn chưa nhập tên phòng");
+                return Ok(new { message = "Bạn chưa nhập tên phòng" });
             }
 
             if (db.dblPhongHocs.Any(x => x.ten_phong_hoc == phongHoc.ten_phong_hoc))
             {
-                return BadRequest("Phòng học đã tồn tại, vui lòng nhập phòng học mới");
+                return Ok(new { message = "Phòng học đã tồn tại, vui lòng nhập phòng học mới" });
             }
             db.dblPhongHocs.Add(phongHoc);
             await db.SaveChangesAsync();
-            return Ok("Thêm mới dữ liệu thành công");
+            return Ok(new { message = "Thêm mới dữ liệu thành công" });
         }
 
         [HttpPut]
@@ -59,30 +59,30 @@ namespace api_csvc.Controllers
             var check_phong_hoc = await db.dblPhongHocs.FirstOrDefaultAsync(x => x.id_phong_hoc == phongHoc.id_phong_hoc);
             if (db.dblPhongHocs.FirstOrDefault(x => x.id_phong_hoc == phongHoc.id_phong_hoc) == null)
             {
-                return BadRequest("Không tìm thấy phòng học");
+                return Ok(new { message = "Không tìm thấy phòng học" });
             }
             if (string.IsNullOrEmpty(phongHoc.ten_phong_hoc))
             {
-                return BadRequest("Vui lòng nhập tên phòng học cần update");
+                return Ok(new { message = "Vui lòng nhập tên phòng học cần update" });
             }
 
             check_phong_hoc.ten_phong_hoc = phongHoc.ten_phong_hoc;
             await db.SaveChangesAsync();
-            return Ok("Update dữ liệu thành công");
+            return Ok(new { message = "Update dữ liệu thành công" });
         }
 
-        [HttpDelete]
-        [Route("api/delete_phong_hoc/{id}")]
-        public async Task<IHttpActionResult> Delete_phong_hoc(int id)
+        [HttpPost]
+        [Route("api/delete_phong_hoc")]
+        public async Task<IHttpActionResult> Delete_phong_hoc(dblPhongHoc phongHoc)
         {
-            var check_phong_hoc = await db.dblPhongHocs.FindAsync(id);
+            var check_phong_hoc = await db.dblPhongHocs.FindAsync(phongHoc.id_phong_hoc);
             if (check_phong_hoc == null)
             {
-                return BadRequest("Không tìm thấy phòng");
+                return Ok(new { message = "Không tìm thấy phòng" });
             }
             db.dblPhongHocs.Remove(check_phong_hoc);
             await db.SaveChangesAsync();
-            return Ok("Xóa dữ liệu thành công");
+            return Ok(new { message = "Xóa dữ liệu thành công" });
         }
 
     }

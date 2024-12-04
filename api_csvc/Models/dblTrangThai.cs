@@ -17,12 +17,15 @@ namespace api_csvc.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public dblTrangThai()
         {
+            this.dblDanhSachMuons = new HashSet<dblDanhSachMuon>();
             this.dblThietBis = new HashSet<dblThietBi>();
         }
     
         public int id_trang_thai { get; set; }
         public string ten_trang_thaii { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<dblDanhSachMuon> dblDanhSachMuons { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<dblThietBi> dblThietBis { get; set; }
     }

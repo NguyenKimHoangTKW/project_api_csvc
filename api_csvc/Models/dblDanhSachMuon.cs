@@ -18,15 +18,18 @@ namespace api_csvc.Models
         public int id_cbvc { get; set; }
         public Nullable<int> id_phong_su_dung { get; set; }
         public int id_thiet_bi { get; set; }
-        public int id_don_vi_tinh { get; set; }
         public int so_luong_muon { get; set; }
         public string yeu_cau { get; set; }
+        public string ly_do_huy { get; set; }
+        public Nullable<int> id_trang_thai { get; set; }
+        public Nullable<int> ngay_dang_ky_muon { get; set; }
+        public Nullable<int> ngay_huy { get; set; }
         public Nullable<int> ngay_muon { get; set; }
         public Nullable<int> ngay_tra { get; set; }
     
         public virtual dblCBVC dblCBVC { get; set; }
-        public virtual dblDonViTinh dblDonViTinh { get; set; }
         public virtual dblPhongHoc dblPhongHoc { get; set; }
         public virtual dblThietBi dblThietBi { get; set; }
+        public virtual dblTrangThai dblTrangThai { get; set; }
     }
 }
