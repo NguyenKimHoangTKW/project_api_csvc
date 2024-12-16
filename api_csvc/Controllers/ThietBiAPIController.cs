@@ -14,7 +14,7 @@ namespace api_csvc.Controllers
 {
     public class ThietBiAPIController : ApiController
     {
-        db_api_csvcEntities db = new db_api_csvcEntities();
+        csvcapiEntities db = new csvcapiEntities();
         [HttpGet]
         [Route("api/get_full_thiet_bi")]
         public async Task<IHttpActionResult> load_full_thiet_bi()

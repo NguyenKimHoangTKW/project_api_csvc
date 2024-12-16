@@ -13,10 +13,10 @@ namespace api_csvc.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class db_api_csvcEntities : DbContext
+    public partial class csvcapiEntities : DbContext
     {
-        public db_api_csvcEntities()
-            : base("name=db_api_csvcEntities")
+        public csvcapiEntities()
+            : base("name=csvcapiEntities")
         {
         }
     

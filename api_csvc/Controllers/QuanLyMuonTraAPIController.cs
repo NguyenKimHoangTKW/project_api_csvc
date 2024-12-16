@@ -15,7 +15,7 @@ namespace api_csvc.Controllers
 {
     public class QuanLyMuonTraAPIController : ApiController
     {
-        db_api_csvcEntities db = new db_api_csvcEntities(); 
+        csvcapiEntities db = new csvcapiEntities(); 
 
         [HttpGet]
         [Route("api/drop-list-thiet-bi")]

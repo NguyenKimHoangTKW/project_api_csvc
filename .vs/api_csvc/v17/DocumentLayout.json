@@ -1,22 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\",
+  "WorkspaceRootPath": "D:\\LapTrinhUDDD\\project_api_csvc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\ltmb\\project_cuoi_ky\\project_api_csvc\\api_csvc\\models\\updateaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\models\\updateaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\api_csvc\\models\\dbcsvcmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\models\\dbcsvcmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\api_csvc\\controllers\\thietbiapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\controllers\\thietbiapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\api_csvc\\models\\themmoithietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\models\\themmoithietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\views\\shared\\_searchstartpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\views\\shared\\_searchstartpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\controllers\\accountapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\controllers\\accountapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,55 +34,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 206,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ThemMoiThietBi.cs",
-              "DocumentMoniker": "D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\api_csvc\\Models\\ThemMoiThietBi.cs",
-              "RelativeDocumentMoniker": "api_csvc\\Models\\ThemMoiThietBi.cs",
-              "ToolTip": "D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\api_csvc\\Models\\ThemMoiThietBi.cs",
-              "RelativeToolTip": "api_csvc\\Models\\ThemMoiThietBi.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T15:07:42.792Z"
+              "Title": "_SearchStartPartial.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Views\\Shared\\_SearchStartPartial.cshtml",
+              "RelativeDocumentMoniker": "api_csvc\\Views\\Shared\\_SearchStartPartial.cshtml",
+              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Views\\Shared\\_SearchStartPartial.cshtml",
+              "RelativeToolTip": "api_csvc\\Views\\Shared\\_SearchStartPartial.cshtml",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAwGUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T09:31:09.289Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UpdateAccount.cs",
-              "DocumentMoniker": "D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\api_csvc\\Models\\UpdateAccount.cs",
-              "RelativeDocumentMoniker": "api_csvc\\Models\\UpdateAccount.cs",
-              "ToolTip": "D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\api_csvc\\Models\\UpdateAccount.cs",
-              "RelativeToolTip": "api_csvc\\Models\\UpdateAccount.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAsAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "api_csvc\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "api_csvc\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T19:06:32.037Z",
+              "WhenOpened": "2024-12-12T08:42:32.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountAPIController.cs",
+              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Controllers\\AccountAPIController.cs",
+              "RelativeDocumentMoniker": "api_csvc\\Controllers\\AccountAPIController.cs",
+              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Controllers\\AccountAPIController.cs",
+              "RelativeToolTip": "api_csvc\\Controllers\\AccountAPIController.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAAAGAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T08:37:27.126Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "dbCSVCModel.edmx [Diagram1]",
-              "DocumentMoniker": "D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\api_csvc\\Models\\dbCSVCModel.edmx",
-              "RelativeDocumentMoniker": "api_csvc\\Models\\dbCSVCModel.edmx",
-              "ToolTip": "D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\api_csvc\\Models\\dbCSVCModel.edmx [Diagram1]",
-              "RelativeToolTip": "api_csvc\\Models\\dbCSVCModel.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2024-12-02T16:09:20.056Z"
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "api_csvc\\App_Start\\RouteConfig.cs",
+              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "api_csvc\\App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T08:32:29.453Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ThietBiAPIController.cs",
-              "DocumentMoniker": "D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\api_csvc\\Controllers\\ThietBiAPIController.cs",
-              "RelativeDocumentMoniker": "api_csvc\\Controllers\\ThietBiAPIController.cs",
-              "ToolTip": "D:\\LTMB\\Project_Cuoi_Ky\\project_api_csvc\\api_csvc\\Controllers\\ThietBiAPIController.cs",
-              "RelativeToolTip": "api_csvc\\Controllers\\ThietBiAPIController.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAQwJEAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T09:12:08.659Z"
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "api_csvc\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "api_csvc\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAmwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T08:17:36.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "api_csvc\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "api_csvc\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAAwLsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T08:15:53.064Z",
+              "EditorCaption": ""
             }
           ]
         }

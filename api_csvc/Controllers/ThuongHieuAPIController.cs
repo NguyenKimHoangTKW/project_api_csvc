@@ -13,7 +13,7 @@ namespace api_csvc.Controllers
 {
     public class ThuongHieuAPIController : ApiController
     {
-        db_api_csvcEntities db = new db_api_csvcEntities();
+        csvcapiEntities db = new csvcapiEntities();
 
         [HttpGet]
         [Route("api/get_full_thuong_hieu")]

@@ -17,6 +17,8 @@ namespace api_csvc.Models
         public int id_account { get; set; }
         public string name { get; set; }
         public string email { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
         public Nullable<int> id_role { get; set; }
     
         public virtual dblRole dblRole { get; set; }

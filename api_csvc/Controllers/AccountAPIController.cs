@@ -1,4 +1,5 @@
-﻿using api_csvc.Models;
+﻿using api_csvc.Helper;
+using api_csvc.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -13,7 +14,7 @@ namespace api_csvc.Controllers
 {
     public class AccountAPIController : ApiController
     {
-        db_api_csvcEntities db = new db_api_csvcEntities();
+        csvcapiEntities db = new csvcapiEntities();
 
         [HttpPost]
         [Route("api/login-with-google")]
@@ -79,12 +80,28 @@ namespace api_csvc.Controllers
         [Route("api/update-account")]
         public IHttpActionResult Update_Account(UpdateAccount account)
         {
-           
+
             var check_account = db.Accounts.FirstOrDefault(x => x.id_account == account.id_account);
             var check_role = db.dblRoles.FirstOrDefault(x => x.ten_role == account.ten_role);
             check_account.id_role = check_role.id_role;
             db.SaveChanges();
-            return Ok(new {message = "Update thành công"});
+            return Ok(new { message = "Update thành công" });
+        }
+
+        [HttpPost]
+        [Route("api/dang-nhap")]
+        public async Task<IHttpActionResult> dang_nhap(Account ac)
+        {
+            var check_user = await db.Accounts.FirstOrDefaultAsync(x => x.username == ac.username && x.password == ac.password);
+            if (check_user != null)
+            {
+                SessionHelper.SetUser(check_user);
+                return Ok(new { url = "/danh-sach-csvc", success = true });               
+            }
+            else
+            {
+                return Ok(new { message = "thất bại", success = false });
+            }
         }
     }
 }

@@ -1,50 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="db_api_csvcModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="db_api_csvcEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Accounts" EntityType="db_api_csvcModel.Account" />
-    <EntitySet Name="dblCBVCs" EntityType="db_api_csvcModel.dblCBVC" />
-    <EntitySet Name="dblDanhSachMuons" EntityType="db_api_csvcModel.dblDanhSachMuon" />
-    <EntitySet Name="dblDonViTinhs" EntityType="db_api_csvcModel.dblDonViTinh" />
-    <EntitySet Name="dblPhanLoais" EntityType="db_api_csvcModel.dblPhanLoai" />
-    <EntitySet Name="dblPhongHocs" EntityType="db_api_csvcModel.dblPhongHoc" />
-    <EntitySet Name="dblRoles" EntityType="db_api_csvcModel.dblRole" />
-    <EntitySet Name="dblThietBis" EntityType="db_api_csvcModel.dblThietBi" />
-    <EntitySet Name="dblThuongHieux" EntityType="db_api_csvcModel.dblThuongHieu" />
-    <EntitySet Name="dblTrangThais" EntityType="db_api_csvcModel.dblTrangThai" />
-    <EntitySet Name="sysdiagrams" EntityType="db_api_csvcModel.sysdiagram" />
-    <AssociationSet Name="FK_Account_dblRole" Association="db_api_csvcModel.FK_Account_dblRole">
+<Schema Namespace="csvcapiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="csvcapiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="csvcapiModel.Account" />
+    <EntitySet Name="dblCBVCs" EntityType="csvcapiModel.dblCBVC" />
+    <EntitySet Name="dblDanhSachMuons" EntityType="csvcapiModel.dblDanhSachMuon" />
+    <EntitySet Name="dblDonViTinhs" EntityType="csvcapiModel.dblDonViTinh" />
+    <EntitySet Name="dblPhanLoais" EntityType="csvcapiModel.dblPhanLoai" />
+    <EntitySet Name="dblPhongHocs" EntityType="csvcapiModel.dblPhongHoc" />
+    <EntitySet Name="dblRoles" EntityType="csvcapiModel.dblRole" />
+    <EntitySet Name="dblThietBis" EntityType="csvcapiModel.dblThietBi" />
+    <EntitySet Name="dblThuongHieux" EntityType="csvcapiModel.dblThuongHieu" />
+    <EntitySet Name="dblTrangThais" EntityType="csvcapiModel.dblTrangThai" />
+    <EntitySet Name="sysdiagrams" EntityType="csvcapiModel.sysdiagram" />
+    <AssociationSet Name="FK_Account_dblRole" Association="csvcapiModel.FK_Account_dblRole">
       <End Role="dblRole" EntitySet="dblRoles" />
       <End Role="Account" EntitySet="Accounts" />
     </AssociationSet>
-    <AssociationSet Name="FK_dblDanhSachMuon_dblCBVC" Association="db_api_csvcModel.FK_dblDanhSachMuon_dblCBVC">
+    <AssociationSet Name="FK_dblDanhSachMuon_dblCBVC" Association="csvcapiModel.FK_dblDanhSachMuon_dblCBVC">
       <End Role="dblCBVC" EntitySet="dblCBVCs" />
       <End Role="dblDanhSachMuon" EntitySet="dblDanhSachMuons" />
     </AssociationSet>
-    <AssociationSet Name="FK_dblDanhSachMuon_dblPhongHoc" Association="db_api_csvcModel.FK_dblDanhSachMuon_dblPhongHoc">
+    <AssociationSet Name="FK_dblDanhSachMuon_dblPhongHoc" Association="csvcapiModel.FK_dblDanhSachMuon_dblPhongHoc">
       <End Role="dblPhongHoc" EntitySet="dblPhongHocs" />
       <End Role="dblDanhSachMuon" EntitySet="dblDanhSachMuons" />
     </AssociationSet>
-    <AssociationSet Name="FK_dblDanhSachMuon_dblThietBi" Association="db_api_csvcModel.FK_dblDanhSachMuon_dblThietBi">
+    <AssociationSet Name="FK_dblDanhSachMuon_dblThietBi" Association="csvcapiModel.FK_dblDanhSachMuon_dblThietBi">
       <End Role="dblThietBi" EntitySet="dblThietBis" />
       <End Role="dblDanhSachMuon" EntitySet="dblDanhSachMuons" />
     </AssociationSet>
-    <AssociationSet Name="FK_dblDanhSachMuon_dblTrangThai" Association="db_api_csvcModel.FK_dblDanhSachMuon_dblTrangThai">
+    <AssociationSet Name="FK_dblDanhSachMuon_dblTrangThai" Association="csvcapiModel.FK_dblDanhSachMuon_dblTrangThai">
       <End Role="dblTrangThai" EntitySet="dblTrangThais" />
       <End Role="dblDanhSachMuon" EntitySet="dblDanhSachMuons" />
     </AssociationSet>
-    <AssociationSet Name="FK_dblThietBi_dblDonViTinh" Association="db_api_csvcModel.FK_dblThietBi_dblDonViTinh">
+    <AssociationSet Name="FK_dblThietBi_dblDonViTinh" Association="csvcapiModel.FK_dblThietBi_dblDonViTinh">
       <End Role="dblDonViTinh" EntitySet="dblDonViTinhs" />
       <End Role="dblThietBi" EntitySet="dblThietBis" />
     </AssociationSet>
-    <AssociationSet Name="FK_dblThietBi_dblPhanLoai" Association="db_api_csvcModel.FK_dblThietBi_dblPhanLoai">
+    <AssociationSet Name="FK_dblThietBi_dblPhanLoai" Association="csvcapiModel.FK_dblThietBi_dblPhanLoai">
       <End Role="dblPhanLoai" EntitySet="dblPhanLoais" />
       <End Role="dblThietBi" EntitySet="dblThietBis" />
     </AssociationSet>
-    <AssociationSet Name="FK_dblThietBi_dblThuongHieu" Association="db_api_csvcModel.FK_dblThietBi_dblThuongHieu">
+    <AssociationSet Name="FK_dblThietBi_dblThuongHieu" Association="csvcapiModel.FK_dblThietBi_dblThuongHieu">
       <End Role="dblThuongHieu" EntitySet="dblThuongHieux" />
       <End Role="dblThietBi" EntitySet="dblThietBis" />
     </AssociationSet>
-    <AssociationSet Name="FK_dblThietBi_dblTrangThai" Association="db_api_csvcModel.FK_dblThietBi_dblTrangThai">
+    <AssociationSet Name="FK_dblThietBi_dblTrangThai" Association="csvcapiModel.FK_dblThietBi_dblTrangThai">
       <End Role="dblTrangThai" EntitySet="dblTrangThais" />
       <End Role="dblThietBi" EntitySet="dblThietBis" />
     </AssociationSet>
@@ -56,8 +56,10 @@
     <Property Name="id_account" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="id_role" Type="Int32" />
-    <NavigationProperty Name="dblRole" Relationship="db_api_csvcModel.FK_Account_dblRole" FromRole="Account" ToRole="dblRole" />
+    <NavigationProperty Name="dblRole" Relationship="csvcapiModel.FK_Account_dblRole" FromRole="Account" ToRole="dblRole" />
   </EntityType>
   <EntityType Name="dblCBVC">
     <Key>
@@ -66,7 +68,7 @@
     <Property Name="id_CBVC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="name_CBVC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="dblDanhSachMuons" Relationship="db_api_csvcModel.FK_dblDanhSachMuon_dblCBVC" FromRole="dblCBVC" ToRole="dblDanhSachMuon" />
+    <NavigationProperty Name="dblDanhSachMuons" Relationship="csvcapiModel.FK_dblDanhSachMuon_dblCBVC" FromRole="dblCBVC" ToRole="dblDanhSachMuon" />
   </EntityType>
   <EntityType Name="dblDanhSachMuon">
     <Key>
@@ -84,10 +86,10 @@
     <Property Name="ngay_huy" Type="Int32" />
     <Property Name="ngay_muon" Type="Int32" />
     <Property Name="ngay_tra" Type="Int32" />
-    <NavigationProperty Name="dblCBVC" Relationship="db_api_csvcModel.FK_dblDanhSachMuon_dblCBVC" FromRole="dblDanhSachMuon" ToRole="dblCBVC" />
-    <NavigationProperty Name="dblPhongHoc" Relationship="db_api_csvcModel.FK_dblDanhSachMuon_dblPhongHoc" FromRole="dblDanhSachMuon" ToRole="dblPhongHoc" />
-    <NavigationProperty Name="dblThietBi" Relationship="db_api_csvcModel.FK_dblDanhSachMuon_dblThietBi" FromRole="dblDanhSachMuon" ToRole="dblThietBi" />
-    <NavigationProperty Name="dblTrangThai" Relationship="db_api_csvcModel.FK_dblDanhSachMuon_dblTrangThai" FromRole="dblDanhSachMuon" ToRole="dblTrangThai" />
+    <NavigationProperty Name="dblCBVC" Relationship="csvcapiModel.FK_dblDanhSachMuon_dblCBVC" FromRole="dblDanhSachMuon" ToRole="dblCBVC" />
+    <NavigationProperty Name="dblPhongHoc" Relationship="csvcapiModel.FK_dblDanhSachMuon_dblPhongHoc" FromRole="dblDanhSachMuon" ToRole="dblPhongHoc" />
+    <NavigationProperty Name="dblThietBi" Relationship="csvcapiModel.FK_dblDanhSachMuon_dblThietBi" FromRole="dblDanhSachMuon" ToRole="dblThietBi" />
+    <NavigationProperty Name="dblTrangThai" Relationship="csvcapiModel.FK_dblDanhSachMuon_dblTrangThai" FromRole="dblDanhSachMuon" ToRole="dblTrangThai" />
   </EntityType>
   <EntityType Name="dblDonViTinh">
     <Key>
@@ -95,7 +97,7 @@
     </Key>
     <Property Name="id_don_vi_tinh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ten_don_vi_tinh" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="dblThietBis" Relationship="db_api_csvcModel.FK_dblThietBi_dblDonViTinh" FromRole="dblDonViTinh" ToRole="dblThietBi" />
+    <NavigationProperty Name="dblThietBis" Relationship="csvcapiModel.FK_dblThietBi_dblDonViTinh" FromRole="dblDonViTinh" ToRole="dblThietBi" />
   </EntityType>
   <EntityType Name="dblPhanLoai">
     <Key>
@@ -103,7 +105,7 @@
     </Key>
     <Property Name="id_phan_loai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ten_phan_loai" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="dblThietBis" Relationship="db_api_csvcModel.FK_dblThietBi_dblPhanLoai" FromRole="dblPhanLoai" ToRole="dblThietBi" />
+    <NavigationProperty Name="dblThietBis" Relationship="csvcapiModel.FK_dblThietBi_dblPhanLoai" FromRole="dblPhanLoai" ToRole="dblThietBi" />
   </EntityType>
   <EntityType Name="dblPhongHoc">
     <Key>
@@ -111,7 +113,7 @@
     </Key>
     <Property Name="id_phong_hoc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ten_phong_hoc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="dblDanhSachMuons" Relationship="db_api_csvcModel.FK_dblDanhSachMuon_dblPhongHoc" FromRole="dblPhongHoc" ToRole="dblDanhSachMuon" />
+    <NavigationProperty Name="dblDanhSachMuons" Relationship="csvcapiModel.FK_dblDanhSachMuon_dblPhongHoc" FromRole="dblPhongHoc" ToRole="dblDanhSachMuon" />
   </EntityType>
   <EntityType Name="dblRole">
     <Key>
@@ -119,7 +121,7 @@
     </Key>
     <Property Name="id_role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ten_role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Accounts" Relationship="db_api_csvcModel.FK_Account_dblRole" FromRole="dblRole" ToRole="Account" />
+    <NavigationProperty Name="Accounts" Relationship="csvcapiModel.FK_Account_dblRole" FromRole="dblRole" ToRole="Account" />
   </EntityType>
   <EntityType Name="dblThietBi">
     <Key>
@@ -134,11 +136,11 @@
     <Property Name="id_don_vi_tinh" Type="Int32" />
     <Property Name="id_phan_loai" Type="Int32" Nullable="false" />
     <Property Name="id_trang_thai" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="dblDanhSachMuons" Relationship="db_api_csvcModel.FK_dblDanhSachMuon_dblThietBi" FromRole="dblThietBi" ToRole="dblDanhSachMuon" />
-    <NavigationProperty Name="dblDonViTinh" Relationship="db_api_csvcModel.FK_dblThietBi_dblDonViTinh" FromRole="dblThietBi" ToRole="dblDonViTinh" />
-    <NavigationProperty Name="dblPhanLoai" Relationship="db_api_csvcModel.FK_dblThietBi_dblPhanLoai" FromRole="dblThietBi" ToRole="dblPhanLoai" />
-    <NavigationProperty Name="dblThuongHieu" Relationship="db_api_csvcModel.FK_dblThietBi_dblThuongHieu" FromRole="dblThietBi" ToRole="dblThuongHieu" />
-    <NavigationProperty Name="dblTrangThai" Relationship="db_api_csvcModel.FK_dblThietBi_dblTrangThai" FromRole="dblThietBi" ToRole="dblTrangThai" />
+    <NavigationProperty Name="dblDanhSachMuons" Relationship="csvcapiModel.FK_dblDanhSachMuon_dblThietBi" FromRole="dblThietBi" ToRole="dblDanhSachMuon" />
+    <NavigationProperty Name="dblDonViTinh" Relationship="csvcapiModel.FK_dblThietBi_dblDonViTinh" FromRole="dblThietBi" ToRole="dblDonViTinh" />
+    <NavigationProperty Name="dblPhanLoai" Relationship="csvcapiModel.FK_dblThietBi_dblPhanLoai" FromRole="dblThietBi" ToRole="dblPhanLoai" />
+    <NavigationProperty Name="dblThuongHieu" Relationship="csvcapiModel.FK_dblThietBi_dblThuongHieu" FromRole="dblThietBi" ToRole="dblThuongHieu" />
+    <NavigationProperty Name="dblTrangThai" Relationship="csvcapiModel.FK_dblThietBi_dblTrangThai" FromRole="dblThietBi" ToRole="dblTrangThai" />
   </EntityType>
   <EntityType Name="dblThuongHieu">
     <Key>
@@ -146,7 +148,7 @@
     </Key>
     <Property Name="id_thuong_hieu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ten_thuong_hieu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="dblThietBis" Relationship="db_api_csvcModel.FK_dblThietBi_dblThuongHieu" FromRole="dblThuongHieu" ToRole="dblThietBi" />
+    <NavigationProperty Name="dblThietBis" Relationship="csvcapiModel.FK_dblThietBi_dblThuongHieu" FromRole="dblThuongHieu" ToRole="dblThietBi" />
   </EntityType>
   <EntityType Name="dblTrangThai">
     <Key>
@@ -154,8 +156,8 @@
     </Key>
     <Property Name="id_trang_thai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ten_trang_thaii" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="dblDanhSachMuons" Relationship="db_api_csvcModel.FK_dblDanhSachMuon_dblTrangThai" FromRole="dblTrangThai" ToRole="dblDanhSachMuon" />
-    <NavigationProperty Name="dblThietBis" Relationship="db_api_csvcModel.FK_dblThietBi_dblTrangThai" FromRole="dblTrangThai" ToRole="dblThietBi" />
+    <NavigationProperty Name="dblDanhSachMuons" Relationship="csvcapiModel.FK_dblDanhSachMuon_dblTrangThai" FromRole="dblTrangThai" ToRole="dblDanhSachMuon" />
+    <NavigationProperty Name="dblThietBis" Relationship="csvcapiModel.FK_dblThietBi_dblTrangThai" FromRole="dblTrangThai" ToRole="dblThietBi" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -168,8 +170,8 @@
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <Association Name="FK_Account_dblRole">
-    <End Type="db_api_csvcModel.dblRole" Role="dblRole" Multiplicity="0..1" />
-    <End Type="db_api_csvcModel.Account" Role="Account" Multiplicity="*" />
+    <End Type="csvcapiModel.dblRole" Role="dblRole" Multiplicity="0..1" />
+    <End Type="csvcapiModel.Account" Role="Account" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="dblRole">
         <PropertyRef Name="id_role" />
@@ -180,8 +182,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_dblDanhSachMuon_dblCBVC">
-    <End Type="db_api_csvcModel.dblCBVC" Role="dblCBVC" Multiplicity="1" />
-    <End Type="db_api_csvcModel.dblDanhSachMuon" Role="dblDanhSachMuon" Multiplicity="*" />
+    <End Type="csvcapiModel.dblCBVC" Role="dblCBVC" Multiplicity="1" />
+    <End Type="csvcapiModel.dblDanhSachMuon" Role="dblDanhSachMuon" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="dblCBVC">
         <PropertyRef Name="id_CBVC" />
@@ -192,8 +194,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_dblDanhSachMuon_dblPhongHoc">
-    <End Type="db_api_csvcModel.dblPhongHoc" Role="dblPhongHoc" Multiplicity="0..1" />
-    <End Type="db_api_csvcModel.dblDanhSachMuon" Role="dblDanhSachMuon" Multiplicity="*" />
+    <End Type="csvcapiModel.dblPhongHoc" Role="dblPhongHoc" Multiplicity="0..1" />
+    <End Type="csvcapiModel.dblDanhSachMuon" Role="dblDanhSachMuon" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="dblPhongHoc">
         <PropertyRef Name="id_phong_hoc" />
@@ -204,8 +206,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_dblDanhSachMuon_dblThietBi">
-    <End Type="db_api_csvcModel.dblThietBi" Role="dblThietBi" Multiplicity="1" />
-    <End Type="db_api_csvcModel.dblDanhSachMuon" Role="dblDanhSachMuon" Multiplicity="*" />
+    <End Type="csvcapiModel.dblThietBi" Role="dblThietBi" Multiplicity="1" />
+    <End Type="csvcapiModel.dblDanhSachMuon" Role="dblDanhSachMuon" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="dblThietBi">
         <PropertyRef Name="id_thiet_bi" />
@@ -216,8 +218,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_dblDanhSachMuon_dblTrangThai">
-    <End Type="db_api_csvcModel.dblTrangThai" Role="dblTrangThai" Multiplicity="0..1" />
-    <End Type="db_api_csvcModel.dblDanhSachMuon" Role="dblDanhSachMuon" Multiplicity="*" />
+    <End Type="csvcapiModel.dblTrangThai" Role="dblTrangThai" Multiplicity="0..1" />
+    <End Type="csvcapiModel.dblDanhSachMuon" Role="dblDanhSachMuon" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="dblTrangThai">
         <PropertyRef Name="id_trang_thai" />
@@ -228,8 +230,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_dblThietBi_dblDonViTinh">
-    <End Type="db_api_csvcModel.dblDonViTinh" Role="dblDonViTinh" Multiplicity="0..1" />
-    <End Type="db_api_csvcModel.dblThietBi" Role="dblThietBi" Multiplicity="*" />
+    <End Type="csvcapiModel.dblDonViTinh" Role="dblDonViTinh" Multiplicity="0..1" />
+    <End Type="csvcapiModel.dblThietBi" Role="dblThietBi" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="dblDonViTinh">
         <PropertyRef Name="id_don_vi_tinh" />
@@ -240,8 +242,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_dblThietBi_dblPhanLoai">
-    <End Type="db_api_csvcModel.dblPhanLoai" Role="dblPhanLoai" Multiplicity="1" />
-    <End Type="db_api_csvcModel.dblThietBi" Role="dblThietBi" Multiplicity="*" />
+    <End Type="csvcapiModel.dblPhanLoai" Role="dblPhanLoai" Multiplicity="1" />
+    <End Type="csvcapiModel.dblThietBi" Role="dblThietBi" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="dblPhanLoai">
         <PropertyRef Name="id_phan_loai" />
@@ -252,8 +254,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_dblThietBi_dblThuongHieu">
-    <End Type="db_api_csvcModel.dblThuongHieu" Role="dblThuongHieu" Multiplicity="0..1" />
-    <End Type="db_api_csvcModel.dblThietBi" Role="dblThietBi" Multiplicity="*" />
+    <End Type="csvcapiModel.dblThuongHieu" Role="dblThuongHieu" Multiplicity="0..1" />
+    <End Type="csvcapiModel.dblThietBi" Role="dblThietBi" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="dblThuongHieu">
         <PropertyRef Name="id_thuong_hieu" />
@@ -264,8 +266,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_dblThietBi_dblTrangThai">
-    <End Type="db_api_csvcModel.dblTrangThai" Role="dblTrangThai" Multiplicity="1" />
-    <End Type="db_api_csvcModel.dblThietBi" Role="dblThietBi" Multiplicity="*" />
+    <End Type="csvcapiModel.dblTrangThai" Role="dblTrangThai" Multiplicity="1" />
+    <End Type="csvcapiModel.dblThietBi" Role="dblThietBi" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="dblTrangThai">
         <PropertyRef Name="id_trang_thai" />
