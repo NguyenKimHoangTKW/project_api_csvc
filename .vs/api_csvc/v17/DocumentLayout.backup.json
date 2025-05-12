@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "D:\\LapTrinhUDDD\\project_api_csvc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\views\\shared\\_searchstartpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\views\\shared\\_searchstartpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\controllers\\accountapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\controllers\\accountapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\controllers\\servicesnailapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\controllers\\servicesnailapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,85 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 206,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_SearchStartPartial.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Views\\Shared\\_SearchStartPartial.cshtml",
-              "RelativeDocumentMoniker": "api_csvc\\Views\\Shared\\_SearchStartPartial.cshtml",
-              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Views\\Shared\\_SearchStartPartial.cshtml",
-              "RelativeToolTip": "api_csvc\\Views\\Shared\\_SearchStartPartial.cshtml",
-              "ViewState": "AgIAADcAAAAAAAAAAAAAwGUAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-12T09:31:09.289Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "api_csvc\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "api_csvc\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T08:42:32.167Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "AccountAPIController.cs",
               "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Controllers\\AccountAPIController.cs",
               "RelativeDocumentMoniker": "api_csvc\\Controllers\\AccountAPIController.cs",
               "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Controllers\\AccountAPIController.cs",
               "RelativeToolTip": "api_csvc\\Controllers\\AccountAPIController.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAAAGAAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAwwIUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T08:37:27.126Z",
+              "WhenOpened": "2025-05-06T02:59:00.783Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RouteConfig.cs",
-              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\App_Start\\RouteConfig.cs",
-              "RelativeDocumentMoniker": "api_csvc\\App_Start\\RouteConfig.cs",
-              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\App_Start\\RouteConfig.cs",
-              "RelativeToolTip": "api_csvc\\App_Start\\RouteConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAjAAAAAAAAAA==",
+              "Title": "ServicesNailApiController.cs",
+              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Controllers\\ServicesNailApiController.cs",
+              "RelativeDocumentMoniker": "api_csvc\\Controllers\\ServicesNailApiController.cs",
+              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Controllers\\ServicesNailApiController.cs",
+              "RelativeToolTip": "api_csvc\\Controllers\\ServicesNailApiController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T08:32:29.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "api_csvc\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "api_csvc\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAmwCUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-12T08:17:36.419Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "api_csvc\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "api_csvc\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAAwMEAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-12T08:15:53.064Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T02:58:31.604Z"
             }
           ]
         }

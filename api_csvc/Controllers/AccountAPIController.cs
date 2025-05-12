@@ -12,12 +12,13 @@ using System.Web.Http;
 
 namespace api_csvc.Controllers
 {
+    [RoutePrefix("api/v1")]
     public class AccountAPIController : ApiController
     {
-        csvcapiEntities db = new csvcapiEntities();
+        csvcapiEntities1 db = new csvcapiEntities1();
 
         [HttpPost]
-        [Route("api/login-with-google")]
+        [Route("login-with-google")]
         public async Task<IHttpActionResult> LoginWithGoogle(Account ac)
         {
             var isCbvcEmail = await db.dblCBVCs.AnyAsync(x => x.email == ac.email);
@@ -49,7 +50,7 @@ namespace api_csvc.Controllers
 
 
         [HttpGet]
-        [Route("api/get_full_account")]
+        [Route("get_full_account")]
         public async Task<IHttpActionResult> get_full_account()
         {
             var get_full = await db.Accounts
@@ -64,7 +65,7 @@ namespace api_csvc.Controllers
         }
 
         [HttpGet]
-        [Route("api/droplist_role")]
+        [Route("droplist_role")]
         public async Task<IHttpActionResult> droplist_role()
         {
             var drop = await db.dblRoles
@@ -77,7 +78,7 @@ namespace api_csvc.Controllers
         }
 
         [HttpPost]
-        [Route("api/update-account")]
+        [Route("update-account")]
         public IHttpActionResult Update_Account(UpdateAccount account)
         {
 
@@ -89,18 +90,43 @@ namespace api_csvc.Controllers
         }
 
         [HttpPost]
-        [Route("api/dang-nhap")]
+        [Route("dang-nhap")]
         public async Task<IHttpActionResult> dang_nhap(Account ac)
         {
             var check_user = await db.Accounts.FirstOrDefaultAsync(x => x.username == ac.username && x.password == ac.password);
+            var list_info = new List<dynamic>();
             if (check_user != null)
             {
-                SessionHelper.SetUser(check_user);
-                return Ok(new { url = "/danh-sach-csvc", success = true });               
+                list_info.Add(new
+                {
+                    check_user.username,
+                    check_user.password,
+                    check_user.id_role
+                });
+                return Ok(new { data = list_info, message = "Đăng nhập thành công", success = true });
             }
             else
             {
-                return Ok(new { message = "thất bại", success = false });
+                return Ok(new { message = "Sai thông tin tài khoản hoặc mật khẩu", success = false });
+            }
+        }
+        [HttpPost]
+        [Route("create-account")]
+        public async Task<IHttpActionResult> create_account_user(Account ac)
+        {
+            if (db.Accounts.FirstOrDefault(x => x.username == ac.username) != null)
+            {
+                return Ok(new { message = "Tài khoản này đã tồn tại, vui lòng nhập tài khoản khác", success = false });
+            }
+            else
+            {
+                var new_items = new Account
+                {
+                    username = ac.username,
+                    password = ac.password,
+                    id_role = 1
+                };
+                return Ok(new { message = "Tạo mới tài khoản thành công", success = true });
             }
         }
     }

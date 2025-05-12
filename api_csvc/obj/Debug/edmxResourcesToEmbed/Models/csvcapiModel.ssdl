@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="csvcapiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="id_account" />
+    </Key>
+    <Property Name="id_account" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="email" Type="nvarchar(max)" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_role" Type="int" />
+  </EntityType>
+  <EntityType Name="dblCBVC">
+    <Key>
+      <PropertyRef Name="id_CBVC" />
+    </Key>
+    <Property Name="id_CBVC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_CBVC" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dblDanhSachMuon">
+    <Key>
+      <PropertyRef Name="id_danh_sach_muon" />
+    </Key>
+    <Property Name="id_danh_sach_muon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_cbvc" Type="int" Nullable="false" />
+    <Property Name="id_phong_su_dung" Type="int" />
+    <Property Name="id_thiet_bi" Type="int" Nullable="false" />
+    <Property Name="so_luong_muon" Type="int" Nullable="false" />
+    <Property Name="yeu_cau" Type="nvarchar(max)" />
+    <Property Name="ly_do_huy" Type="nvarchar(max)" />
+    <Property Name="id_trang_thai" Type="int" />
+    <Property Name="ngay_dang_ky_muon" Type="int" />
+    <Property Name="ngay_huy" Type="int" />
+    <Property Name="ngay_muon" Type="int" />
+    <Property Name="ngay_tra" Type="int" />
+  </EntityType>
+  <EntityType Name="dblDonViTinh">
+    <Key>
+      <PropertyRef Name="id_don_vi_tinh" />
+    </Key>
+    <Property Name="id_don_vi_tinh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_don_vi_tinh" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dblPhanLoai">
+    <Key>
+      <PropertyRef Name="id_phan_loai" />
+    </Key>
+    <Property Name="id_phan_loai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_phan_loai" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dblPhongHoc">
+    <Key>
+      <PropertyRef Name="id_phong_hoc" />
+    </Key>
+    <Property Name="id_phong_hoc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_phong_hoc" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dblRole">
+    <Key>
+      <PropertyRef Name="id_role" />
+    </Key>
+    <Property Name="id_role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_role" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="dblThietBi">
+    <Key>
+      <PropertyRef Name="id_thiet_bi" />
+    </Key>
+    <Property Name="id_thiet_bi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_thiet_bi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="thong_so" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_thuong_hieu" Type="int" />
+    <Property Name="so_luong" Type="int" Nullable="false" />
+    <Property Name="mo_ta" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_don_vi_tinh" Type="int" />
+    <Property Name="id_phan_loai" Type="int" Nullable="false" />
+    <Property Name="id_trang_thai" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dblThuongHieu">
+    <Key>
+      <PropertyRef Name="id_thuong_hieu" />
+    </Key>
+    <Property Name="id_thuong_hieu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_thuong_hieu" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dblTrangThai">
+    <Key>
+      <PropertyRef Name="id_trang_thai" />
+    </Key>
+    <Property Name="id_trang_thai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_trang_thaii" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Services_Nail">
+    <Key>
+      <PropertyRef Name="id_services" />
+    </Key>
+    <Property Name="id_services" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_services" Type="nvarchar" MaxLength="200" />
+    <Property Name="price" Type="float" />
+    <Property Name="time_create" Type="int" />
+    <Property Name="time_update" Type="int" />
+    <Property Name="id_account" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Account_dblRole">
+    <End Role="dblRole" Type="Self.dblRole" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dblRole">
+        <PropertyRef Name="id_role" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="id_role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dblDanhSachMuon_dblCBVC">
+    <End Role="dblCBVC" Type="Self.dblCBVC" Multiplicity="1" />
+    <End Role="dblDanhSachMuon" Type="Self.dblDanhSachMuon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dblCBVC">
+        <PropertyRef Name="id_CBVC" />
+      </Principal>
+      <Dependent Role="dblDanhSachMuon">
+        <PropertyRef Name="id_cbvc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dblDanhSachMuon_dblPhongHoc">
+    <End Role="dblPhongHoc" Type="Self.dblPhongHoc" Multiplicity="0..1" />
+    <End Role="dblDanhSachMuon" Type="Self.dblDanhSachMuon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dblPhongHoc">
+        <PropertyRef Name="id_phong_hoc" />
+      </Principal>
+      <Dependent Role="dblDanhSachMuon">
+        <PropertyRef Name="id_phong_su_dung" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dblDanhSachMuon_dblThietBi">
+    <End Role="dblThietBi" Type="Self.dblThietBi" Multiplicity="1" />
+    <End Role="dblDanhSachMuon" Type="Self.dblDanhSachMuon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dblThietBi">
+        <PropertyRef Name="id_thiet_bi" />
+      </Principal>
+      <Dependent Role="dblDanhSachMuon">
+        <PropertyRef Name="id_thiet_bi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dblDanhSachMuon_dblTrangThai">
+    <End Role="dblTrangThai" Type="Self.dblTrangThai" Multiplicity="0..1" />
+    <End Role="dblDanhSachMuon" Type="Self.dblDanhSachMuon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dblTrangThai">
+        <PropertyRef Name="id_trang_thai" />
+      </Principal>
+      <Dependent Role="dblDanhSachMuon">
+        <PropertyRef Name="id_trang_thai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dblThietBi_dblDonViTinh">
+    <End Role="dblDonViTinh" Type="Self.dblDonViTinh" Multiplicity="0..1" />
+    <End Role="dblThietBi" Type="Self.dblThietBi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dblDonViTinh">
+        <PropertyRef Name="id_don_vi_tinh" />
+      </Principal>
+      <Dependent Role="dblThietBi">
+        <PropertyRef Name="id_don_vi_tinh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dblThietBi_dblPhanLoai">
+    <End Role="dblPhanLoai" Type="Self.dblPhanLoai" Multiplicity="1" />
+    <End Role="dblThietBi" Type="Self.dblThietBi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dblPhanLoai">
+        <PropertyRef Name="id_phan_loai" />
+      </Principal>
+      <Dependent Role="dblThietBi">
+        <PropertyRef Name="id_phan_loai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dblThietBi_dblThuongHieu">
+    <End Role="dblThuongHieu" Type="Self.dblThuongHieu" Multiplicity="0..1" />
+    <End Role="dblThietBi" Type="Self.dblThietBi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dblThuongHieu">
+        <PropertyRef Name="id_thuong_hieu" />
+      </Principal>
+      <Dependent Role="dblThietBi">
+        <PropertyRef Name="id_thuong_hieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dblThietBi_dblTrangThai">
+    <End Role="dblTrangThai" Type="Self.dblTrangThai" Multiplicity="1" />
+    <End Role="dblThietBi" Type="Self.dblThietBi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dblTrangThai">
+        <PropertyRef Name="id_trang_thai" />
+      </Principal>
+      <Dependent Role="dblThietBi">
+        <PropertyRef Name="id_trang_thai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Services_Nail_Account">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Services_Nail" Type="Self.Services_Nail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id_account" />
+      </Principal>
+      <Dependent Role="Services_Nail">
+        <PropertyRef Name="id_account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="csvcapiModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dblCBVC" EntityType="Self.dblCBVC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dblDanhSachMuon" EntityType="Self.dblDanhSachMuon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dblDonViTinh" EntityType="Self.dblDonViTinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dblPhanLoai" EntityType="Self.dblPhanLoai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dblPhongHoc" EntityType="Self.dblPhongHoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dblRole" EntityType="Self.dblRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dblThietBi" EntityType="Self.dblThietBi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dblThuongHieu" EntityType="Self.dblThuongHieu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dblTrangThai" EntityType="Self.dblTrangThai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Services_Nail" EntityType="Self.Services_Nail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Account_dblRole" Association="Self.FK_Account_dblRole">
+      <End Role="dblRole" EntitySet="dblRole" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dblDanhSachMuon_dblCBVC" Association="Self.FK_dblDanhSachMuon_dblCBVC">
+      <End Role="dblCBVC" EntitySet="dblCBVC" />
+      <End Role="dblDanhSachMuon" EntitySet="dblDanhSachMuon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dblDanhSachMuon_dblPhongHoc" Association="Self.FK_dblDanhSachMuon_dblPhongHoc">
+      <End Role="dblPhongHoc" EntitySet="dblPhongHoc" />
+      <End Role="dblDanhSachMuon" EntitySet="dblDanhSachMuon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dblDanhSachMuon_dblThietBi" Association="Self.FK_dblDanhSachMuon_dblThietBi">
+      <End Role="dblThietBi" EntitySet="dblThietBi" />
+      <End Role="dblDanhSachMuon" EntitySet="dblDanhSachMuon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dblDanhSachMuon_dblTrangThai" Association="Self.FK_dblDanhSachMuon_dblTrangThai">
+      <End Role="dblTrangThai" EntitySet="dblTrangThai" />
+      <End Role="dblDanhSachMuon" EntitySet="dblDanhSachMuon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dblThietBi_dblDonViTinh" Association="Self.FK_dblThietBi_dblDonViTinh">
+      <End Role="dblDonViTinh" EntitySet="dblDonViTinh" />
+      <End Role="dblThietBi" EntitySet="dblThietBi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dblThietBi_dblPhanLoai" Association="Self.FK_dblThietBi_dblPhanLoai">
+      <End Role="dblPhanLoai" EntitySet="dblPhanLoai" />
+      <End Role="dblThietBi" EntitySet="dblThietBi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dblThietBi_dblThuongHieu" Association="Self.FK_dblThietBi_dblThuongHieu">
+      <End Role="dblThuongHieu" EntitySet="dblThuongHieu" />
+      <End Role="dblThietBi" EntitySet="dblThietBi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dblThietBi_dblTrangThai" Association="Self.FK_dblThietBi_dblTrangThai">
+      <End Role="dblTrangThai" EntitySet="dblTrangThai" />
+      <End Role="dblThietBi" EntitySet="dblThietBi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Services_Nail_Account" Association="Self.FK_Services_Nail_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Services_Nail" EntitySet="Services_Nail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

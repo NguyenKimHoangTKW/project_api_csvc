@@ -14,6 +14,12 @@ namespace api_csvc.Models
     
     public partial class Account
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Account()
+        {
+            this.Services_Nail = new HashSet<Services_Nail>();
+        }
+    
         public int id_account { get; set; }
         public string name { get; set; }
         public string email { get; set; }
@@ -22,5 +28,7 @@ namespace api_csvc.Models
         public Nullable<int> id_role { get; set; }
     
         public virtual dblRole dblRole { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Services_Nail> Services_Nail { get; set; }
     }
 }

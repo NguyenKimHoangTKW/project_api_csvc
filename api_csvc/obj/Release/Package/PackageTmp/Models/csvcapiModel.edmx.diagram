@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b1d2bb9f42644aedbce8a6ea1f244fb1" Name="Diagram1">
+        <EntityTypeShape EntityType="csvcapiModel.Account" Width="1.5" PointX="11" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="csvcapiModel.dblCBVC" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="csvcapiModel.dblDanhSachMuon" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="csvcapiModel.dblDonViTinh" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csvcapiModel.dblPhanLoai" Width="1.5" PointX="3.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="csvcapiModel.dblPhongHoc" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="csvcapiModel.dblRole" Width="1.5" PointX="8.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csvcapiModel.dblThietBi" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="csvcapiModel.dblThuongHieu" Width="1.5" PointX="3.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="csvcapiModel.dblTrangThai" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="csvcapiModel.Services_Nail" Width="1.5" PointX="13.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="csvcapiModel.sysdiagram" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="csvcapiModel.FK_Account_dblRole" ManuallyRouted="false" />
+        <AssociationConnector Association="csvcapiModel.FK_Services_Nail_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="csvcapiModel.FK_dblDanhSachMuon_dblCBVC" ManuallyRouted="false" />
+        <AssociationConnector Association="csvcapiModel.FK_dblDanhSachMuon_dblPhongHoc" ManuallyRouted="false" />
+        <AssociationConnector Association="csvcapiModel.FK_dblDanhSachMuon_dblThietBi" ManuallyRouted="false" />
+        <AssociationConnector Association="csvcapiModel.FK_dblDanhSachMuon_dblTrangThai" ManuallyRouted="false" />
+        <AssociationConnector Association="csvcapiModel.FK_dblThietBi_dblDonViTinh" ManuallyRouted="false" />
+        <AssociationConnector Association="csvcapiModel.FK_dblThietBi_dblPhanLoai" ManuallyRouted="false" />
+        <AssociationConnector Association="csvcapiModel.FK_dblThietBi_dblThuongHieu" ManuallyRouted="false" />
+        <AssociationConnector Association="csvcapiModel.FK_dblThietBi_dblTrangThai" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

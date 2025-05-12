@@ -12,7 +12,7 @@ namespace api_csvc.Controllers
 {
     public class CBVCApiController : ApiController
     {
-        csvcapiEntities db = new csvcapiEntities();
+        csvcapiEntities1 db = new csvcapiEntities1();
         [HttpPost]
         [Route("api/get_cbvc_by_email")]
         public async Task<IHttpActionResult> get_cbvc_by_email(dblCBVC cbvc)

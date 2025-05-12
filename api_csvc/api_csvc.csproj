@@ -141,6 +141,7 @@
     <Compile Include="Controllers\PhanLoaiAPIController.cs" />
     <Compile Include="Controllers\PhongHocAPIController.cs" />
     <Compile Include="Controllers\QuanLyMuonTraAPIController.cs" />
+    <Compile Include="Controllers\ServicesNailApiController.cs" />
     <Compile Include="Controllers\ThietBiAPIController.cs" />
     <Compile Include="Controllers\ThuongHieuAPIController.cs" />
     <Compile Include="Global.asax.cs">
@@ -148,52 +149,55 @@
     </Compile>
     <Compile Include="Helper\SessionHelper.cs" />
     <Compile Include="Models\Account.cs">
-      <DependentUpon>dbCSVCModel.tt</DependentUpon>
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbCSVCModel.Context.cs">
+    <Compile Include="Models\csvcapiModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbCSVCModel.Context.tt</DependentUpon>
+      <DependentUpon>csvcapiModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbCSVCModel.cs">
+    <Compile Include="Models\csvcapiModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbCSVCModel.tt</DependentUpon>
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbCSVCModel.Designer.cs">
+    <Compile Include="Models\csvcapiModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbCSVCModel.edmx</DependentUpon>
+      <DependentUpon>csvcapiModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\dblCBVC.cs">
-      <DependentUpon>dbCSVCModel.tt</DependentUpon>
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\dblDanhSachMuon.cs">
-      <DependentUpon>dbCSVCModel.tt</DependentUpon>
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\dblDonViTinh.cs">
-      <DependentUpon>dbCSVCModel.tt</DependentUpon>
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\dblPhanLoai.cs">
-      <DependentUpon>dbCSVCModel.tt</DependentUpon>
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\dblPhongHoc.cs">
-      <DependentUpon>dbCSVCModel.tt</DependentUpon>
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\dblRole.cs">
-      <DependentUpon>dbCSVCModel.tt</DependentUpon>
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\dblThietBi.cs">
-      <DependentUpon>dbCSVCModel.tt</DependentUpon>
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\dblThuongHieu.cs">
-      <DependentUpon>dbCSVCModel.tt</DependentUpon>
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\dblTrangThai.cs">
-      <DependentUpon>dbCSVCModel.tt</DependentUpon>
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Services_Nail.cs">
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>dbCSVCModel.tt</DependentUpon>
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ThemMoiThietBi.cs" />
     <Compile Include="Models\UpdateAccount.cs" />
@@ -219,15 +223,15 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Models\dbCSVCModel.Context.tt">
+    <Content Include="Models\csvcapiModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dbCSVCModel.edmx</DependentUpon>
-      <LastGenOutput>dbCSVCModel.Context.cs</LastGenOutput>
+      <DependentUpon>csvcapiModel.edmx</DependentUpon>
+      <LastGenOutput>csvcapiModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\dbCSVCModel.tt">
+    <Content Include="Models\csvcapiModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dbCSVCModel.edmx</DependentUpon>
-      <LastGenOutput>dbCSVCModel.cs</LastGenOutput>
+      <DependentUpon>csvcapiModel.edmx</DependentUpon>
+      <LastGenOutput>csvcapiModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -235,14 +239,13 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\dbCSVCModel.edmx">
+    <EntityDeploy Include="Models\csvcapiModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dbCSVCModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>csvcapiModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\dbCSVCModel.edmx.diagram">
-      <DependentUpon>dbCSVCModel.edmx</DependentUpon>
+    <Content Include="Models\csvcapiModel.edmx.diagram">
+      <DependentUpon>csvcapiModel.edmx</DependentUpon>
     </Content>
-    <None Include="Properties\PublishProfiles\kimhoangapi - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -1044,6 +1047,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\bootstrap.min.js.map" />

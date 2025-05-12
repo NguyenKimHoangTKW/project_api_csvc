@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<sitemanifest>
-  <IisApp path="D:\LTMB\Project_Cuoi_Ky\project_api_csvc\api_csvc\obj\Release\Package\PackageTmp" />
-  <setAcl path="D:\LTMB\Project_Cuoi_Ky\project_api_csvc\api_csvc\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
-  <setAcl path="D:\LTMB\Project_Cuoi_Ky\project_api_csvc\api_csvc\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
-</sitemanifest>

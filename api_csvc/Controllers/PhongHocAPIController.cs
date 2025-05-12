@@ -12,7 +12,7 @@ namespace api_csvc.Controllers
 {
     public class PhongHocAPIController : ApiController
     {
-        csvcapiEntities db = new csvcapiEntities();
+        csvcapiEntities1 db = new csvcapiEntities1();
 
         [HttpGet]
         [Route("api/get_full_phong_hoc")]
