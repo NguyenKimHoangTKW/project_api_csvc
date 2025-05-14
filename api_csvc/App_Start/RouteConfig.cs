@@ -20,9 +20,28 @@ namespace api_csvc
                 namespaces: new string[] { "api_csvc.Controllers" }
             );
             routes.MapRoute(
-               name: "danhsachcvscmuon",
-               url: "danh-sach-csvc",
+               name: "trangchuadmin",
+               url: "trang-chu-admin",
                defaults: new { controller = "Home", action = "Index" }
+            );
+            routes.MapRoute(
+               name: "ThietBiAdmin",
+               url: "admin/danh-sach-thiet-bi",
+               defaults: new { controller = "Home", action = "thiet_bi" }
+            );
+            routes.MapRoute(
+               name: "NguoiDungAdmin",
+               url: "admin/nguoi-dung",
+               defaults: new { controller = "Home", action = "nguoi_dung" }
+            );
+            routes.MapRoute(
+               name: "CBVCAdmin",
+               url: "admin/danh-sach-cbvc",
+               defaults: new { controller = "Home", action = "danh_sach_cbvc" }
+            ); routes.MapRoute(
+               name: "ThietBiMuonAdmin",
+               url: "admin/danh-sach-thiet-bi-muon",
+               defaults: new { controller = "Home", action = "danh_sach_thiet_bi_muon" }
             );
             routes.MapRoute(
                 name: "Default",

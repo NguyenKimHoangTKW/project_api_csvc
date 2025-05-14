@@ -1,81 +1,72 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <title>Đăng nhập - Ban Kế hoạch và cơ sở vật chất, kỹ thuật - Trường Đại học Thủ Dầu Một</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Quản lý cơ sở vật chất - TDMU</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="https://tdmu.edu.vn/hinh/Icon.png">
+    <link rel="shortcut icon" href="https://tdmu.edu.vn/hinh/Icon.png" />
 
-    <!-- page css -->
-    <!-- Core css -->
-    <link href="~/Style/assets/css/app.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
 
+    <!-- Core CSS -->
+    <link href="~/Style/assets/css/app.min.css" rel="stylesheet" />
 </head>
 
 <body>
     <div class="app">
         <div class="container-fluid p-0 h-100">
             <div class="row no-gutters h-100 full-height">
-                <div class="col-lg-4 d-none d-lg-flex bg" style="background-image: url('/Style/assets/images/khong-gian-tdmu-2024.jpg')">
+
+                <!-- Cột hình ảnh -->
+                <div class="col-lg-4 d-none d-lg-flex bg" style="background-image: url('/Style/assets/images/banner1.jpg'); background-size: cover;">
                     <div class="d-flex h-100 p-h-40 p-v-15 flex-column justify-content-between">
                         <div>
-                            <img src="~/Style/assets/images/Logo_TDMU_2024_nguyen_ban_Trang.svg" alt="">
+                            <img src="~/Style/assets/images/Logo_TDMU_2024_nguyen_ban_Trang.svg" alt="Logo TDMU" style="width: 150px;">
                         </div>
-                        <div class="d-flex justify-content-between">
-                            <span class="text-white">Quản lý cơ sở vật chất - TDMU</span>
+                        <div class="d-flex justify-content-between text-white">
+                            <span>Quản lý cơ sở vật chất - TDMU</span>
                         </div>
                     </div>
                 </div>
+                <!-- Cột nội dung đăng nhập -->
                 <div class="col-lg-8 bg-white">
                     <div class="container h-100">
                         <div class="row no-gutters h-100 align-items-center">
-                            <div class="col-md-8 col-lg-7 col-xl-6 mx-auto">
-                                <h2>HỆ THỐNG QUẢN LÝ CƠ SỞ VẬT CHẤT</h2>
-                                <p class="m-b-30">
-                                    Nhập thông tin xác thực của bạn để có quyền truy cập
+                            <div class="col-md-8 col-lg-7 col-xl-6 mx-auto text-center">
+                                <img src="~/Style/assets/images/Logo_TDMU_2024_nguyen_ban.svg" alt="Logo" style="max-width: 100px;" class="mb-3" />
+                                <h4 class="mb-1 font-weight-bold">HỆ THỐNG QUẢN LÝ CƠ SỞ VẬT CHẤT</h4>
+                                <p class="text-muted mb-4">Ban Kế hoạch và cơ sở vật chất, kỹ thuật - Trường Đại học Thủ Dầu Một</p>
+
+                                <button class="btn btn-danger btn-block" id="btnLoginGoogle" style="font-weight: 500; padding: 10px 20px;" onclick="signIn()">
+                                    <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo" style="width: 20px; margin-right: 8px;">
+                                    Đăng nhập bằng Google
+                                </button>
+
+                                <p class="mt-4 text-muted" style="font-size: 14px;">
+                                    Vui lòng sử dụng tài khoản Quản trị viên để đăng nhập hệ thống.
                                 </p>
-                                <div class="form-group">
-                                    <label class="font-weight-semibold" for="userName">Username:</label>
-                                    <div class="input-affix">
-                                        <i class="prefix-icon anticon anticon-user"></i>
-                                        <input type="text" class="form-control" id="userName" placeholder="Username">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="font-weight-semibold" for="password">Password:</label>
-                                    <div class="input-affix m-b-10">
-                                        <i class="prefix-icon anticon anticon-lock"></i>
-                                        <input type="password" class="form-control" id="password" placeholder="Password">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <button class="btn btn-primary">Đăng nhập</button>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
-
-    <!-- Core Vendors JS -->
-    <script src="~/Style/assets/js/vendors.min.js"></script>
-    <!-- page js -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Core JS -->
+    <script src="~/Style/assets/js/vendors.min.js"></script>
     <script src="~/Style/assets/js/app.min.js"></script>
+    <script>
+        let BASE_URL = "/api/v1";
+    </script>
+    <script src="~/Scripts/LoginWithGoogle.js"></script>
 </body>
-
 </html>
-

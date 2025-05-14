@@ -13,12 +13,13 @@ using System.Xml.Linq;
 
 namespace api_csvc.Controllers
 {
+    [RoutePrefix("api/v1")]
     public class QuanLyMuonTraAPIController : ApiController
     {
-        csvcapiEntities1 db = new csvcapiEntities1(); 
+        csvcapiEntities1 db = new csvcapiEntities1();
 
         [HttpGet]
-        [Route("api/drop-list-thiet-bi")]
+        [Route("drop-list-thiet-bi")]
         public async Task<IHttpActionResult> drop_list_thiet_bi()
         {
             var list_thiet_bi = await db.dblThietBis
@@ -31,7 +32,7 @@ namespace api_csvc.Controllers
         }
 
         [HttpGet]
-        [Route("api/drop-list-don-vi-tinh")]
+        [Route("drop-list-don-vi-tinh")]
         public async Task<IHttpActionResult> drop_list_don_vi_tinh()
         {
             var list_don_vi_tinh = await db.dblDonViTinhs
@@ -43,7 +44,7 @@ namespace api_csvc.Controllers
             return Ok(list_don_vi_tinh);
         }
         [HttpPost]
-        [Route("api/user_muon_thiet_bi")]
+        [Route("user_muon_thiet_bi")]
         public async Task<IHttpActionResult> create_muon_thiet_bi(UserMuonThietBi muonThietBi)
         {
 
@@ -75,7 +76,7 @@ namespace api_csvc.Controllers
         }
 
         [HttpGet]
-        [Route("api/get-full-thiet-bi-muon")]
+        [Route("get-full-thiet-bi-muon")]
         public async Task<IHttpActionResult> update_cho_muon_thiet_bi()
         {
             var check_danh_sach_muon = await db.dblDanhSachMuons.ToListAsync();
@@ -107,7 +108,7 @@ namespace api_csvc.Controllers
             }
         }
         [HttpPost]
-        [Route("api/get-full-thiet-bi-muon-by-cbvc")]
+        [Route("get-full-thiet-bi-muon-by-cbvc")]
         public async Task<IHttpActionResult> get_thiet_bi_user(dblCBVC cBVC)
         {
             var check_cbvc = await db.dblCBVCs.FirstOrDefaultAsync(x => x.email == cBVC.email);
@@ -139,7 +140,7 @@ namespace api_csvc.Controllers
         }
 
         [HttpPost]
-        [Route("api/user-huy-muon-thiet-bi")]
+        [Route("user-huy-muon-thiet-bi")]
         public async Task<IHttpActionResult> Huy_Muon_user(dblDanhSachMuon danhSachMuon)
         {
             DateTime now = DateTime.UtcNow;
@@ -160,8 +161,8 @@ namespace api_csvc.Controllers
         }
 
         [HttpPost]
-        [Route("api/duyet-muon-user")]
-        public IHttpActionResult Duyet_muon_thiet_bi(UserMuonThietBi userMuonThietBi)
+        [Route("duyet-muon-user")]
+        public async Task<IHttpActionResult> Duyet_muon_thiet_bi(UserMuonThietBi userMuonThietBi)
         {
             var check_trang_thai = db.dblTrangThais.FirstOrDefault(x => x.ten_trang_thaii == userMuonThietBi.ten_trang_thai);
             var check_danh_sach_muon = db.dblDanhSachMuons.FirstOrDefault(x => x.id_danh_sach_muon == userMuonThietBi.id_danh_sach_muon);
@@ -172,14 +173,14 @@ namespace api_csvc.Controllers
             {
                 check_danh_sach_muon.id_trang_thai = 7;
                 check_danh_sach_muon.ngay_muon = unixTimestamp;
-                check_danh_sach_muon.ly_do_huy ="Đã duyệt mượn, vui lòng đến Ban khảo thí,kiểm định và đảm bảo chất lượng để nhận";
+                check_danh_sach_muon.ly_do_huy = "Đã duyệt mượn, vui lòng đến Ban Kế hoạch và cơ sở vật chất, kỹ thuật để nhận";
                 check_thiet_bi.so_luong = (check_thiet_bi.so_luong - check_danh_sach_muon.so_luong_muon);
             }
             else if (check_trang_thai.id_trang_thai == 8)
             {
                 check_danh_sach_muon.id_trang_thai = 8;
                 check_danh_sach_muon.ngay_tra = unixTimestamp;
-                check_danh_sach_muon.ly_do_huy = "Đã duyệt mượn, vui lòng đến Ban khảo thí,kiểm định và đảm bảo chất lượng để nhận";
+                check_danh_sach_muon.ly_do_huy = "Đã duyệt mượn, vui lòng đến Ban Kế hoạch và cơ sở vật chất, kỹ thuật để nhận";
                 check_thiet_bi.so_luong = (check_danh_sach_muon.so_luong_muon + check_thiet_bi.so_luong);
             }
             else if (check_trang_thai.id_trang_thai == 6)
@@ -188,7 +189,7 @@ namespace api_csvc.Controllers
                 check_danh_sach_muon.ngay_huy = unixTimestamp;
                 check_danh_sach_muon.ly_do_huy = userMuonThietBi.ly_do_huy;
             }
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             var check_thiet_bi_khac_0 = db.dblThietBis.FirstOrDefault(x => x.so_luong == 0);
 
             if (check_thiet_bi_khac_0 != null)
@@ -203,12 +204,26 @@ namespace api_csvc.Controllers
                     any_thiet_bi.id_trang_thai = 3;
                 }
             }
-
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return Ok(new { message = "Cập nhật thành công" });
         }
+        [HttpPost]
+        [Route("info-danh-sach-muon")]
+        public async Task<IHttpActionResult> info(dblDanhSachMuon items)
+        {
+            var check_danhsach = await db.dblDanhSachMuons
+                .Where(x => x.id_danh_sach_muon == items.id_danh_sach_muon)
+                .Select(x => new
+                {
+                    x.dblThietBi.ten_thiet_bi,
+                    x.dblTrangThai.ten_trang_thaii,
+                    x.ly_do_huy
+                })
+                .FirstOrDefaultAsync();
+            return Ok(check_danhsach);
+        }
         [HttpGet]
-        [Route("api/droplist_trang_thai_duyet_muon")]
+        [Route("droplist_trang_thai_duyet_muon")]
         public async Task<IHttpActionResult> drop_list_trangthai()
         {
             var desiredStatusIds = new List<int> { 6, 7, 8 };

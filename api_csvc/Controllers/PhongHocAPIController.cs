@@ -10,12 +10,13 @@ using System.Web.Http;
 
 namespace api_csvc.Controllers
 {
+    [RoutePrefix("api/v1")]
     public class PhongHocAPIController : ApiController
     {
         csvcapiEntities1 db = new csvcapiEntities1();
 
         [HttpGet]
-        [Route("api/get_full_phong_hoc")]
+        [Route("get_full_phong_hoc")]
         public async Task<IHttpActionResult> load_full_phong_hoc()
         {
             bool check_phong_hoc = await db.dblPhongHocs.AnyAsync();
@@ -35,7 +36,7 @@ namespace api_csvc.Controllers
             }
         }
         [HttpPost]
-        [Route("api/create_phong_hoc")]
+        [Route("create_phong_hoc")]
         public async Task<IHttpActionResult> Create_phong_hoc(dblPhongHoc phongHoc)
         {
             if (string.IsNullOrEmpty(phongHoc.ten_phong_hoc))
@@ -53,7 +54,7 @@ namespace api_csvc.Controllers
         }
 
         [HttpPut]
-        [Route("api/update_phong_hoc")]
+        [Route("update_phong_hoc")]
         public async Task<IHttpActionResult> Update_phong_hoc(dblPhongHoc phongHoc)
         {
             var check_phong_hoc = await db.dblPhongHocs.FirstOrDefaultAsync(x => x.id_phong_hoc == phongHoc.id_phong_hoc);
@@ -72,7 +73,7 @@ namespace api_csvc.Controllers
         }
 
         [HttpPost]
-        [Route("api/delete_phong_hoc")]
+        [Route("delete_phong_hoc")]
         public async Task<IHttpActionResult> Delete_phong_hoc(dblPhongHoc phongHoc)
         {
             var check_phong_hoc = await db.dblPhongHocs.FindAsync(phongHoc.id_phong_hoc);

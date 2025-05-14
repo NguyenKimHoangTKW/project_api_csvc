@@ -1,4 +1,5 @@
 ﻿using api_csvc.Models;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,11 +13,12 @@ using System.Web.Http;
 
 namespace api_csvc.Controllers
 {
+    [RoutePrefix("api/v1")]
     public class ThietBiAPIController : ApiController
     {
         csvcapiEntities1 db = new csvcapiEntities1();
         [HttpGet]
-        [Route("api/get_full_thiet_bi")]
+        [Route("get_full_thiet_bi")]
         public async Task<IHttpActionResult> load_full_thiet_bi()
         {
             var check_thiet_bi = await db.dblThietBis.FirstOrDefaultAsync();
@@ -42,9 +44,28 @@ namespace api_csvc.Controllers
                 return Ok(get_thietbi);
             }
         }
-
+        [HttpPost]
+        [Route("get-info-thiet-bi")]
+        public async Task<IHttpActionResult> load_info(dblThietBi items)
+        {
+            var check_info_thiet_bi = await db.dblThietBis
+                .Where(x => x.id_thiet_bi == items.id_thiet_bi)
+                .Select(x => new
+                {
+                    x.ten_thiet_bi,
+                    x.thong_so,
+                    x.dblThuongHieu.ten_thuong_hieu,
+                    x.so_luong,
+                    x.mo_ta,
+                    x.dblPhanLoai.ten_phan_loai,
+                    x.dblTrangThai.ten_trang_thaii,
+                    x.dblDonViTinh.ten_don_vi_tinh
+                })
+                .FirstOrDefaultAsync();
+            return Ok(check_info_thiet_bi);
+        }
         [HttpGet]
-        [Route("api/get_full_thiet_bi_by_thuong_hieu")]
+        [Route("get_full_thiet_bi_by_thuong_hieu")]
         public async Task<IHttpActionResult> load_thiet_bi_by_thuong_hieu()
         {
             var get_thuong_hieu = await db.dblThuongHieux.ToListAsync();
@@ -75,7 +96,7 @@ namespace api_csvc.Controllers
         }
 
         [HttpGet]
-        [Route("api/droplist-don-vi-tinh")]
+        [Route("droplist-don-vi-tinh")]
         public async Task<IHttpActionResult> get_full_don_vi_tinh()
         {
             var drop_list = await db.dblDonViTinhs
@@ -88,7 +109,7 @@ namespace api_csvc.Controllers
         }
 
         [HttpGet]
-        [Route("api/droplist-phan-loai")]
+        [Route("droplist-phan-loai")]
         public async Task<IHttpActionResult> get_full_phan_loai()
         {
             var drop_list = await db.dblPhanLoais
@@ -101,12 +122,12 @@ namespace api_csvc.Controllers
             return Ok(drop_list);
         }
         [HttpPost]
-        [Route("api/update-thiet-bi")]
+        [Route("update-thiet-bi")]
         public async Task<IHttpActionResult> Update_Thiet_bi(ThemMoiThietBi thietBi)
         {
             if (db.dblThietBis.FirstOrDefault(x => x.ten_thiet_bi == thietBi.ten_thiet_bi) != null)
             {
-                return Ok(new { message = "Tên thiết bị đã tồn tại" });
+                return Ok(new { message = "Tên thiết bị đã tồn tại", success = false });
             }
 
             var check_thuong_hieu = await db.dblThuongHieux.FirstOrDefaultAsync(x => x.ten_thuong_hieu == thietBi.ten_thuong_hieu);
@@ -126,14 +147,18 @@ namespace api_csvc.Controllers
             };
             db.dblThietBis.Add(add);
             await db.SaveChangesAsync();
-            return Ok(new { message = "Thêm mới thiết bị thành công" });
+            return Ok(new { message = "Thêm mới thiết bị thành công", success = true });
         }
 
         [HttpPost]
-        [Route("api/sua-thiet-bi")]
+        [Route("sua-thiet-bi")]
         public async Task<IHttpActionResult> Suathietbi(ThemMoiThietBi thietBi)
         {
             var check_thiet_bi = await db.dblThietBis.FirstOrDefaultAsync(x => x.id_thiet_bi == thietBi.id_thiet_bi);
+            if (check_thiet_bi == null)
+            {
+                return Ok(new { message = "Không tìm thấy thông tin thiết bị", success = false });
+            }
             var check_thuong_hieu = await db.dblThuongHieux.FirstOrDefaultAsync(x => x.ten_thuong_hieu == thietBi.ten_thuong_hieu);
             var check_don_vi_tinh = await db.dblDonViTinhs.FirstOrDefaultAsync(x => x.ten_don_vi_tinh == thietBi.ten_don_vi_tinh);
             var check_phan_loai = await db.dblPhanLoais.FirstOrDefaultAsync(x => x.ten_phan_loai == thietBi.ten_phan_loai);
@@ -146,16 +171,38 @@ namespace api_csvc.Controllers
             check_thiet_bi.id_phan_loai = check_phan_loai.id_phan_loai;
             if (check_thiet_bi.so_luong == 0)
             {
-                check_thiet_bi.id_trang_thai = 4; 
+                check_thiet_bi.id_trang_thai = 4;
             }
             else
             {
-                check_thiet_bi.id_trang_thai = 3; 
+                check_thiet_bi.id_trang_thai = 3;
             }
-
             await db.SaveChangesAsync();
-            return Ok(new { message = "Cập nhật dữ liệu thành công" });
+            return Ok(new { message = "Cập nhật dữ liệu thành công", success = true });
         }
 
+        [HttpPost]
+        [Route("delete-thiet-bi")]
+        public async Task<IHttpActionResult> delete_thiet_bi(dblThietBi items)
+        {
+            var check_dsm = await db.dblDanhSachMuons.Where(x => x.id_thiet_bi == items.id_thiet_bi).ToListAsync();
+            if (check_dsm.Any())
+            {
+                db.dblDanhSachMuons.RemoveRange(check_dsm);
+                await db.SaveChangesAsync();
+            }
+            var check_thiet_bi = await db.dblThietBis.FirstOrDefaultAsync(x => x.id_thiet_bi == items.id_thiet_bi);
+            if (check_thiet_bi == null)
+            {
+                return Ok(new { message = "Không tìm thấy thông tin thiết bị", success = false });
+            }
+            else
+            {
+                db.dblThietBis.Remove(check_thiet_bi);
+
+            }
+            await db.SaveChangesAsync();
+            return Ok(new { message = "Xóa thiết bị thành công", success = true });
+        }
     }
 }

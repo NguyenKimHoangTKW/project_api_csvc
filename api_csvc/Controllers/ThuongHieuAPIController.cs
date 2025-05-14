@@ -16,7 +16,7 @@ namespace api_csvc.Controllers
         csvcapiEntities1 db = new csvcapiEntities1();
 
         [HttpGet]
-        [Route("api/get_full_thuong_hieu")]
+        [Route("get_full_thuong_hieu")]
         public async Task<IHttpActionResult> load_full_thuong_hieu()
         {
             var check_thuong_hieu = await db.dblThuongHieux.FirstOrDefaultAsync();
@@ -37,7 +37,7 @@ namespace api_csvc.Controllers
         }
 
         [HttpPost]
-        [Route("api/create-thuong-hieu")]
+        [Route("create-thuong-hieu")]
         public async Task<IHttpActionResult> Create_thuong_hieu(dblThuongHieu thuongHieu)
         {
             if (string.IsNullOrEmpty(thuongHieu.ten_thuong_hieu))
@@ -55,7 +55,7 @@ namespace api_csvc.Controllers
         }
 
         [HttpPut]
-        [Route("api/update-thuong-hieu")]
+        [Route("update-thuong-hieu")]
         public async Task<IHttpActionResult> Update_thuong_hieu(dblThuongHieu thuongHieu)
         {
             var check_thuong_hieu = await db.dblThuongHieux.FirstOrDefaultAsync(x => x.id_thuong_hieu == thuongHieu.id_thuong_hieu);
@@ -74,7 +74,7 @@ namespace api_csvc.Controllers
         }
 
         [HttpDelete]
-        [Route("api/delete-thiet-bi/{id}")]
+        [Route("delete-thiet-bi/{id}")]
         public async Task<IHttpActionResult> Delete_thiet_bi(int id)
         {
             var check_thiet_bi = await db.dblThietBis.FindAsync(id);

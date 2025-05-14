@@ -19,5 +19,12 @@ namespace api_csvc
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+        protected void Application_PostAuthorizeRequest()
+        {
+            if (HttpContext.Current != null)
+            {
+                HttpContext.Current.SetSessionStateBehavior(System.Web.SessionState.SessionStateBehavior.Required);
+            }
+        }
     }
 }

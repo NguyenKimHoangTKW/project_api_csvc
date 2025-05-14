@@ -1,0 +1,36 @@
+﻿@using api_csvc.Helper
+@{
+    var user = SessionHelper.GetUser();
+}
+<div class="header">
+    <div class="logo logo-dark">
+        <a href="index.html">
+            <img src="~/Style/assets/images/Icon.png" style="width: 66px" alt="Logo">
+            <img class="logo-fold" src="~/Style/assets/images/Icon.png" style="width: 66px" alt="Logo">
+        </a>
+    </div>
+    <div class="logo logo-white">
+        <a href="index.html">
+            <img src="~/Style/assets/images/Icon.png" style="width: 66px" alt="Logo">
+            <img class="logo-fold" src="~/Style/assets/images/Icon.png" style="width: 66px" alt="Logo">
+        </a>
+    </div>
+    <div class="nav-wrap">
+        <ul class="nav-left">
+            <li class="desktop-toggle">
+                <a href="javascript:void(0);">
+                    <i class="anticon"></i>
+                </a>
+            </li>
+            <li class="mobile-toggle">
+                <a href="javascript:void(0);">
+                    <i class="anticon"></i>
+                </a>
+            </li>
+            <li>
+                <h5>Xin chào: <b>@user.name</b></h5>
+                <span>Cấp quyền: <b>Quản trị viên</b></span>
+            </li>
+        </ul>
+    </div>
+</div>

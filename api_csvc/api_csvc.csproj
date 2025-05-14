@@ -148,6 +148,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\SessionHelper.cs" />
+    <Compile Include="Helper\UserAuthorizeAttribute.cs" />
     <Compile Include="Models\Account.cs">
       <DependentUpon>csvcapiModel.tt</DependentUpon>
     </Compile>
@@ -233,6 +234,10 @@
       <DependentUpon>csvcapiModel.edmx</DependentUpon>
       <LastGenOutput>csvcapiModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\Admin\DanhSachCBVC.js" />
+    <Content Include="Scripts\Admin\DanhSachTaiKhoan.js" />
+    <Content Include="Scripts\Admin\DanhSachThietBi.js" />
+    <Content Include="Scripts\Admin\DanhSachThietBiMuon.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -251,8 +256,12 @@
     <Content Include="Scripts\jquery-3.7.0.min.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
+    <Content Include="Scripts\LoginWithGoogle.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Style\assets\css\app.min.css" />
+    <Content Include="Style\assets\css\buttons.dataTables.min.css" />
+    <Content Include="Style\assets\css\sweetalert2.min.css" />
+    <Content Include="Style\assets\css\tieude.min.css" />
     <Content Include="Style\assets\es6\app.js" />
     <Content Include="Style\assets\es6\constant\theme-constant.js" />
     <Content Include="Style\assets\es6\core\core.js" />
@@ -292,12 +301,18 @@
     <Content Include="Style\assets\images\avatars\thumb-7.jpg" />
     <Content Include="Style\assets\images\avatars\thumb-8.jpg" />
     <Content Include="Style\assets\images\avatars\thumb-9.jpg" />
-    <Content Include="Style\assets\images\khong-gian-tdmu-2024.jpg" />
+    <Content Include="Style\assets\images\banner.jpg" />
+    <Content Include="Style\assets\images\banner1.jpg" />
+    <Content Include="Style\assets\images\Icon.png" />
+    <Content Include="Style\assets\images\logo-close.png" />
+    <Content Include="Style\assets\images\logo-open.png" />
     <Content Include="Style\assets\images\logo\favicon.png" />
     <Content Include="Style\assets\images\logo\logo-fold-white.png" />
     <Content Include="Style\assets\images\logo\logo-fold.png" />
     <Content Include="Style\assets\images\logo\logo-white.png" />
     <Content Include="Style\assets\images\logo\logo.png" />
+    <Content Include="Style\assets\images\logo\logo_test_2.png" />
+    <Content Include="Style\assets\images\Logo_TDMU_2024_nguyen_ban.svg" />
     <Content Include="Style\assets\images\Logo_TDMU_2024_nguyen_ban_Trang.svg" />
     <Content Include="Style\assets\images\others\adobe-thumb.png" />
     <Content Include="Style\assets\images\others\amazon-thumb.png" />
@@ -351,6 +366,13 @@
     <Content Include="Style\assets\images\others\visa.png" />
     <Content Include="Style\assets\images\others\weather-app-thumb.jpg" />
     <Content Include="Style\assets\js\app.min.js" />
+    <Content Include="Style\assets\js\buttons.html5.min.js" />
+    <Content Include="Style\assets\js\buttons.print.min.js" />
+    <Content Include="Style\assets\js\dataTables.buttons.min.js" />
+    <Content Include="Style\assets\js\exceljs.min.js" />
+    <Content Include="Style\assets\js\FileSaver.min.js" />
+    <Content Include="Style\assets\js\jszip.min.js" />
+    <Content Include="Style\assets\js\login-google.js" />
     <Content Include="Style\assets\js\pages\chartist.js" />
     <Content Include="Style\assets\js\pages\chartjs.js" />
     <Content Include="Style\assets\js\pages\chat.js" />
@@ -370,8 +392,12 @@
     <Content Include="Style\assets\js\pages\profile.js" />
     <Content Include="Style\assets\js\pages\project-list.js" />
     <Content Include="Style\assets\js\pages\slider.js" />
+    <Content Include="Style\assets\js\pdfmake.min.js" />
+    <Content Include="Style\assets\js\site.js" />
+    <Content Include="Style\assets\js\sweetalert2%4011.js" />
     <Content Include="Style\assets\js\vendors.min.js" />
-    <Content Include="Style\assets\images\Logo_TDMU_2024_nguyen_ban.svg" />
+    <Content Include="Style\assets\js\vfs_fonts.js" />
+    <Content Include="Style\assets\js\xlsx.full.min.js" />
     <Content Include="Style\assets\vendors\bootstrap-datepicker\bootstrap-datepicker.min.css" />
     <Content Include="Style\assets\vendors\bootstrap-datepicker\bootstrap-datepicker.min.js" />
     <Content Include="Style\assets\vendors\bootstrap\dist\css\bootstrap-grid.css" />
@@ -807,6 +833,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\login.cshtml" />
+    <Content Include="Views\Shared\_SideNavPartial.cshtml" />
+    <Content Include="Views\Shared\_SearchStartPartial.cshtml" />
+    <Content Include="Views\Shared\_HeaderPartial.cshtml" />
+    <Content Include="Views\Home\thiet_bi.cshtml" />
     <Content Include="Style\assets\fonts\anticon.eot" />
     <Content Include="Style\assets\fonts\anticon.ttf" />
     <Content Include="Style\assets\fonts\anticon.woff" />
@@ -1040,9 +1071,9 @@
     <Content Include="Style\assets\vendors\select2\release.sh" />
     <Content Include="Style\assets\vendors\select2\select2.jquery.json" />
     <Content Include="Style\assets\vendors\select2\select2_locale_en.js.template" />
-    <Content Include="Views\Home\login.cshtml" />
-    <Content Include="Views\Shared\_SideNavPartial.cshtml" />
-    <Content Include="Views\Shared\_SearchStartPartial.cshtml" />
+    <Content Include="Views\Home\nguoi_dung.cshtml" />
+    <Content Include="Views\Home\danh_sach_cbvc.cshtml" />
+    <Content Include="Views\Home\danh_sach_thiet_bi_muon.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

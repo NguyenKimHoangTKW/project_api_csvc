@@ -9,5 +9,6 @@ namespace api_csvc.Models
     {
         public int id_account { get; set; }
         public string ten_role { get; set; }
+        public string email { get; set; }
     }
 }
