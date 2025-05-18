@@ -11,6 +11,55 @@
     <Property Name="password" Type="nvarchar" MaxLength="50" />
     <Property Name="id_role" Type="int" />
   </EntityType>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="id_author" />
+    </Key>
+    <Property Name="id_author" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_author" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Books">
+    <Key>
+      <PropertyRef Name="id_books" />
+    </Key>
+    <Property Name="id_books" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bookName" Type="nvarchar" MaxLength="200" />
+    <Property Name="bookCover" Type="nvarchar(max)" />
+    <Property Name="rating" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_languages" Type="int" />
+    <Property Name="pageNo" Type="int" />
+    <Property Name="id_author" Type="int" />
+    <Property Name="readed" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="completion" Type="nvarchar" MaxLength="50" />
+    <Property Name="lastRead" Type="nvarchar" MaxLength="50" />
+    <Property Name="backgroundColor" Type="nvarchar(max)" />
+    <Property Name="navTintColor" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="books_by_categories">
+    <Key>
+      <PropertyRef Name="id_books_by_categories" />
+    </Key>
+    <Property Name="id_books_by_categories" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_books" Type="int" />
+    <Property Name="id_categories" Type="int" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="id_categories" />
+    </Key>
+    <Property Name="id_categories" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_categories" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="chi_tiet_don_hang">
+    <Key>
+      <PropertyRef Name="id_chi_tiet_hoa_don" />
+    </Key>
+    <Property Name="id_chi_tiet_hoa_don" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_account" Type="int" />
+    <Property Name="id_mon_an" Type="int" />
+    <Property Name="so_luong" Type="int" />
+  </EntityType>
   <EntityType Name="dblCBVC">
     <Key>
       <PropertyRef Name="id_CBVC" />
@@ -92,6 +141,58 @@
     <Property Name="id_trang_thai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ten_trang_thaii" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="Details_book_genre">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_books" Type="int" />
+    <Property Name="id_genre" Type="int" />
+  </EntityType>
+  <EntityType Name="Genre">
+    <Key>
+      <PropertyRef Name="id_genre" />
+    </Key>
+    <Property Name="id_genre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_genre" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="group_loai_mon_an">
+    <Key>
+      <PropertyRef Name="id_group_loai_mon_an" />
+    </Key>
+    <Property Name="id_group_loai_mon_an" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_group_loai_mon_an" Type="nvarchar" MaxLength="200" />
+    <Property Name="img" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="hoa_don_ban_hang">
+    <Key>
+      <PropertyRef Name="id_hoa_don" />
+    </Key>
+    <Property Name="id_hoa_don" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_account" Type="int" />
+    <Property Name="id_mon_an" Type="int" />
+    <Property Name="so_luong" Type="int" />
+    <Property Name="thanh_tien" Type="float" />
+    <Property Name="ngay_xuat_hoa_don" Type="int" />
+  </EntityType>
+  <EntityType Name="Languages">
+    <Key>
+      <PropertyRef Name="id_languages" />
+    </Key>
+    <Property Name="id_languages" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="acronym" Type="nvarchar" MaxLength="50" />
+    <Property Name="name_languages" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mon_an">
+    <Key>
+      <PropertyRef Name="id_mon_an" />
+    </Key>
+    <Property Name="id_mon_an" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_mon_an" Type="nvarchar" MaxLength="200" />
+    <Property Name="id_group_loai_mon_an" Type="int" />
+    <Property Name="price" Type="float" />
+    <Property Name="img" Type="nvarchar(max)" />
+  </EntityType>
   <EntityType Name="Services_Nail">
     <Key>
       <PropertyRef Name="id_services" />
@@ -122,6 +223,78 @@
       </Principal>
       <Dependent Role="Account">
         <PropertyRef Name="id_role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Books_Author">
+    <End Role="Author" Type="Self.Author" Multiplicity="0..1" />
+    <End Role="Books" Type="Self.Books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="id_author" />
+      </Principal>
+      <Dependent Role="Books">
+        <PropertyRef Name="id_author" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_books_by_categories_Books">
+    <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
+    <End Role="books_by_categories" Type="Self.books_by_categories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="id_books" />
+      </Principal>
+      <Dependent Role="books_by_categories">
+        <PropertyRef Name="id_books" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_books_by_categories_Categories">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="books_by_categories" Type="Self.books_by_categories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id_categories" />
+      </Principal>
+      <Dependent Role="books_by_categories">
+        <PropertyRef Name="id_categories" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Books_Languages">
+    <End Role="Languages" Type="Self.Languages" Multiplicity="0..1" />
+    <End Role="Books" Type="Self.Books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="id_languages" />
+      </Principal>
+      <Dependent Role="Books">
+        <PropertyRef Name="id_languages" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_chi_tiet_don_hang_Account">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="chi_tiet_don_hang" Type="Self.chi_tiet_don_hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id_account" />
+      </Principal>
+      <Dependent Role="chi_tiet_don_hang">
+        <PropertyRef Name="id_account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_chi_tiet_don_hang_mon_an">
+    <End Role="mon_an" Type="Self.mon_an" Multiplicity="0..1" />
+    <End Role="chi_tiet_don_hang" Type="Self.chi_tiet_don_hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mon_an">
+        <PropertyRef Name="id_mon_an" />
+      </Principal>
+      <Dependent Role="chi_tiet_don_hang">
+        <PropertyRef Name="id_mon_an" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -221,6 +394,66 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Details_book_genre_Books">
+    <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
+    <End Role="Details_book_genre" Type="Self.Details_book_genre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="id_books" />
+      </Principal>
+      <Dependent Role="Details_book_genre">
+        <PropertyRef Name="id_genre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Details_book_genre_Genre">
+    <End Role="Genre" Type="Self.Genre" Multiplicity="0..1" />
+    <End Role="Details_book_genre" Type="Self.Details_book_genre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genre">
+        <PropertyRef Name="id_genre" />
+      </Principal>
+      <Dependent Role="Details_book_genre">
+        <PropertyRef Name="id_genre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hoa_don_ban_hang_Account">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="hoa_don_ban_hang" Type="Self.hoa_don_ban_hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id_account" />
+      </Principal>
+      <Dependent Role="hoa_don_ban_hang">
+        <PropertyRef Name="id_account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hoa_don_ban_hang_mon_an">
+    <End Role="mon_an" Type="Self.mon_an" Multiplicity="0..1" />
+    <End Role="hoa_don_ban_hang" Type="Self.hoa_don_ban_hang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mon_an">
+        <PropertyRef Name="id_mon_an" />
+      </Principal>
+      <Dependent Role="hoa_don_ban_hang">
+        <PropertyRef Name="id_mon_an" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mon_an_group_loai_mon_an">
+    <End Role="group_loai_mon_an" Type="Self.group_loai_mon_an" Multiplicity="0..1" />
+    <End Role="mon_an" Type="Self.mon_an" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="group_loai_mon_an">
+        <PropertyRef Name="id_group_loai_mon_an" />
+      </Principal>
+      <Dependent Role="mon_an">
+        <PropertyRef Name="id_group_loai_mon_an" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Services_Nail_Account">
     <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
     <End Role="Services_Nail" Type="Self.Services_Nail" Multiplicity="*" />
@@ -235,6 +468,11 @@
   </Association>
   <EntityContainer Name="csvcapiModelStoreContainer">
     <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="books_by_categories" EntityType="Self.books_by_categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="chi_tiet_don_hang" EntityType="Self.chi_tiet_don_hang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="dblCBVC" EntityType="Self.dblCBVC" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="dblDanhSachMuon" EntityType="Self.dblDanhSachMuon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="dblDonViTinh" EntityType="Self.dblDonViTinh" Schema="dbo" store:Type="Tables" />
@@ -244,11 +482,41 @@
     <EntitySet Name="dblThietBi" EntityType="Self.dblThietBi" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="dblThuongHieu" EntityType="Self.dblThuongHieu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="dblTrangThai" EntityType="Self.dblTrangThai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Details_book_genre" EntityType="Self.Details_book_genre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="group_loai_mon_an" EntityType="Self.group_loai_mon_an" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hoa_don_ban_hang" EntityType="Self.hoa_don_ban_hang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mon_an" EntityType="Self.mon_an" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Services_Nail" EntityType="Self.Services_Nail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Account_dblRole" Association="Self.FK_Account_dblRole">
       <End Role="dblRole" EntitySet="dblRole" />
       <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Books_Author" Association="Self.FK_Books_Author">
+      <End Role="Author" EntitySet="Author" />
+      <End Role="Books" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="FK_books_by_categories_Books" Association="Self.FK_books_by_categories_Books">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="books_by_categories" EntitySet="books_by_categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_books_by_categories_Categories" Association="Self.FK_books_by_categories_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="books_by_categories" EntitySet="books_by_categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Books_Languages" Association="Self.FK_Books_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="Books" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="FK_chi_tiet_don_hang_Account" Association="Self.FK_chi_tiet_don_hang_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="chi_tiet_don_hang" EntitySet="chi_tiet_don_hang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_chi_tiet_don_hang_mon_an" Association="Self.FK_chi_tiet_don_hang_mon_an">
+      <End Role="mon_an" EntitySet="mon_an" />
+      <End Role="chi_tiet_don_hang" EntitySet="chi_tiet_don_hang" />
     </AssociationSet>
     <AssociationSet Name="FK_dblDanhSachMuon_dblCBVC" Association="Self.FK_dblDanhSachMuon_dblCBVC">
       <End Role="dblCBVC" EntitySet="dblCBVC" />
@@ -281,6 +549,26 @@
     <AssociationSet Name="FK_dblThietBi_dblTrangThai" Association="Self.FK_dblThietBi_dblTrangThai">
       <End Role="dblTrangThai" EntitySet="dblTrangThai" />
       <End Role="dblThietBi" EntitySet="dblThietBi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Details_book_genre_Books" Association="Self.FK_Details_book_genre_Books">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="Details_book_genre" EntitySet="Details_book_genre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Details_book_genre_Genre" Association="Self.FK_Details_book_genre_Genre">
+      <End Role="Genre" EntitySet="Genre" />
+      <End Role="Details_book_genre" EntitySet="Details_book_genre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hoa_don_ban_hang_Account" Association="Self.FK_hoa_don_ban_hang_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="hoa_don_ban_hang" EntitySet="hoa_don_ban_hang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hoa_don_ban_hang_mon_an" Association="Self.FK_hoa_don_ban_hang_mon_an">
+      <End Role="mon_an" EntitySet="mon_an" />
+      <End Role="hoa_don_ban_hang" EntitySet="hoa_don_ban_hang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mon_an_group_loai_mon_an" Association="Self.FK_mon_an_group_loai_mon_an">
+      <End Role="group_loai_mon_an" EntitySet="group_loai_mon_an" />
+      <End Role="mon_an" EntitySet="mon_an" />
     </AssociationSet>
     <AssociationSet Name="FK_Services_Nail_Account" Association="Self.FK_Services_Nail_Account">
       <End Role="Account" EntitySet="Account" />

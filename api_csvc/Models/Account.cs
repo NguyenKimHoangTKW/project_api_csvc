@@ -17,6 +17,8 @@ namespace api_csvc.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Account()
         {
+            this.chi_tiet_don_hang = new HashSet<chi_tiet_don_hang>();
+            this.hoa_don_ban_hang = new HashSet<hoa_don_ban_hang>();
             this.Services_Nail = new HashSet<Services_Nail>();
         }
     
@@ -28,6 +30,10 @@ namespace api_csvc.Models
         public Nullable<int> id_role { get; set; }
     
         public virtual dblRole dblRole { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<chi_tiet_don_hang> chi_tiet_don_hang { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<hoa_don_ban_hang> hoa_don_ban_hang { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Services_Nail> Services_Nail { get; set; }
     }

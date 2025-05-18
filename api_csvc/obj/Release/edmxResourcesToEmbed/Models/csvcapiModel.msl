@@ -4,125 +4,237 @@
     <EntitySetMapping Name="Accounts">
       <EntityTypeMapping TypeName="csvcapiModel.Account">
         <MappingFragment StoreEntitySet="Account">
-          <ScalarProperty Name="id_account" ColumnName="id_account" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="email" ColumnName="email" />
-          <ScalarProperty Name="username" ColumnName="username" />
-          <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="id_role" ColumnName="id_role" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id_account" ColumnName="id_account" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Authors">
+      <EntityTypeMapping TypeName="csvcapiModel.Author">
+        <MappingFragment StoreEntitySet="Author">
+          <ScalarProperty Name="name_author" ColumnName="name_author" />
+          <ScalarProperty Name="id_author" ColumnName="id_author" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Books">
+      <EntityTypeMapping TypeName="csvcapiModel.Book">
+        <MappingFragment StoreEntitySet="Books">
+          <ScalarProperty Name="navTintColor" ColumnName="navTintColor" />
+          <ScalarProperty Name="backgroundColor" ColumnName="backgroundColor" />
+          <ScalarProperty Name="lastRead" ColumnName="lastRead" />
+          <ScalarProperty Name="completion" ColumnName="completion" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="readed" ColumnName="readed" />
+          <ScalarProperty Name="id_author" ColumnName="id_author" />
+          <ScalarProperty Name="pageNo" ColumnName="pageNo" />
+          <ScalarProperty Name="id_languages" ColumnName="id_languages" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="bookCover" ColumnName="bookCover" />
+          <ScalarProperty Name="bookName" ColumnName="bookName" />
+          <ScalarProperty Name="id_books" ColumnName="id_books" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="books_by_categories">
+      <EntityTypeMapping TypeName="csvcapiModel.books_by_categories">
+        <MappingFragment StoreEntitySet="books_by_categories">
+          <ScalarProperty Name="id_categories" ColumnName="id_categories" />
+          <ScalarProperty Name="id_books" ColumnName="id_books" />
+          <ScalarProperty Name="id_books_by_categories" ColumnName="id_books_by_categories" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="csvcapiModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="name_categories" ColumnName="name_categories" />
+          <ScalarProperty Name="id_categories" ColumnName="id_categories" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chi_tiet_don_hang">
+      <EntityTypeMapping TypeName="csvcapiModel.chi_tiet_don_hang">
+        <MappingFragment StoreEntitySet="chi_tiet_don_hang">
+          <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+          <ScalarProperty Name="id_mon_an" ColumnName="id_mon_an" />
+          <ScalarProperty Name="id_account" ColumnName="id_account" />
+          <ScalarProperty Name="id_chi_tiet_hoa_don" ColumnName="id_chi_tiet_hoa_don" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="dblCBVCs">
       <EntityTypeMapping TypeName="csvcapiModel.dblCBVC">
         <MappingFragment StoreEntitySet="dblCBVC">
-          <ScalarProperty Name="id_CBVC" ColumnName="id_CBVC" />
-          <ScalarProperty Name="name_CBVC" ColumnName="name_CBVC" />
           <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="name_CBVC" ColumnName="name_CBVC" />
+          <ScalarProperty Name="id_CBVC" ColumnName="id_CBVC" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="dblDanhSachMuons">
       <EntityTypeMapping TypeName="csvcapiModel.dblDanhSachMuon">
         <MappingFragment StoreEntitySet="dblDanhSachMuon">
-          <ScalarProperty Name="id_danh_sach_muon" ColumnName="id_danh_sach_muon" />
-          <ScalarProperty Name="id_cbvc" ColumnName="id_cbvc" />
-          <ScalarProperty Name="id_phong_su_dung" ColumnName="id_phong_su_dung" />
-          <ScalarProperty Name="id_thiet_bi" ColumnName="id_thiet_bi" />
-          <ScalarProperty Name="so_luong_muon" ColumnName="so_luong_muon" />
-          <ScalarProperty Name="yeu_cau" ColumnName="yeu_cau" />
-          <ScalarProperty Name="ly_do_huy" ColumnName="ly_do_huy" />
-          <ScalarProperty Name="id_trang_thai" ColumnName="id_trang_thai" />
-          <ScalarProperty Name="ngay_dang_ky_muon" ColumnName="ngay_dang_ky_muon" />
-          <ScalarProperty Name="ngay_huy" ColumnName="ngay_huy" />
-          <ScalarProperty Name="ngay_muon" ColumnName="ngay_muon" />
           <ScalarProperty Name="ngay_tra" ColumnName="ngay_tra" />
+          <ScalarProperty Name="ngay_muon" ColumnName="ngay_muon" />
+          <ScalarProperty Name="ngay_huy" ColumnName="ngay_huy" />
+          <ScalarProperty Name="ngay_dang_ky_muon" ColumnName="ngay_dang_ky_muon" />
+          <ScalarProperty Name="id_trang_thai" ColumnName="id_trang_thai" />
+          <ScalarProperty Name="ly_do_huy" ColumnName="ly_do_huy" />
+          <ScalarProperty Name="yeu_cau" ColumnName="yeu_cau" />
+          <ScalarProperty Name="so_luong_muon" ColumnName="so_luong_muon" />
+          <ScalarProperty Name="id_thiet_bi" ColumnName="id_thiet_bi" />
+          <ScalarProperty Name="id_phong_su_dung" ColumnName="id_phong_su_dung" />
+          <ScalarProperty Name="id_cbvc" ColumnName="id_cbvc" />
+          <ScalarProperty Name="id_danh_sach_muon" ColumnName="id_danh_sach_muon" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="dblDonViTinhs">
       <EntityTypeMapping TypeName="csvcapiModel.dblDonViTinh">
         <MappingFragment StoreEntitySet="dblDonViTinh">
-          <ScalarProperty Name="id_don_vi_tinh" ColumnName="id_don_vi_tinh" />
           <ScalarProperty Name="ten_don_vi_tinh" ColumnName="ten_don_vi_tinh" />
+          <ScalarProperty Name="id_don_vi_tinh" ColumnName="id_don_vi_tinh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="dblPhanLoais">
       <EntityTypeMapping TypeName="csvcapiModel.dblPhanLoai">
         <MappingFragment StoreEntitySet="dblPhanLoai">
-          <ScalarProperty Name="id_phan_loai" ColumnName="id_phan_loai" />
           <ScalarProperty Name="ten_phan_loai" ColumnName="ten_phan_loai" />
+          <ScalarProperty Name="id_phan_loai" ColumnName="id_phan_loai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="dblPhongHocs">
       <EntityTypeMapping TypeName="csvcapiModel.dblPhongHoc">
         <MappingFragment StoreEntitySet="dblPhongHoc">
-          <ScalarProperty Name="id_phong_hoc" ColumnName="id_phong_hoc" />
           <ScalarProperty Name="ten_phong_hoc" ColumnName="ten_phong_hoc" />
+          <ScalarProperty Name="id_phong_hoc" ColumnName="id_phong_hoc" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="dblRoles">
       <EntityTypeMapping TypeName="csvcapiModel.dblRole">
         <MappingFragment StoreEntitySet="dblRole">
-          <ScalarProperty Name="id_role" ColumnName="id_role" />
           <ScalarProperty Name="ten_role" ColumnName="ten_role" />
+          <ScalarProperty Name="id_role" ColumnName="id_role" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="dblThietBis">
       <EntityTypeMapping TypeName="csvcapiModel.dblThietBi">
         <MappingFragment StoreEntitySet="dblThietBi">
-          <ScalarProperty Name="id_thiet_bi" ColumnName="id_thiet_bi" />
-          <ScalarProperty Name="ten_thiet_bi" ColumnName="ten_thiet_bi" />
-          <ScalarProperty Name="thong_so" ColumnName="thong_so" />
-          <ScalarProperty Name="id_thuong_hieu" ColumnName="id_thuong_hieu" />
-          <ScalarProperty Name="so_luong" ColumnName="so_luong" />
-          <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
-          <ScalarProperty Name="id_don_vi_tinh" ColumnName="id_don_vi_tinh" />
-          <ScalarProperty Name="id_phan_loai" ColumnName="id_phan_loai" />
           <ScalarProperty Name="id_trang_thai" ColumnName="id_trang_thai" />
+          <ScalarProperty Name="id_phan_loai" ColumnName="id_phan_loai" />
+          <ScalarProperty Name="id_don_vi_tinh" ColumnName="id_don_vi_tinh" />
+          <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
+          <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+          <ScalarProperty Name="id_thuong_hieu" ColumnName="id_thuong_hieu" />
+          <ScalarProperty Name="thong_so" ColumnName="thong_so" />
+          <ScalarProperty Name="ten_thiet_bi" ColumnName="ten_thiet_bi" />
+          <ScalarProperty Name="id_thiet_bi" ColumnName="id_thiet_bi" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="dblThuongHieux">
       <EntityTypeMapping TypeName="csvcapiModel.dblThuongHieu">
         <MappingFragment StoreEntitySet="dblThuongHieu">
-          <ScalarProperty Name="id_thuong_hieu" ColumnName="id_thuong_hieu" />
           <ScalarProperty Name="ten_thuong_hieu" ColumnName="ten_thuong_hieu" />
+          <ScalarProperty Name="id_thuong_hieu" ColumnName="id_thuong_hieu" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="dblTrangThais">
       <EntityTypeMapping TypeName="csvcapiModel.dblTrangThai">
         <MappingFragment StoreEntitySet="dblTrangThai">
-          <ScalarProperty Name="id_trang_thai" ColumnName="id_trang_thai" />
           <ScalarProperty Name="ten_trang_thaii" ColumnName="ten_trang_thaii" />
+          <ScalarProperty Name="id_trang_thai" ColumnName="id_trang_thai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Details_book_genre">
+      <EntityTypeMapping TypeName="csvcapiModel.Details_book_genre">
+        <MappingFragment StoreEntitySet="Details_book_genre">
+          <ScalarProperty Name="id_genre" ColumnName="id_genre" />
+          <ScalarProperty Name="id_books" ColumnName="id_books" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genres">
+      <EntityTypeMapping TypeName="csvcapiModel.Genre">
+        <MappingFragment StoreEntitySet="Genre">
+          <ScalarProperty Name="name_genre" ColumnName="name_genre" />
+          <ScalarProperty Name="id_genre" ColumnName="id_genre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="group_loai_mon_an">
+      <EntityTypeMapping TypeName="csvcapiModel.group_loai_mon_an">
+        <MappingFragment StoreEntitySet="group_loai_mon_an">
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="ten_group_loai_mon_an" ColumnName="ten_group_loai_mon_an" />
+          <ScalarProperty Name="id_group_loai_mon_an" ColumnName="id_group_loai_mon_an" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hoa_don_ban_hang">
+      <EntityTypeMapping TypeName="csvcapiModel.hoa_don_ban_hang">
+        <MappingFragment StoreEntitySet="hoa_don_ban_hang">
+          <ScalarProperty Name="ngay_xuat_hoa_don" ColumnName="ngay_xuat_hoa_don" />
+          <ScalarProperty Name="thanh_tien" ColumnName="thanh_tien" />
+          <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+          <ScalarProperty Name="id_mon_an" ColumnName="id_mon_an" />
+          <ScalarProperty Name="id_account" ColumnName="id_account" />
+          <ScalarProperty Name="id_hoa_don" ColumnName="id_hoa_don" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="csvcapiModel.Language">
+        <MappingFragment StoreEntitySet="Languages">
+          <ScalarProperty Name="name_languages" ColumnName="name_languages" />
+          <ScalarProperty Name="acronym" ColumnName="acronym" />
+          <ScalarProperty Name="id_languages" ColumnName="id_languages" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mon_an">
+      <EntityTypeMapping TypeName="csvcapiModel.mon_an">
+        <MappingFragment StoreEntitySet="mon_an">
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="id_group_loai_mon_an" ColumnName="id_group_loai_mon_an" />
+          <ScalarProperty Name="ten_mon_an" ColumnName="ten_mon_an" />
+          <ScalarProperty Name="id_mon_an" ColumnName="id_mon_an" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Services_Nail">
       <EntityTypeMapping TypeName="csvcapiModel.Services_Nail">
         <MappingFragment StoreEntitySet="Services_Nail">
-          <ScalarProperty Name="id_services" ColumnName="id_services" />
-          <ScalarProperty Name="name_services" ColumnName="name_services" />
-          <ScalarProperty Name="price" ColumnName="price" />
-          <ScalarProperty Name="time_create" ColumnName="time_create" />
-          <ScalarProperty Name="time_update" ColumnName="time_update" />
           <ScalarProperty Name="id_account" ColumnName="id_account" />
+          <ScalarProperty Name="time_update" ColumnName="time_update" />
+          <ScalarProperty Name="time_create" ColumnName="time_create" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="name_services" ColumnName="name_services" />
+          <ScalarProperty Name="id_services" ColumnName="id_services" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="csvcapiModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
           <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

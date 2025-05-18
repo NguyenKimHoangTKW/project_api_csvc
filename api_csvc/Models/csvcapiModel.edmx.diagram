@@ -5,28 +5,50 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b1d2bb9f42644aedbce8a6ea1f244fb1" Name="Diagram1">
-        <EntityTypeShape EntityType="csvcapiModel.Account" Width="1.5" PointX="11" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="csvcapiModel.dblCBVC" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="csvcapiModel.dblDanhSachMuon" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="csvcapiModel.dblDonViTinh" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="csvcapiModel.dblPhanLoai" Width="1.5" PointX="3.75" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="csvcapiModel.dblPhongHoc" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="csvcapiModel.dblRole" Width="1.5" PointX="8.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="csvcapiModel.dblThietBi" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="csvcapiModel.dblThuongHieu" Width="1.5" PointX="3.75" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="csvcapiModel.dblTrangThai" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="csvcapiModel.Services_Nail" Width="1.5" PointX="13.25" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="csvcapiModel.sysdiagram" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <AssociationConnector Association="csvcapiModel.FK_Account_dblRole" ManuallyRouted="false" />
-        <AssociationConnector Association="csvcapiModel.FK_Services_Nail_Account" ManuallyRouted="false" />
-        <AssociationConnector Association="csvcapiModel.FK_dblDanhSachMuon_dblCBVC" ManuallyRouted="false" />
-        <AssociationConnector Association="csvcapiModel.FK_dblDanhSachMuon_dblPhongHoc" ManuallyRouted="false" />
-        <AssociationConnector Association="csvcapiModel.FK_dblDanhSachMuon_dblThietBi" ManuallyRouted="false" />
-        <AssociationConnector Association="csvcapiModel.FK_dblDanhSachMuon_dblTrangThai" ManuallyRouted="false" />
-        <AssociationConnector Association="csvcapiModel.FK_dblThietBi_dblDonViTinh" ManuallyRouted="false" />
-        <AssociationConnector Association="csvcapiModel.FK_dblThietBi_dblPhanLoai" ManuallyRouted="false" />
-        <AssociationConnector Association="csvcapiModel.FK_dblThietBi_dblThuongHieu" ManuallyRouted="false" />
-        <AssociationConnector Association="csvcapiModel.FK_dblThietBi_dblTrangThai" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="csvcapiModel.Account" Width="1.5" PointX="5" PointY="18.375" />
+        <EntityTypeShape EntityType="csvcapiModel.Author" Width="1.5" PointX="8.75" PointY="1" />
+        <EntityTypeShape EntityType="csvcapiModel.Book" Width="1.5" PointX="11" PointY="2.625" />
+        <EntityTypeShape EntityType="csvcapiModel.books_by_categories" Width="1.5" PointX="13.25" PointY="3.75" />
+        <EntityTypeShape EntityType="csvcapiModel.Category" Width="1.5" PointX="11" PointY="12" />
+        <EntityTypeShape EntityType="csvcapiModel.chi_tiet_don_hang" Width="1.5" PointX="7.25" PointY="18.75" />
+        <EntityTypeShape EntityType="csvcapiModel.dblCBVC" Width="1.5" PointX="0.75" PointY="13.625" />
+        <EntityTypeShape EntityType="csvcapiModel.dblDanhSachMuon" Width="1.5" PointX="3" PointY="4.75" />
+        <EntityTypeShape EntityType="csvcapiModel.dblDonViTinh" Width="1.5" PointX="3.75" PointY="10" />
+        <EntityTypeShape EntityType="csvcapiModel.dblPhanLoai" Width="1.5" PointX="3.75" PointY="1.75" />
+        <EntityTypeShape EntityType="csvcapiModel.dblPhongHoc" Width="1.5" PointX="0.75" PointY="11.375" />
+        <EntityTypeShape EntityType="csvcapiModel.dblRole" Width="1.5" PointX="2.75" PointY="19.125" />
+        <EntityTypeShape EntityType="csvcapiModel.dblThietBi" Width="1.5" PointX="6" PointY="5" />
+        <EntityTypeShape EntityType="csvcapiModel.dblThuongHieu" Width="1.5" PointX="3.75" PointY="12.375" />
+        <EntityTypeShape EntityType="csvcapiModel.dblTrangThai" Width="1.5" PointX="0.75" PointY="6" />
+        <EntityTypeShape EntityType="csvcapiModel.Details_book_genre" Width="1.5" PointX="13.25" PointY="0.75" />
+        <EntityTypeShape EntityType="csvcapiModel.Genre" Width="1.5" PointX="11" PointY="9.125" />
+        <EntityTypeShape EntityType="csvcapiModel.group_loai_mon_an" Width="1.5" PointX="2.75" PointY="23" />
+        <EntityTypeShape EntityType="csvcapiModel.hoa_don_ban_hang" Width="1.5" PointX="10.25" PointY="18.625" />
+        <EntityTypeShape EntityType="csvcapiModel.Language" Width="1.5" PointX="8.75" PointY="3.875" />
+        <EntityTypeShape EntityType="csvcapiModel.mon_an" Width="1.5" PointX="5" PointY="22.625" />
+        <EntityTypeShape EntityType="csvcapiModel.Services_Nail" Width="1.5" PointX="7.25" PointY="24.875" />
+        <EntityTypeShape EntityType="csvcapiModel.sysdiagram" Width="1.5" PointX="0.75" PointY="2.125" />
+        <AssociationConnector Association="csvcapiModel.FK_Account_dblRole" />
+        <AssociationConnector Association="csvcapiModel.FK_chi_tiet_don_hang_Account" />
+        <AssociationConnector Association="csvcapiModel.FK_hoa_don_ban_hang_Account" />
+        <AssociationConnector Association="csvcapiModel.FK_Services_Nail_Account" />
+        <AssociationConnector Association="csvcapiModel.FK_Books_Author" />
+        <AssociationConnector Association="csvcapiModel.FK_books_by_categories_Books" />
+        <AssociationConnector Association="csvcapiModel.FK_Books_Languages" />
+        <AssociationConnector Association="csvcapiModel.FK_Details_book_genre_Books" />
+        <AssociationConnector Association="csvcapiModel.FK_books_by_categories_Categories" />
+        <AssociationConnector Association="csvcapiModel.FK_chi_tiet_don_hang_mon_an" />
+        <AssociationConnector Association="csvcapiModel.FK_dblDanhSachMuon_dblCBVC" />
+        <AssociationConnector Association="csvcapiModel.FK_dblDanhSachMuon_dblPhongHoc" />
+        <AssociationConnector Association="csvcapiModel.FK_dblDanhSachMuon_dblThietBi" />
+        <AssociationConnector Association="csvcapiModel.FK_dblDanhSachMuon_dblTrangThai" />
+        <AssociationConnector Association="csvcapiModel.FK_dblThietBi_dblDonViTinh" />
+        <AssociationConnector Association="csvcapiModel.FK_dblThietBi_dblPhanLoai" />
+        <AssociationConnector Association="csvcapiModel.FK_dblThietBi_dblThuongHieu" />
+        <AssociationConnector Association="csvcapiModel.FK_dblThietBi_dblTrangThai" />
+        <AssociationConnector Association="csvcapiModel.FK_Details_book_genre_Genre" />
+        <AssociationConnector Association="csvcapiModel.FK_mon_an_group_loai_mon_an" />
+        <AssociationConnector Association="csvcapiModel.FK_hoa_don_ban_hang_mon_an" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

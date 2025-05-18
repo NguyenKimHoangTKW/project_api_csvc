@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "D:\\LapTrinhUDDD\\project_api_csvc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\controllers\\accountapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\controllers\\accountapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\controllers\\bookstoreapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\controllers\\bookstoreapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\scripts\\admin\\danhsachtaikhoan.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\scripts\\admin\\danhsachtaikhoan.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\views\\home\\nguoi_dung.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\views\\home\\nguoi_dung.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\scripts\\admin\\danhsachcbvc.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\scripts\\admin\\danhsachcbvc.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\laptrinhuddd\\project_api_csvc\\api_csvc\\views\\home\\danh_sach_cbvc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\views\\home\\danh_sach_cbvc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\models\\csvcapimodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\models\\csvcapimodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,78 +17,31 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 207,
+          "DockedWidth": 252,
           "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "nguoi_dung.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Views\\Home\\nguoi_dung.cshtml",
-              "RelativeDocumentMoniker": "api_csvc\\Views\\Home\\nguoi_dung.cshtml",
-              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Views\\Home\\nguoi_dung.cshtml",
-              "RelativeToolTip": "api_csvc\\Views\\Home\\nguoi_dung.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAD8AAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-13T18:14:44.449Z",
-              "EditorCaption": ""
+              "DocumentIndex": 1,
+              "Title": "csvcapiModel.edmx [Diagram1]",
+              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Models\\csvcapiModel.edmx",
+              "RelativeDocumentMoniker": "api_csvc\\Models\\csvcapiModel.edmx",
+              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Models\\csvcapiModel.edmx [Diagram1]",
+              "RelativeToolTip": "api_csvc\\Models\\csvcapiModel.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-05-16T03:35:12.65Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AccountAPIController.cs",
-              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Controllers\\AccountAPIController.cs",
-              "RelativeDocumentMoniker": "api_csvc\\Controllers\\AccountAPIController.cs",
-              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Controllers\\AccountAPIController.cs",
-              "RelativeToolTip": "api_csvc\\Controllers\\AccountAPIController.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAAAJcAAAASAAAAAAAAAA==",
+              "Title": "BookStoreAPIController.cs",
+              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Controllers\\BookStoreAPIController.cs",
+              "RelativeDocumentMoniker": "api_csvc\\Controllers\\BookStoreAPIController.cs",
+              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Controllers\\BookStoreAPIController.cs",
+              "RelativeToolTip": "api_csvc\\Controllers\\BookStoreAPIController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAgwCwAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T18:13:16.211Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DanhSachCBVC.js",
-              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Scripts\\Admin\\DanhSachCBVC.js",
-              "RelativeDocumentMoniker": "api_csvc\\Scripts\\Admin\\DanhSachCBVC.js",
-              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Scripts\\Admin\\DanhSachCBVC.js",
-              "RelativeToolTip": "api_csvc\\Scripts\\Admin\\DanhSachCBVC.js",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-05-13T18:02:36.17Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 207,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DanhSachTaiKhoan.js",
-              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Scripts\\Admin\\DanhSachTaiKhoan.js",
-              "RelativeDocumentMoniker": "api_csvc\\Scripts\\Admin\\DanhSachTaiKhoan.js",
-              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Scripts\\Admin\\DanhSachTaiKhoan.js",
-              "RelativeToolTip": "api_csvc\\Scripts\\Admin\\DanhSachTaiKhoan.js",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAD8AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-05-13T18:15:06.989Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "danh_sach_cbvc.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Views\\Home\\danh_sach_cbvc.cshtml",
-              "RelativeDocumentMoniker": "api_csvc\\Views\\Home\\danh_sach_cbvc.cshtml",
-              "ToolTip": "D:\\LapTrinhUDDD\\project_api_csvc\\api_csvc\\Views\\Home\\danh_sach_cbvc.cshtml",
-              "RelativeToolTip": "api_csvc\\Views\\Home\\danh_sach_cbvc.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAACoAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-13T18:04:57.214Z",
+              "WhenOpened": "2025-05-16T02:06:39.451Z",
               "EditorCaption": ""
             }
           ]

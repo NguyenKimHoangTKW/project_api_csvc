@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="csvcapiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="csvcapiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Account">
           <Key>
             <PropertyRef Name="id_account" />
@@ -15,6 +15,55 @@
           <Property Name="username" Type="nvarchar" MaxLength="50" />
           <Property Name="password" Type="nvarchar" MaxLength="50" />
           <Property Name="id_role" Type="int" />
+        </EntityType>
+        <EntityType Name="Author">
+          <Key>
+            <PropertyRef Name="id_author" />
+          </Key>
+          <Property Name="id_author" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_author" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Books">
+          <Key>
+            <PropertyRef Name="id_books" />
+          </Key>
+          <Property Name="id_books" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bookName" Type="nvarchar" MaxLength="200" />
+          <Property Name="bookCover" Type="nvarchar(max)" />
+          <Property Name="rating" Type="nvarchar" MaxLength="50" />
+          <Property Name="id_languages" Type="int" />
+          <Property Name="pageNo" Type="int" />
+          <Property Name="id_author" Type="int" />
+          <Property Name="readed" Type="nvarchar" MaxLength="50" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="completion" Type="nvarchar" MaxLength="50" />
+          <Property Name="lastRead" Type="nvarchar" MaxLength="50" />
+          <Property Name="backgroundColor" Type="nvarchar(max)" />
+          <Property Name="navTintColor" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="books_by_categories">
+          <Key>
+            <PropertyRef Name="id_books_by_categories" />
+          </Key>
+          <Property Name="id_books_by_categories" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_books" Type="int" />
+          <Property Name="id_categories" Type="int" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="id_categories" />
+          </Key>
+          <Property Name="id_categories" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_categories" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="chi_tiet_don_hang">
+          <Key>
+            <PropertyRef Name="id_chi_tiet_hoa_don" />
+          </Key>
+          <Property Name="id_chi_tiet_hoa_don" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_account" Type="int" />
+          <Property Name="id_mon_an" Type="int" />
+          <Property Name="so_luong" Type="int" />
         </EntityType>
         <EntityType Name="dblCBVC">
           <Key>
@@ -97,6 +146,58 @@
           <Property Name="id_trang_thai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ten_trang_thaii" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Details_book_genre">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_books" Type="int" />
+          <Property Name="id_genre" Type="int" />
+        </EntityType>
+        <EntityType Name="Genre">
+          <Key>
+            <PropertyRef Name="id_genre" />
+          </Key>
+          <Property Name="id_genre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_genre" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="group_loai_mon_an">
+          <Key>
+            <PropertyRef Name="id_group_loai_mon_an" />
+          </Key>
+          <Property Name="id_group_loai_mon_an" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten_group_loai_mon_an" Type="nvarchar" MaxLength="200" />
+          <Property Name="img" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="hoa_don_ban_hang">
+          <Key>
+            <PropertyRef Name="id_hoa_don" />
+          </Key>
+          <Property Name="id_hoa_don" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_account" Type="int" />
+          <Property Name="id_mon_an" Type="int" />
+          <Property Name="so_luong" Type="int" />
+          <Property Name="thanh_tien" Type="float" />
+          <Property Name="ngay_xuat_hoa_don" Type="int" />
+        </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="id_languages" />
+          </Key>
+          <Property Name="id_languages" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="acronym" Type="nvarchar" MaxLength="50" />
+          <Property Name="name_languages" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="mon_an">
+          <Key>
+            <PropertyRef Name="id_mon_an" />
+          </Key>
+          <Property Name="id_mon_an" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten_mon_an" Type="nvarchar" MaxLength="200" />
+          <Property Name="id_group_loai_mon_an" Type="int" />
+          <Property Name="price" Type="float" />
+          <Property Name="img" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="Services_Nail">
           <Key>
             <PropertyRef Name="id_services" />
@@ -130,6 +231,78 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Books_Author">
+          <End Role="Author" Type="Self.Author" Multiplicity="0..1" />
+          <End Role="Books" Type="Self.Books" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Author">
+              <PropertyRef Name="id_author" />
+            </Principal>
+            <Dependent Role="Books">
+              <PropertyRef Name="id_author" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_books_by_categories_Books">
+          <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
+          <End Role="books_by_categories" Type="Self.books_by_categories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="id_books" />
+            </Principal>
+            <Dependent Role="books_by_categories">
+              <PropertyRef Name="id_books" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_books_by_categories_Categories">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+          <End Role="books_by_categories" Type="Self.books_by_categories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="id_categories" />
+            </Principal>
+            <Dependent Role="books_by_categories">
+              <PropertyRef Name="id_categories" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Books_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="0..1" />
+          <End Role="Books" Type="Self.Books" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="id_languages" />
+            </Principal>
+            <Dependent Role="Books">
+              <PropertyRef Name="id_languages" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_chi_tiet_don_hang_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="chi_tiet_don_hang" Type="Self.chi_tiet_don_hang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id_account" />
+            </Principal>
+            <Dependent Role="chi_tiet_don_hang">
+              <PropertyRef Name="id_account" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_chi_tiet_don_hang_mon_an">
+          <End Role="mon_an" Type="Self.mon_an" Multiplicity="0..1" />
+          <End Role="chi_tiet_don_hang" Type="Self.chi_tiet_don_hang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mon_an">
+              <PropertyRef Name="id_mon_an" />
+            </Principal>
+            <Dependent Role="chi_tiet_don_hang">
+              <PropertyRef Name="id_mon_an" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_dblDanhSachMuon_dblCBVC">
           <End Role="dblCBVC" Type="Self.dblCBVC" Multiplicity="1" />
           <End Role="dblDanhSachMuon" Type="Self.dblDanhSachMuon" Multiplicity="*" />
@@ -226,6 +399,66 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Details_book_genre_Books">
+          <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
+          <End Role="Details_book_genre" Type="Self.Details_book_genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="id_books" />
+            </Principal>
+            <Dependent Role="Details_book_genre">
+              <PropertyRef Name="id_genre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Details_book_genre_Genre">
+          <End Role="Genre" Type="Self.Genre" Multiplicity="0..1" />
+          <End Role="Details_book_genre" Type="Self.Details_book_genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genre">
+              <PropertyRef Name="id_genre" />
+            </Principal>
+            <Dependent Role="Details_book_genre">
+              <PropertyRef Name="id_genre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_hoa_don_ban_hang_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="hoa_don_ban_hang" Type="Self.hoa_don_ban_hang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id_account" />
+            </Principal>
+            <Dependent Role="hoa_don_ban_hang">
+              <PropertyRef Name="id_account" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_hoa_don_ban_hang_mon_an">
+          <End Role="mon_an" Type="Self.mon_an" Multiplicity="0..1" />
+          <End Role="hoa_don_ban_hang" Type="Self.hoa_don_ban_hang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mon_an">
+              <PropertyRef Name="id_mon_an" />
+            </Principal>
+            <Dependent Role="hoa_don_ban_hang">
+              <PropertyRef Name="id_mon_an" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_mon_an_group_loai_mon_an">
+          <End Role="group_loai_mon_an" Type="Self.group_loai_mon_an" Multiplicity="0..1" />
+          <End Role="mon_an" Type="Self.mon_an" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="group_loai_mon_an">
+              <PropertyRef Name="id_group_loai_mon_an" />
+            </Principal>
+            <Dependent Role="mon_an">
+              <PropertyRef Name="id_group_loai_mon_an" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Services_Nail_Account">
           <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
           <End Role="Services_Nail" Type="Self.Services_Nail" Multiplicity="*" />
@@ -240,6 +473,11 @@
         </Association>
         <EntityContainer Name="csvcapiModelStoreContainer">
           <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="books_by_categories" EntityType="Self.books_by_categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="chi_tiet_don_hang" EntityType="Self.chi_tiet_don_hang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dblCBVC" EntityType="Self.dblCBVC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dblDanhSachMuon" EntityType="Self.dblDanhSachMuon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dblDonViTinh" EntityType="Self.dblDonViTinh" Schema="dbo" store:Type="Tables" />
@@ -249,11 +487,41 @@
           <EntitySet Name="dblThietBi" EntityType="Self.dblThietBi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dblThuongHieu" EntityType="Self.dblThuongHieu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dblTrangThai" EntityType="Self.dblTrangThai" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Details_book_genre" EntityType="Self.Details_book_genre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="group_loai_mon_an" EntityType="Self.group_loai_mon_an" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hoa_don_ban_hang" EntityType="Self.hoa_don_ban_hang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mon_an" EntityType="Self.mon_an" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Services_Nail" EntityType="Self.Services_Nail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Account_dblRole" Association="Self.FK_Account_dblRole">
             <End Role="dblRole" EntitySet="dblRole" />
             <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Books_Author" Association="Self.FK_Books_Author">
+            <End Role="Author" EntitySet="Author" />
+            <End Role="Books" EntitySet="Books" />
+          </AssociationSet>
+          <AssociationSet Name="FK_books_by_categories_Books" Association="Self.FK_books_by_categories_Books">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="books_by_categories" EntitySet="books_by_categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_books_by_categories_Categories" Association="Self.FK_books_by_categories_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="books_by_categories" EntitySet="books_by_categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Books_Languages" Association="Self.FK_Books_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Books" EntitySet="Books" />
+          </AssociationSet>
+          <AssociationSet Name="FK_chi_tiet_don_hang_Account" Association="Self.FK_chi_tiet_don_hang_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="chi_tiet_don_hang" EntitySet="chi_tiet_don_hang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_chi_tiet_don_hang_mon_an" Association="Self.FK_chi_tiet_don_hang_mon_an">
+            <End Role="mon_an" EntitySet="mon_an" />
+            <End Role="chi_tiet_don_hang" EntitySet="chi_tiet_don_hang" />
           </AssociationSet>
           <AssociationSet Name="FK_dblDanhSachMuon_dblCBVC" Association="Self.FK_dblDanhSachMuon_dblCBVC">
             <End Role="dblCBVC" EntitySet="dblCBVC" />
@@ -287,16 +555,144 @@
             <End Role="dblTrangThai" EntitySet="dblTrangThai" />
             <End Role="dblThietBi" EntitySet="dblThietBi" />
           </AssociationSet>
+          <AssociationSet Name="FK_Details_book_genre_Books" Association="Self.FK_Details_book_genre_Books">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="Details_book_genre" EntitySet="Details_book_genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_book_genre_Genre" Association="Self.FK_Details_book_genre_Genre">
+            <End Role="Genre" EntitySet="Genre" />
+            <End Role="Details_book_genre" EntitySet="Details_book_genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_hoa_don_ban_hang_Account" Association="Self.FK_hoa_don_ban_hang_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="hoa_don_ban_hang" EntitySet="hoa_don_ban_hang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_hoa_don_ban_hang_mon_an" Association="Self.FK_hoa_don_ban_hang_mon_an">
+            <End Role="mon_an" EntitySet="mon_an" />
+            <End Role="hoa_don_ban_hang" EntitySet="hoa_don_ban_hang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_mon_an_group_loai_mon_an" Association="Self.FK_mon_an_group_loai_mon_an">
+            <End Role="group_loai_mon_an" EntitySet="group_loai_mon_an" />
+            <End Role="mon_an" EntitySet="mon_an" />
+          </AssociationSet>
           <AssociationSet Name="FK_Services_Nail_Account" Association="Self.FK_Services_Nail_Account">
             <End Role="Account" EntitySet="Account" />
             <End Role="Services_Nail" EntitySet="Services_Nail" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="csvcapiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="csvcapiEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="csvcapiModel.Account" />
+          <EntitySet Name="Authors" EntityType="csvcapiModel.Author" />
+          <EntitySet Name="Books" EntityType="csvcapiModel.Book" />
+          <EntitySet Name="books_by_categories" EntityType="csvcapiModel.books_by_categories" />
+          <EntitySet Name="Categories" EntityType="csvcapiModel.Category" />
+          <EntitySet Name="chi_tiet_don_hang" EntityType="csvcapiModel.chi_tiet_don_hang" />
+          <EntitySet Name="dblCBVCs" EntityType="csvcapiModel.dblCBVC" />
+          <EntitySet Name="dblDanhSachMuons" EntityType="csvcapiModel.dblDanhSachMuon" />
+          <EntitySet Name="dblDonViTinhs" EntityType="csvcapiModel.dblDonViTinh" />
+          <EntitySet Name="dblPhanLoais" EntityType="csvcapiModel.dblPhanLoai" />
+          <EntitySet Name="dblPhongHocs" EntityType="csvcapiModel.dblPhongHoc" />
+          <EntitySet Name="dblRoles" EntityType="csvcapiModel.dblRole" />
+          <EntitySet Name="dblThietBis" EntityType="csvcapiModel.dblThietBi" />
+          <EntitySet Name="dblThuongHieux" EntityType="csvcapiModel.dblThuongHieu" />
+          <EntitySet Name="dblTrangThais" EntityType="csvcapiModel.dblTrangThai" />
+          <EntitySet Name="Details_book_genre" EntityType="csvcapiModel.Details_book_genre" />
+          <EntitySet Name="Genres" EntityType="csvcapiModel.Genre" />
+          <EntitySet Name="group_loai_mon_an" EntityType="csvcapiModel.group_loai_mon_an" />
+          <EntitySet Name="hoa_don_ban_hang" EntityType="csvcapiModel.hoa_don_ban_hang" />
+          <EntitySet Name="Languages" EntityType="csvcapiModel.Language" />
+          <EntitySet Name="mon_an" EntityType="csvcapiModel.mon_an" />
+          <EntitySet Name="Services_Nail" EntityType="csvcapiModel.Services_Nail" />
+          <EntitySet Name="sysdiagrams" EntityType="csvcapiModel.sysdiagram" />
+          <AssociationSet Name="FK_Account_dblRole" Association="csvcapiModel.FK_Account_dblRole">
+            <End Role="dblRole" EntitySet="dblRoles" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_chi_tiet_don_hang_Account" Association="csvcapiModel.FK_chi_tiet_don_hang_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="chi_tiet_don_hang" EntitySet="chi_tiet_don_hang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_hoa_don_ban_hang_Account" Association="csvcapiModel.FK_hoa_don_ban_hang_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="hoa_don_ban_hang" EntitySet="hoa_don_ban_hang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Services_Nail_Account" Association="csvcapiModel.FK_Services_Nail_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Services_Nail" EntitySet="Services_Nail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Books_Author" Association="csvcapiModel.FK_Books_Author">
+            <End Role="Author" EntitySet="Authors" />
+            <End Role="Book" EntitySet="Books" />
+          </AssociationSet>
+          <AssociationSet Name="FK_books_by_categories_Books" Association="csvcapiModel.FK_books_by_categories_Books">
+            <End Role="Book" EntitySet="Books" />
+            <End Role="books_by_categories" EntitySet="books_by_categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Books_Languages" Association="csvcapiModel.FK_Books_Languages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="Book" EntitySet="Books" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_book_genre_Books" Association="csvcapiModel.FK_Details_book_genre_Books">
+            <End Role="Book" EntitySet="Books" />
+            <End Role="Details_book_genre" EntitySet="Details_book_genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_books_by_categories_Categories" Association="csvcapiModel.FK_books_by_categories_Categories">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="books_by_categories" EntitySet="books_by_categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_chi_tiet_don_hang_mon_an" Association="csvcapiModel.FK_chi_tiet_don_hang_mon_an">
+            <End Role="mon_an" EntitySet="mon_an" />
+            <End Role="chi_tiet_don_hang" EntitySet="chi_tiet_don_hang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dblDanhSachMuon_dblCBVC" Association="csvcapiModel.FK_dblDanhSachMuon_dblCBVC">
+            <End Role="dblCBVC" EntitySet="dblCBVCs" />
+            <End Role="dblDanhSachMuon" EntitySet="dblDanhSachMuons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dblDanhSachMuon_dblPhongHoc" Association="csvcapiModel.FK_dblDanhSachMuon_dblPhongHoc">
+            <End Role="dblPhongHoc" EntitySet="dblPhongHocs" />
+            <End Role="dblDanhSachMuon" EntitySet="dblDanhSachMuons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dblDanhSachMuon_dblThietBi" Association="csvcapiModel.FK_dblDanhSachMuon_dblThietBi">
+            <End Role="dblThietBi" EntitySet="dblThietBis" />
+            <End Role="dblDanhSachMuon" EntitySet="dblDanhSachMuons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dblDanhSachMuon_dblTrangThai" Association="csvcapiModel.FK_dblDanhSachMuon_dblTrangThai">
+            <End Role="dblTrangThai" EntitySet="dblTrangThais" />
+            <End Role="dblDanhSachMuon" EntitySet="dblDanhSachMuons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dblThietBi_dblDonViTinh" Association="csvcapiModel.FK_dblThietBi_dblDonViTinh">
+            <End Role="dblDonViTinh" EntitySet="dblDonViTinhs" />
+            <End Role="dblThietBi" EntitySet="dblThietBis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dblThietBi_dblPhanLoai" Association="csvcapiModel.FK_dblThietBi_dblPhanLoai">
+            <End Role="dblPhanLoai" EntitySet="dblPhanLoais" />
+            <End Role="dblThietBi" EntitySet="dblThietBis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dblThietBi_dblThuongHieu" Association="csvcapiModel.FK_dblThietBi_dblThuongHieu">
+            <End Role="dblThuongHieu" EntitySet="dblThuongHieux" />
+            <End Role="dblThietBi" EntitySet="dblThietBis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dblThietBi_dblTrangThai" Association="csvcapiModel.FK_dblThietBi_dblTrangThai">
+            <End Role="dblTrangThai" EntitySet="dblTrangThais" />
+            <End Role="dblThietBi" EntitySet="dblThietBis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_book_genre_Genre" Association="csvcapiModel.FK_Details_book_genre_Genre">
+            <End Role="Genre" EntitySet="Genres" />
+            <End Role="Details_book_genre" EntitySet="Details_book_genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_mon_an_group_loai_mon_an" Association="csvcapiModel.FK_mon_an_group_loai_mon_an">
+            <End Role="group_loai_mon_an" EntitySet="group_loai_mon_an" />
+            <End Role="mon_an" EntitySet="mon_an" />
+          </AssociationSet>
+          <AssociationSet Name="FK_hoa_don_ban_hang_mon_an" Association="csvcapiModel.FK_hoa_don_ban_hang_mon_an">
+            <End Role="mon_an" EntitySet="mon_an" />
+            <End Role="hoa_don_ban_hang" EntitySet="hoa_don_ban_hang" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Account">
           <Key>
             <PropertyRef Name="id_account" />
@@ -307,17 +703,78 @@
           <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="id_role" Type="Int32" />
-          <NavigationProperty Name="dblRole" Relationship="Self.FK_Account_dblRole" FromRole="Account" ToRole="dblRole" />
-          <NavigationProperty Name="Services_Nail" Relationship="Self.FK_Services_Nail_Account" FromRole="Account" ToRole="Services_Nail" />
+          <NavigationProperty Name="dblRole" Relationship="csvcapiModel.FK_Account_dblRole" FromRole="Account" ToRole="dblRole" />
+          <NavigationProperty Name="chi_tiet_don_hang" Relationship="csvcapiModel.FK_chi_tiet_don_hang_Account" FromRole="Account" ToRole="chi_tiet_don_hang" />
+          <NavigationProperty Name="hoa_don_ban_hang" Relationship="csvcapiModel.FK_hoa_don_ban_hang_Account" FromRole="Account" ToRole="hoa_don_ban_hang" />
+          <NavigationProperty Name="Services_Nail" Relationship="csvcapiModel.FK_Services_Nail_Account" FromRole="Account" ToRole="Services_Nail" />
+        </EntityType>
+        <EntityType Name="Author">
+          <Key>
+            <PropertyRef Name="id_author" />
+          </Key>
+          <Property Name="id_author" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_author" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Books" Relationship="csvcapiModel.FK_Books_Author" FromRole="Author" ToRole="Book" />
+        </EntityType>
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="id_books" />
+          </Key>
+          <Property Name="id_books" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bookName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="bookCover" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="rating" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="id_languages" Type="Int32" />
+          <Property Name="pageNo" Type="Int32" />
+          <Property Name="id_author" Type="Int32" />
+          <Property Name="readed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="completion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lastRead" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="backgroundColor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="navTintColor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Author" Relationship="csvcapiModel.FK_Books_Author" FromRole="Book" ToRole="Author" />
+          <NavigationProperty Name="books_by_categories" Relationship="csvcapiModel.FK_books_by_categories_Books" FromRole="Book" ToRole="books_by_categories" />
+          <NavigationProperty Name="Language" Relationship="csvcapiModel.FK_Books_Languages" FromRole="Book" ToRole="Language" />
+          <NavigationProperty Name="Details_book_genre" Relationship="csvcapiModel.FK_Details_book_genre_Books" FromRole="Book" ToRole="Details_book_genre" />
+        </EntityType>
+        <EntityType Name="books_by_categories">
+          <Key>
+            <PropertyRef Name="id_books_by_categories" />
+          </Key>
+          <Property Name="id_books_by_categories" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_books" Type="Int32" />
+          <Property Name="id_categories" Type="Int32" />
+          <NavigationProperty Name="Book" Relationship="csvcapiModel.FK_books_by_categories_Books" FromRole="books_by_categories" ToRole="Book" />
+          <NavigationProperty Name="Category" Relationship="csvcapiModel.FK_books_by_categories_Categories" FromRole="books_by_categories" ToRole="Category" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="id_categories" />
+          </Key>
+          <Property Name="id_categories" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_categories" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="books_by_categories" Relationship="csvcapiModel.FK_books_by_categories_Categories" FromRole="Category" ToRole="books_by_categories" />
+        </EntityType>
+        <EntityType Name="chi_tiet_don_hang">
+          <Key>
+            <PropertyRef Name="id_chi_tiet_hoa_don" />
+          </Key>
+          <Property Name="id_chi_tiet_hoa_don" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_account" Type="Int32" />
+          <Property Name="id_mon_an" Type="Int32" />
+          <Property Name="so_luong" Type="Int32" />
+          <NavigationProperty Name="Account" Relationship="csvcapiModel.FK_chi_tiet_don_hang_Account" FromRole="chi_tiet_don_hang" ToRole="Account" />
+          <NavigationProperty Name="mon_an" Relationship="csvcapiModel.FK_chi_tiet_don_hang_mon_an" FromRole="chi_tiet_don_hang" ToRole="mon_an" />
         </EntityType>
         <EntityType Name="dblCBVC">
           <Key>
             <PropertyRef Name="id_CBVC" />
           </Key>
           <Property Name="id_CBVC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name_CBVC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="dblDanhSachMuons" Relationship="Self.FK_dblDanhSachMuon_dblCBVC" FromRole="dblCBVC" ToRole="dblDanhSachMuon" />
+          <Property Name="name_CBVC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="dblDanhSachMuons" Relationship="csvcapiModel.FK_dblDanhSachMuon_dblCBVC" FromRole="dblCBVC" ToRole="dblDanhSachMuon" />
         </EntityType>
         <EntityType Name="dblDanhSachMuon">
           <Key>
@@ -335,34 +792,34 @@
           <Property Name="ngay_huy" Type="Int32" />
           <Property Name="ngay_muon" Type="Int32" />
           <Property Name="ngay_tra" Type="Int32" />
-          <NavigationProperty Name="dblCBVC" Relationship="Self.FK_dblDanhSachMuon_dblCBVC" FromRole="dblDanhSachMuon" ToRole="dblCBVC" />
-          <NavigationProperty Name="dblPhongHoc" Relationship="Self.FK_dblDanhSachMuon_dblPhongHoc" FromRole="dblDanhSachMuon" ToRole="dblPhongHoc" />
-          <NavigationProperty Name="dblThietBi" Relationship="Self.FK_dblDanhSachMuon_dblThietBi" FromRole="dblDanhSachMuon" ToRole="dblThietBi" />
-          <NavigationProperty Name="dblTrangThai" Relationship="Self.FK_dblDanhSachMuon_dblTrangThai" FromRole="dblDanhSachMuon" ToRole="dblTrangThai" />
+          <NavigationProperty Name="dblCBVC" Relationship="csvcapiModel.FK_dblDanhSachMuon_dblCBVC" FromRole="dblDanhSachMuon" ToRole="dblCBVC" />
+          <NavigationProperty Name="dblPhongHoc" Relationship="csvcapiModel.FK_dblDanhSachMuon_dblPhongHoc" FromRole="dblDanhSachMuon" ToRole="dblPhongHoc" />
+          <NavigationProperty Name="dblThietBi" Relationship="csvcapiModel.FK_dblDanhSachMuon_dblThietBi" FromRole="dblDanhSachMuon" ToRole="dblThietBi" />
+          <NavigationProperty Name="dblTrangThai" Relationship="csvcapiModel.FK_dblDanhSachMuon_dblTrangThai" FromRole="dblDanhSachMuon" ToRole="dblTrangThai" />
         </EntityType>
         <EntityType Name="dblDonViTinh">
           <Key>
             <PropertyRef Name="id_don_vi_tinh" />
           </Key>
           <Property Name="id_don_vi_tinh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ten_don_vi_tinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="dblThietBis" Relationship="Self.FK_dblThietBi_dblDonViTinh" FromRole="dblDonViTinh" ToRole="dblThietBi" />
+          <Property Name="ten_don_vi_tinh" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="dblThietBis" Relationship="csvcapiModel.FK_dblThietBi_dblDonViTinh" FromRole="dblDonViTinh" ToRole="dblThietBi" />
         </EntityType>
         <EntityType Name="dblPhanLoai">
           <Key>
             <PropertyRef Name="id_phan_loai" />
           </Key>
           <Property Name="id_phan_loai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ten_phan_loai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="dblThietBis" Relationship="Self.FK_dblThietBi_dblPhanLoai" FromRole="dblPhanLoai" ToRole="dblThietBi" />
+          <Property Name="ten_phan_loai" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="dblThietBis" Relationship="csvcapiModel.FK_dblThietBi_dblPhanLoai" FromRole="dblPhanLoai" ToRole="dblThietBi" />
         </EntityType>
         <EntityType Name="dblPhongHoc">
           <Key>
             <PropertyRef Name="id_phong_hoc" />
           </Key>
           <Property Name="id_phong_hoc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ten_phong_hoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="dblDanhSachMuons" Relationship="Self.FK_dblDanhSachMuon_dblPhongHoc" FromRole="dblPhongHoc" ToRole="dblDanhSachMuon" />
+          <Property Name="ten_phong_hoc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="dblDanhSachMuons" Relationship="csvcapiModel.FK_dblDanhSachMuon_dblPhongHoc" FromRole="dblPhongHoc" ToRole="dblDanhSachMuon" />
         </EntityType>
         <EntityType Name="dblRole">
           <Key>
@@ -370,14 +827,14 @@
           </Key>
           <Property Name="id_role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ten_role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Accounts" Relationship="Self.FK_Account_dblRole" FromRole="dblRole" ToRole="Account" />
+          <NavigationProperty Name="Accounts" Relationship="csvcapiModel.FK_Account_dblRole" FromRole="dblRole" ToRole="Account" />
         </EntityType>
         <EntityType Name="dblThietBi">
           <Key>
             <PropertyRef Name="id_thiet_bi" />
           </Key>
           <Property Name="id_thiet_bi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ten_thiet_bi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ten_thiet_bi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="thong_so" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="id_thuong_hieu" Type="Int32" />
           <Property Name="so_luong" Type="Int32" Nullable="false" />
@@ -385,28 +842,90 @@
           <Property Name="id_don_vi_tinh" Type="Int32" />
           <Property Name="id_phan_loai" Type="Int32" Nullable="false" />
           <Property Name="id_trang_thai" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="dblDanhSachMuons" Relationship="Self.FK_dblDanhSachMuon_dblThietBi" FromRole="dblThietBi" ToRole="dblDanhSachMuon" />
-          <NavigationProperty Name="dblDonViTinh" Relationship="Self.FK_dblThietBi_dblDonViTinh" FromRole="dblThietBi" ToRole="dblDonViTinh" />
-          <NavigationProperty Name="dblPhanLoai" Relationship="Self.FK_dblThietBi_dblPhanLoai" FromRole="dblThietBi" ToRole="dblPhanLoai" />
-          <NavigationProperty Name="dblThuongHieu" Relationship="Self.FK_dblThietBi_dblThuongHieu" FromRole="dblThietBi" ToRole="dblThuongHieu" />
-          <NavigationProperty Name="dblTrangThai" Relationship="Self.FK_dblThietBi_dblTrangThai" FromRole="dblThietBi" ToRole="dblTrangThai" />
+          <NavigationProperty Name="dblDanhSachMuons" Relationship="csvcapiModel.FK_dblDanhSachMuon_dblThietBi" FromRole="dblThietBi" ToRole="dblDanhSachMuon" />
+          <NavigationProperty Name="dblDonViTinh" Relationship="csvcapiModel.FK_dblThietBi_dblDonViTinh" FromRole="dblThietBi" ToRole="dblDonViTinh" />
+          <NavigationProperty Name="dblPhanLoai" Relationship="csvcapiModel.FK_dblThietBi_dblPhanLoai" FromRole="dblThietBi" ToRole="dblPhanLoai" />
+          <NavigationProperty Name="dblThuongHieu" Relationship="csvcapiModel.FK_dblThietBi_dblThuongHieu" FromRole="dblThietBi" ToRole="dblThuongHieu" />
+          <NavigationProperty Name="dblTrangThai" Relationship="csvcapiModel.FK_dblThietBi_dblTrangThai" FromRole="dblThietBi" ToRole="dblTrangThai" />
         </EntityType>
         <EntityType Name="dblThuongHieu">
           <Key>
             <PropertyRef Name="id_thuong_hieu" />
           </Key>
           <Property Name="id_thuong_hieu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ten_thuong_hieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="dblThietBis" Relationship="Self.FK_dblThietBi_dblThuongHieu" FromRole="dblThuongHieu" ToRole="dblThietBi" />
+          <Property Name="ten_thuong_hieu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="dblThietBis" Relationship="csvcapiModel.FK_dblThietBi_dblThuongHieu" FromRole="dblThuongHieu" ToRole="dblThietBi" />
         </EntityType>
         <EntityType Name="dblTrangThai">
           <Key>
             <PropertyRef Name="id_trang_thai" />
           </Key>
           <Property Name="id_trang_thai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ten_trang_thaii" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="dblDanhSachMuons" Relationship="Self.FK_dblDanhSachMuon_dblTrangThai" FromRole="dblTrangThai" ToRole="dblDanhSachMuon" />
-          <NavigationProperty Name="dblThietBis" Relationship="Self.FK_dblThietBi_dblTrangThai" FromRole="dblTrangThai" ToRole="dblThietBi" />
+          <Property Name="ten_trang_thaii" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="dblDanhSachMuons" Relationship="csvcapiModel.FK_dblDanhSachMuon_dblTrangThai" FromRole="dblTrangThai" ToRole="dblDanhSachMuon" />
+          <NavigationProperty Name="dblThietBis" Relationship="csvcapiModel.FK_dblThietBi_dblTrangThai" FromRole="dblTrangThai" ToRole="dblThietBi" />
+        </EntityType>
+        <EntityType Name="Details_book_genre">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_books" Type="Int32" />
+          <Property Name="id_genre" Type="Int32" />
+          <NavigationProperty Name="Book" Relationship="csvcapiModel.FK_Details_book_genre_Books" FromRole="Details_book_genre" ToRole="Book" />
+          <NavigationProperty Name="Genre" Relationship="csvcapiModel.FK_Details_book_genre_Genre" FromRole="Details_book_genre" ToRole="Genre" />
+        </EntityType>
+        <EntityType Name="Genre">
+          <Key>
+            <PropertyRef Name="id_genre" />
+          </Key>
+          <Property Name="id_genre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_genre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Details_book_genre" Relationship="csvcapiModel.FK_Details_book_genre_Genre" FromRole="Genre" ToRole="Details_book_genre" />
+        </EntityType>
+        <EntityType Name="group_loai_mon_an">
+          <Key>
+            <PropertyRef Name="id_group_loai_mon_an" />
+          </Key>
+          <Property Name="id_group_loai_mon_an" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten_group_loai_mon_an" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="mon_an" Relationship="csvcapiModel.FK_mon_an_group_loai_mon_an" FromRole="group_loai_mon_an" ToRole="mon_an" />
+        </EntityType>
+        <EntityType Name="hoa_don_ban_hang">
+          <Key>
+            <PropertyRef Name="id_hoa_don" />
+          </Key>
+          <Property Name="id_hoa_don" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_account" Type="Int32" />
+          <Property Name="id_mon_an" Type="Int32" />
+          <Property Name="so_luong" Type="Int32" />
+          <Property Name="thanh_tien" Type="Double" />
+          <Property Name="ngay_xuat_hoa_don" Type="Int32" />
+          <NavigationProperty Name="Account" Relationship="csvcapiModel.FK_hoa_don_ban_hang_Account" FromRole="hoa_don_ban_hang" ToRole="Account" />
+          <NavigationProperty Name="mon_an" Relationship="csvcapiModel.FK_hoa_don_ban_hang_mon_an" FromRole="hoa_don_ban_hang" ToRole="mon_an" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="id_languages" />
+          </Key>
+          <Property Name="id_languages" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="acronym" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name_languages" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Books" Relationship="csvcapiModel.FK_Books_Languages" FromRole="Language" ToRole="Book" />
+        </EntityType>
+        <EntityType Name="mon_an">
+          <Key>
+            <PropertyRef Name="id_mon_an" />
+          </Key>
+          <Property Name="id_mon_an" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten_mon_an" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="id_group_loai_mon_an" Type="Int32" />
+          <Property Name="price" Type="Double" />
+          <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="chi_tiet_don_hang" Relationship="csvcapiModel.FK_chi_tiet_don_hang_mon_an" FromRole="mon_an" ToRole="chi_tiet_don_hang" />
+          <NavigationProperty Name="group_loai_mon_an" Relationship="csvcapiModel.FK_mon_an_group_loai_mon_an" FromRole="mon_an" ToRole="group_loai_mon_an" />
+          <NavigationProperty Name="hoa_don_ban_hang" Relationship="csvcapiModel.FK_hoa_don_ban_hang_mon_an" FromRole="mon_an" ToRole="hoa_don_ban_hang" />
         </EntityType>
         <EntityType Name="Services_Nail">
           <Key>
@@ -418,21 +937,21 @@
           <Property Name="time_create" Type="Int32" />
           <Property Name="time_update" Type="Int32" />
           <Property Name="id_account" Type="Int32" />
-          <NavigationProperty Name="Account" Relationship="Self.FK_Services_Nail_Account" FromRole="Services_Nail" ToRole="Account" />
+          <NavigationProperty Name="Account" Relationship="csvcapiModel.FK_Services_Nail_Account" FromRole="Services_Nail" ToRole="Account" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="principal_id" Type="Int32" Nullable="false" />
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK_Account_dblRole">
-          <End Role="dblRole" Type="Self.dblRole" Multiplicity="0..1" />
-          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <End Type="csvcapiModel.dblRole" Role="dblRole" Multiplicity="0..1" />
+          <End Type="csvcapiModel.Account" Role="Account" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="dblRole">
               <PropertyRef Name="id_role" />
@@ -442,9 +961,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_chi_tiet_don_hang_Account">
+          <End Type="csvcapiModel.Account" Role="Account" Multiplicity="0..1" />
+          <End Type="csvcapiModel.chi_tiet_don_hang" Role="chi_tiet_don_hang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id_account" />
+            </Principal>
+            <Dependent Role="chi_tiet_don_hang">
+              <PropertyRef Name="id_account" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_hoa_don_ban_hang_Account">
+          <End Type="csvcapiModel.Account" Role="Account" Multiplicity="0..1" />
+          <End Type="csvcapiModel.hoa_don_ban_hang" Role="hoa_don_ban_hang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="id_account" />
+            </Principal>
+            <Dependent Role="hoa_don_ban_hang">
+              <PropertyRef Name="id_account" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Services_Nail_Account">
-          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
-          <End Role="Services_Nail" Type="Self.Services_Nail" Multiplicity="*" />
+          <End Type="csvcapiModel.Account" Role="Account" Multiplicity="0..1" />
+          <End Type="csvcapiModel.Services_Nail" Role="Services_Nail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Account">
               <PropertyRef Name="id_account" />
@@ -454,9 +997,81 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Books_Author">
+          <End Type="csvcapiModel.Author" Role="Author" Multiplicity="0..1" />
+          <End Type="csvcapiModel.Book" Role="Book" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Author">
+              <PropertyRef Name="id_author" />
+            </Principal>
+            <Dependent Role="Book">
+              <PropertyRef Name="id_author" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_books_by_categories_Books">
+          <End Type="csvcapiModel.Book" Role="Book" Multiplicity="0..1" />
+          <End Type="csvcapiModel.books_by_categories" Role="books_by_categories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Book">
+              <PropertyRef Name="id_books" />
+            </Principal>
+            <Dependent Role="books_by_categories">
+              <PropertyRef Name="id_books" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Books_Languages">
+          <End Type="csvcapiModel.Language" Role="Language" Multiplicity="0..1" />
+          <End Type="csvcapiModel.Book" Role="Book" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="id_languages" />
+            </Principal>
+            <Dependent Role="Book">
+              <PropertyRef Name="id_languages" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Details_book_genre_Books">
+          <End Type="csvcapiModel.Book" Role="Book" Multiplicity="0..1" />
+          <End Type="csvcapiModel.Details_book_genre" Role="Details_book_genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Book">
+              <PropertyRef Name="id_books" />
+            </Principal>
+            <Dependent Role="Details_book_genre">
+              <PropertyRef Name="id_genre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_books_by_categories_Categories">
+          <End Type="csvcapiModel.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="csvcapiModel.books_by_categories" Role="books_by_categories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="id_categories" />
+            </Principal>
+            <Dependent Role="books_by_categories">
+              <PropertyRef Name="id_categories" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_chi_tiet_don_hang_mon_an">
+          <End Type="csvcapiModel.mon_an" Role="mon_an" Multiplicity="0..1" />
+          <End Type="csvcapiModel.chi_tiet_don_hang" Role="chi_tiet_don_hang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mon_an">
+              <PropertyRef Name="id_mon_an" />
+            </Principal>
+            <Dependent Role="chi_tiet_don_hang">
+              <PropertyRef Name="id_mon_an" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_dblDanhSachMuon_dblCBVC">
-          <End Role="dblCBVC" Type="Self.dblCBVC" Multiplicity="1" />
-          <End Role="dblDanhSachMuon" Type="Self.dblDanhSachMuon" Multiplicity="*" />
+          <End Type="csvcapiModel.dblCBVC" Role="dblCBVC" Multiplicity="1" />
+          <End Type="csvcapiModel.dblDanhSachMuon" Role="dblDanhSachMuon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="dblCBVC">
               <PropertyRef Name="id_CBVC" />
@@ -467,8 +1082,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_dblDanhSachMuon_dblPhongHoc">
-          <End Role="dblPhongHoc" Type="Self.dblPhongHoc" Multiplicity="0..1" />
-          <End Role="dblDanhSachMuon" Type="Self.dblDanhSachMuon" Multiplicity="*" />
+          <End Type="csvcapiModel.dblPhongHoc" Role="dblPhongHoc" Multiplicity="0..1" />
+          <End Type="csvcapiModel.dblDanhSachMuon" Role="dblDanhSachMuon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="dblPhongHoc">
               <PropertyRef Name="id_phong_hoc" />
@@ -479,8 +1094,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_dblDanhSachMuon_dblThietBi">
-          <End Role="dblThietBi" Type="Self.dblThietBi" Multiplicity="1" />
-          <End Role="dblDanhSachMuon" Type="Self.dblDanhSachMuon" Multiplicity="*" />
+          <End Type="csvcapiModel.dblThietBi" Role="dblThietBi" Multiplicity="1" />
+          <End Type="csvcapiModel.dblDanhSachMuon" Role="dblDanhSachMuon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="dblThietBi">
               <PropertyRef Name="id_thiet_bi" />
@@ -491,8 +1106,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_dblDanhSachMuon_dblTrangThai">
-          <End Role="dblTrangThai" Type="Self.dblTrangThai" Multiplicity="0..1" />
-          <End Role="dblDanhSachMuon" Type="Self.dblDanhSachMuon" Multiplicity="*" />
+          <End Type="csvcapiModel.dblTrangThai" Role="dblTrangThai" Multiplicity="0..1" />
+          <End Type="csvcapiModel.dblDanhSachMuon" Role="dblDanhSachMuon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="dblTrangThai">
               <PropertyRef Name="id_trang_thai" />
@@ -503,8 +1118,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_dblThietBi_dblDonViTinh">
-          <End Role="dblDonViTinh" Type="Self.dblDonViTinh" Multiplicity="0..1" />
-          <End Role="dblThietBi" Type="Self.dblThietBi" Multiplicity="*" />
+          <End Type="csvcapiModel.dblDonViTinh" Role="dblDonViTinh" Multiplicity="0..1" />
+          <End Type="csvcapiModel.dblThietBi" Role="dblThietBi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="dblDonViTinh">
               <PropertyRef Name="id_don_vi_tinh" />
@@ -515,8 +1130,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_dblThietBi_dblPhanLoai">
-          <End Role="dblPhanLoai" Type="Self.dblPhanLoai" Multiplicity="1" />
-          <End Role="dblThietBi" Type="Self.dblThietBi" Multiplicity="*" />
+          <End Type="csvcapiModel.dblPhanLoai" Role="dblPhanLoai" Multiplicity="1" />
+          <End Type="csvcapiModel.dblThietBi" Role="dblThietBi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="dblPhanLoai">
               <PropertyRef Name="id_phan_loai" />
@@ -527,8 +1142,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_dblThietBi_dblThuongHieu">
-          <End Role="dblThuongHieu" Type="Self.dblThuongHieu" Multiplicity="0..1" />
-          <End Role="dblThietBi" Type="Self.dblThietBi" Multiplicity="*" />
+          <End Type="csvcapiModel.dblThuongHieu" Role="dblThuongHieu" Multiplicity="0..1" />
+          <End Type="csvcapiModel.dblThietBi" Role="dblThietBi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="dblThuongHieu">
               <PropertyRef Name="id_thuong_hieu" />
@@ -539,8 +1154,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_dblThietBi_dblTrangThai">
-          <End Role="dblTrangThai" Type="Self.dblTrangThai" Multiplicity="1" />
-          <End Role="dblThietBi" Type="Self.dblThietBi" Multiplicity="*" />
+          <End Type="csvcapiModel.dblTrangThai" Role="dblTrangThai" Multiplicity="1" />
+          <End Type="csvcapiModel.dblThietBi" Role="dblThietBi" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="dblTrangThai">
               <PropertyRef Name="id_trang_thai" />
@@ -550,61 +1165,43 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="csvcapiEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Accounts" EntityType="Self.Account" />
-          <EntitySet Name="dblCBVCs" EntityType="Self.dblCBVC" />
-          <EntitySet Name="dblDanhSachMuons" EntityType="Self.dblDanhSachMuon" />
-          <EntitySet Name="dblDonViTinhs" EntityType="Self.dblDonViTinh" />
-          <EntitySet Name="dblPhanLoais" EntityType="Self.dblPhanLoai" />
-          <EntitySet Name="dblPhongHocs" EntityType="Self.dblPhongHoc" />
-          <EntitySet Name="dblRoles" EntityType="Self.dblRole" />
-          <EntitySet Name="dblThietBis" EntityType="Self.dblThietBi" />
-          <EntitySet Name="dblThuongHieux" EntityType="Self.dblThuongHieu" />
-          <EntitySet Name="dblTrangThais" EntityType="Self.dblTrangThai" />
-          <EntitySet Name="Services_Nail" EntityType="Self.Services_Nail" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <AssociationSet Name="FK_Account_dblRole" Association="Self.FK_Account_dblRole">
-            <End Role="dblRole" EntitySet="dblRoles" />
-            <End Role="Account" EntitySet="Accounts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Services_Nail_Account" Association="Self.FK_Services_Nail_Account">
-            <End Role="Account" EntitySet="Accounts" />
-            <End Role="Services_Nail" EntitySet="Services_Nail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dblDanhSachMuon_dblCBVC" Association="Self.FK_dblDanhSachMuon_dblCBVC">
-            <End Role="dblCBVC" EntitySet="dblCBVCs" />
-            <End Role="dblDanhSachMuon" EntitySet="dblDanhSachMuons" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dblDanhSachMuon_dblPhongHoc" Association="Self.FK_dblDanhSachMuon_dblPhongHoc">
-            <End Role="dblPhongHoc" EntitySet="dblPhongHocs" />
-            <End Role="dblDanhSachMuon" EntitySet="dblDanhSachMuons" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dblDanhSachMuon_dblThietBi" Association="Self.FK_dblDanhSachMuon_dblThietBi">
-            <End Role="dblThietBi" EntitySet="dblThietBis" />
-            <End Role="dblDanhSachMuon" EntitySet="dblDanhSachMuons" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dblDanhSachMuon_dblTrangThai" Association="Self.FK_dblDanhSachMuon_dblTrangThai">
-            <End Role="dblTrangThai" EntitySet="dblTrangThais" />
-            <End Role="dblDanhSachMuon" EntitySet="dblDanhSachMuons" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dblThietBi_dblDonViTinh" Association="Self.FK_dblThietBi_dblDonViTinh">
-            <End Role="dblDonViTinh" EntitySet="dblDonViTinhs" />
-            <End Role="dblThietBi" EntitySet="dblThietBis" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dblThietBi_dblPhanLoai" Association="Self.FK_dblThietBi_dblPhanLoai">
-            <End Role="dblPhanLoai" EntitySet="dblPhanLoais" />
-            <End Role="dblThietBi" EntitySet="dblThietBis" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dblThietBi_dblThuongHieu" Association="Self.FK_dblThietBi_dblThuongHieu">
-            <End Role="dblThuongHieu" EntitySet="dblThuongHieux" />
-            <End Role="dblThietBi" EntitySet="dblThietBis" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dblThietBi_dblTrangThai" Association="Self.FK_dblThietBi_dblTrangThai">
-            <End Role="dblTrangThai" EntitySet="dblTrangThais" />
-            <End Role="dblThietBi" EntitySet="dblThietBis" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
+        <Association Name="FK_Details_book_genre_Genre">
+          <End Type="csvcapiModel.Genre" Role="Genre" Multiplicity="0..1" />
+          <End Type="csvcapiModel.Details_book_genre" Role="Details_book_genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genre">
+              <PropertyRef Name="id_genre" />
+            </Principal>
+            <Dependent Role="Details_book_genre">
+              <PropertyRef Name="id_genre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_mon_an_group_loai_mon_an">
+          <End Type="csvcapiModel.group_loai_mon_an" Role="group_loai_mon_an" Multiplicity="0..1" />
+          <End Type="csvcapiModel.mon_an" Role="mon_an" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="group_loai_mon_an">
+              <PropertyRef Name="id_group_loai_mon_an" />
+            </Principal>
+            <Dependent Role="mon_an">
+              <PropertyRef Name="id_group_loai_mon_an" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_hoa_don_ban_hang_mon_an">
+          <End Type="csvcapiModel.mon_an" Role="mon_an" Multiplicity="0..1" />
+          <End Type="csvcapiModel.hoa_don_ban_hang" Role="hoa_don_ban_hang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mon_an">
+              <PropertyRef Name="id_mon_an" />
+            </Principal>
+            <Dependent Role="hoa_don_ban_hang">
+              <PropertyRef Name="id_mon_an" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -613,125 +1210,237 @@
           <EntitySetMapping Name="Accounts">
             <EntityTypeMapping TypeName="csvcapiModel.Account">
               <MappingFragment StoreEntitySet="Account">
-                <ScalarProperty Name="id_account" ColumnName="id_account" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="username" ColumnName="username" />
-                <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="id_role" ColumnName="id_role" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id_account" ColumnName="id_account" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Authors">
+            <EntityTypeMapping TypeName="csvcapiModel.Author">
+              <MappingFragment StoreEntitySet="Author">
+                <ScalarProperty Name="name_author" ColumnName="name_author" />
+                <ScalarProperty Name="id_author" ColumnName="id_author" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Books">
+            <EntityTypeMapping TypeName="csvcapiModel.Book">
+              <MappingFragment StoreEntitySet="Books">
+                <ScalarProperty Name="navTintColor" ColumnName="navTintColor" />
+                <ScalarProperty Name="backgroundColor" ColumnName="backgroundColor" />
+                <ScalarProperty Name="lastRead" ColumnName="lastRead" />
+                <ScalarProperty Name="completion" ColumnName="completion" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="readed" ColumnName="readed" />
+                <ScalarProperty Name="id_author" ColumnName="id_author" />
+                <ScalarProperty Name="pageNo" ColumnName="pageNo" />
+                <ScalarProperty Name="id_languages" ColumnName="id_languages" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="bookCover" ColumnName="bookCover" />
+                <ScalarProperty Name="bookName" ColumnName="bookName" />
+                <ScalarProperty Name="id_books" ColumnName="id_books" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="books_by_categories">
+            <EntityTypeMapping TypeName="csvcapiModel.books_by_categories">
+              <MappingFragment StoreEntitySet="books_by_categories">
+                <ScalarProperty Name="id_categories" ColumnName="id_categories" />
+                <ScalarProperty Name="id_books" ColumnName="id_books" />
+                <ScalarProperty Name="id_books_by_categories" ColumnName="id_books_by_categories" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="csvcapiModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="name_categories" ColumnName="name_categories" />
+                <ScalarProperty Name="id_categories" ColumnName="id_categories" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="chi_tiet_don_hang">
+            <EntityTypeMapping TypeName="csvcapiModel.chi_tiet_don_hang">
+              <MappingFragment StoreEntitySet="chi_tiet_don_hang">
+                <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+                <ScalarProperty Name="id_mon_an" ColumnName="id_mon_an" />
+                <ScalarProperty Name="id_account" ColumnName="id_account" />
+                <ScalarProperty Name="id_chi_tiet_hoa_don" ColumnName="id_chi_tiet_hoa_don" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dblCBVCs">
             <EntityTypeMapping TypeName="csvcapiModel.dblCBVC">
               <MappingFragment StoreEntitySet="dblCBVC">
-                <ScalarProperty Name="id_CBVC" ColumnName="id_CBVC" />
-                <ScalarProperty Name="name_CBVC" ColumnName="name_CBVC" />
                 <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="name_CBVC" ColumnName="name_CBVC" />
+                <ScalarProperty Name="id_CBVC" ColumnName="id_CBVC" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dblDanhSachMuons">
             <EntityTypeMapping TypeName="csvcapiModel.dblDanhSachMuon">
               <MappingFragment StoreEntitySet="dblDanhSachMuon">
-                <ScalarProperty Name="id_danh_sach_muon" ColumnName="id_danh_sach_muon" />
-                <ScalarProperty Name="id_cbvc" ColumnName="id_cbvc" />
-                <ScalarProperty Name="id_phong_su_dung" ColumnName="id_phong_su_dung" />
-                <ScalarProperty Name="id_thiet_bi" ColumnName="id_thiet_bi" />
-                <ScalarProperty Name="so_luong_muon" ColumnName="so_luong_muon" />
-                <ScalarProperty Name="yeu_cau" ColumnName="yeu_cau" />
-                <ScalarProperty Name="ly_do_huy" ColumnName="ly_do_huy" />
-                <ScalarProperty Name="id_trang_thai" ColumnName="id_trang_thai" />
-                <ScalarProperty Name="ngay_dang_ky_muon" ColumnName="ngay_dang_ky_muon" />
-                <ScalarProperty Name="ngay_huy" ColumnName="ngay_huy" />
-                <ScalarProperty Name="ngay_muon" ColumnName="ngay_muon" />
                 <ScalarProperty Name="ngay_tra" ColumnName="ngay_tra" />
+                <ScalarProperty Name="ngay_muon" ColumnName="ngay_muon" />
+                <ScalarProperty Name="ngay_huy" ColumnName="ngay_huy" />
+                <ScalarProperty Name="ngay_dang_ky_muon" ColumnName="ngay_dang_ky_muon" />
+                <ScalarProperty Name="id_trang_thai" ColumnName="id_trang_thai" />
+                <ScalarProperty Name="ly_do_huy" ColumnName="ly_do_huy" />
+                <ScalarProperty Name="yeu_cau" ColumnName="yeu_cau" />
+                <ScalarProperty Name="so_luong_muon" ColumnName="so_luong_muon" />
+                <ScalarProperty Name="id_thiet_bi" ColumnName="id_thiet_bi" />
+                <ScalarProperty Name="id_phong_su_dung" ColumnName="id_phong_su_dung" />
+                <ScalarProperty Name="id_cbvc" ColumnName="id_cbvc" />
+                <ScalarProperty Name="id_danh_sach_muon" ColumnName="id_danh_sach_muon" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dblDonViTinhs">
             <EntityTypeMapping TypeName="csvcapiModel.dblDonViTinh">
               <MappingFragment StoreEntitySet="dblDonViTinh">
-                <ScalarProperty Name="id_don_vi_tinh" ColumnName="id_don_vi_tinh" />
                 <ScalarProperty Name="ten_don_vi_tinh" ColumnName="ten_don_vi_tinh" />
+                <ScalarProperty Name="id_don_vi_tinh" ColumnName="id_don_vi_tinh" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dblPhanLoais">
             <EntityTypeMapping TypeName="csvcapiModel.dblPhanLoai">
               <MappingFragment StoreEntitySet="dblPhanLoai">
-                <ScalarProperty Name="id_phan_loai" ColumnName="id_phan_loai" />
                 <ScalarProperty Name="ten_phan_loai" ColumnName="ten_phan_loai" />
+                <ScalarProperty Name="id_phan_loai" ColumnName="id_phan_loai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dblPhongHocs">
             <EntityTypeMapping TypeName="csvcapiModel.dblPhongHoc">
               <MappingFragment StoreEntitySet="dblPhongHoc">
-                <ScalarProperty Name="id_phong_hoc" ColumnName="id_phong_hoc" />
                 <ScalarProperty Name="ten_phong_hoc" ColumnName="ten_phong_hoc" />
+                <ScalarProperty Name="id_phong_hoc" ColumnName="id_phong_hoc" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dblRoles">
             <EntityTypeMapping TypeName="csvcapiModel.dblRole">
               <MappingFragment StoreEntitySet="dblRole">
-                <ScalarProperty Name="id_role" ColumnName="id_role" />
                 <ScalarProperty Name="ten_role" ColumnName="ten_role" />
+                <ScalarProperty Name="id_role" ColumnName="id_role" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dblThietBis">
             <EntityTypeMapping TypeName="csvcapiModel.dblThietBi">
               <MappingFragment StoreEntitySet="dblThietBi">
-                <ScalarProperty Name="id_thiet_bi" ColumnName="id_thiet_bi" />
-                <ScalarProperty Name="ten_thiet_bi" ColumnName="ten_thiet_bi" />
-                <ScalarProperty Name="thong_so" ColumnName="thong_so" />
-                <ScalarProperty Name="id_thuong_hieu" ColumnName="id_thuong_hieu" />
-                <ScalarProperty Name="so_luong" ColumnName="so_luong" />
-                <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
-                <ScalarProperty Name="id_don_vi_tinh" ColumnName="id_don_vi_tinh" />
-                <ScalarProperty Name="id_phan_loai" ColumnName="id_phan_loai" />
                 <ScalarProperty Name="id_trang_thai" ColumnName="id_trang_thai" />
+                <ScalarProperty Name="id_phan_loai" ColumnName="id_phan_loai" />
+                <ScalarProperty Name="id_don_vi_tinh" ColumnName="id_don_vi_tinh" />
+                <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
+                <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+                <ScalarProperty Name="id_thuong_hieu" ColumnName="id_thuong_hieu" />
+                <ScalarProperty Name="thong_so" ColumnName="thong_so" />
+                <ScalarProperty Name="ten_thiet_bi" ColumnName="ten_thiet_bi" />
+                <ScalarProperty Name="id_thiet_bi" ColumnName="id_thiet_bi" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dblThuongHieux">
             <EntityTypeMapping TypeName="csvcapiModel.dblThuongHieu">
               <MappingFragment StoreEntitySet="dblThuongHieu">
-                <ScalarProperty Name="id_thuong_hieu" ColumnName="id_thuong_hieu" />
                 <ScalarProperty Name="ten_thuong_hieu" ColumnName="ten_thuong_hieu" />
+                <ScalarProperty Name="id_thuong_hieu" ColumnName="id_thuong_hieu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dblTrangThais">
             <EntityTypeMapping TypeName="csvcapiModel.dblTrangThai">
               <MappingFragment StoreEntitySet="dblTrangThai">
-                <ScalarProperty Name="id_trang_thai" ColumnName="id_trang_thai" />
                 <ScalarProperty Name="ten_trang_thaii" ColumnName="ten_trang_thaii" />
+                <ScalarProperty Name="id_trang_thai" ColumnName="id_trang_thai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Details_book_genre">
+            <EntityTypeMapping TypeName="csvcapiModel.Details_book_genre">
+              <MappingFragment StoreEntitySet="Details_book_genre">
+                <ScalarProperty Name="id_genre" ColumnName="id_genre" />
+                <ScalarProperty Name="id_books" ColumnName="id_books" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genres">
+            <EntityTypeMapping TypeName="csvcapiModel.Genre">
+              <MappingFragment StoreEntitySet="Genre">
+                <ScalarProperty Name="name_genre" ColumnName="name_genre" />
+                <ScalarProperty Name="id_genre" ColumnName="id_genre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="group_loai_mon_an">
+            <EntityTypeMapping TypeName="csvcapiModel.group_loai_mon_an">
+              <MappingFragment StoreEntitySet="group_loai_mon_an">
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="ten_group_loai_mon_an" ColumnName="ten_group_loai_mon_an" />
+                <ScalarProperty Name="id_group_loai_mon_an" ColumnName="id_group_loai_mon_an" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hoa_don_ban_hang">
+            <EntityTypeMapping TypeName="csvcapiModel.hoa_don_ban_hang">
+              <MappingFragment StoreEntitySet="hoa_don_ban_hang">
+                <ScalarProperty Name="ngay_xuat_hoa_don" ColumnName="ngay_xuat_hoa_don" />
+                <ScalarProperty Name="thanh_tien" ColumnName="thanh_tien" />
+                <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+                <ScalarProperty Name="id_mon_an" ColumnName="id_mon_an" />
+                <ScalarProperty Name="id_account" ColumnName="id_account" />
+                <ScalarProperty Name="id_hoa_don" ColumnName="id_hoa_don" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="csvcapiModel.Language">
+              <MappingFragment StoreEntitySet="Languages">
+                <ScalarProperty Name="name_languages" ColumnName="name_languages" />
+                <ScalarProperty Name="acronym" ColumnName="acronym" />
+                <ScalarProperty Name="id_languages" ColumnName="id_languages" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mon_an">
+            <EntityTypeMapping TypeName="csvcapiModel.mon_an">
+              <MappingFragment StoreEntitySet="mon_an">
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="id_group_loai_mon_an" ColumnName="id_group_loai_mon_an" />
+                <ScalarProperty Name="ten_mon_an" ColumnName="ten_mon_an" />
+                <ScalarProperty Name="id_mon_an" ColumnName="id_mon_an" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Services_Nail">
             <EntityTypeMapping TypeName="csvcapiModel.Services_Nail">
               <MappingFragment StoreEntitySet="Services_Nail">
-                <ScalarProperty Name="id_services" ColumnName="id_services" />
-                <ScalarProperty Name="name_services" ColumnName="name_services" />
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="time_create" ColumnName="time_create" />
-                <ScalarProperty Name="time_update" ColumnName="time_update" />
                 <ScalarProperty Name="id_account" ColumnName="id_account" />
+                <ScalarProperty Name="time_update" ColumnName="time_update" />
+                <ScalarProperty Name="time_create" ColumnName="time_create" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="name_services" ColumnName="name_services" />
+                <ScalarProperty Name="id_services" ColumnName="id_services" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="csvcapiModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

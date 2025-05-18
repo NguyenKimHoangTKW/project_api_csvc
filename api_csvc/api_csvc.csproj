@@ -136,6 +136,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountAPIController.cs" />
+    <Compile Include="Controllers\BookStoreAPIController.cs" />
     <Compile Include="Controllers\CBVCApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhanLoaiAPIController.cs" />
@@ -144,12 +145,28 @@
     <Compile Include="Controllers\ServicesNailApiController.cs" />
     <Compile Include="Controllers\ThietBiAPIController.cs" />
     <Compile Include="Controllers\ThuongHieuAPIController.cs" />
+    <Compile Include="Controllers\XuLyMonAnAPIController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\SessionHelper.cs" />
     <Compile Include="Helper\UserAuthorizeAttribute.cs" />
     <Compile Include="Models\Account.cs">
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Author.cs">
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Book.cs">
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\books_by_categories.cs">
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\chi_tiet_don_hang.cs">
       <DependentUpon>csvcapiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\csvcapiModel.Context.cs">
@@ -192,6 +209,24 @@
       <DependentUpon>csvcapiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\dblTrangThai.cs">
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Details_book_genre.cs">
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Genre.cs">
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\group_loai_mon_an.cs">
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\hoa_don_ban_hang.cs">
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Language.cs">
+      <DependentUpon>csvcapiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mon_an.cs">
       <DependentUpon>csvcapiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Services_Nail.cs">

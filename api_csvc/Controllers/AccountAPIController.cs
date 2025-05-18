@@ -113,16 +113,19 @@ namespace api_csvc.Controllers
             {
                 list_info.Add(new
                 {
+                    check_user.id_account,
                     check_user.username,
                     check_user.password,
                     check_user.id_role
                 });
+                SessionHelper.SetUser(check_user);
                 return Ok(new { data = list_info, message = "Đăng nhập thành công", success = true });
             }
             else
             {
                 return Ok(new { message = "Sai thông tin tài khoản hoặc mật khẩu", success = false });
             }
+          
         }
         [HttpPost]
         [Route("create-account")]

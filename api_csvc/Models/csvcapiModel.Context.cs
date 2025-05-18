@@ -26,6 +26,11 @@ namespace api_csvc.Models
         }
     
         public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Author> Authors { get; set; }
+        public virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<books_by_categories> books_by_categories { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<chi_tiet_don_hang> chi_tiet_don_hang { get; set; }
         public virtual DbSet<dblCBVC> dblCBVCs { get; set; }
         public virtual DbSet<dblDanhSachMuon> dblDanhSachMuons { get; set; }
         public virtual DbSet<dblDonViTinh> dblDonViTinhs { get; set; }
@@ -35,6 +40,12 @@ namespace api_csvc.Models
         public virtual DbSet<dblThietBi> dblThietBis { get; set; }
         public virtual DbSet<dblThuongHieu> dblThuongHieux { get; set; }
         public virtual DbSet<dblTrangThai> dblTrangThais { get; set; }
+        public virtual DbSet<Details_book_genre> Details_book_genre { get; set; }
+        public virtual DbSet<Genre> Genres { get; set; }
+        public virtual DbSet<group_loai_mon_an> group_loai_mon_an { get; set; }
+        public virtual DbSet<hoa_don_ban_hang> hoa_don_ban_hang { get; set; }
+        public virtual DbSet<Language> Languages { get; set; }
+        public virtual DbSet<mon_an> mon_an { get; set; }
         public virtual DbSet<Services_Nail> Services_Nail { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
