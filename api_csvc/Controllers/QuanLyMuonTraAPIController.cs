@@ -1,4 +1,5 @@
-﻿using api_csvc.Models;
+﻿using api_csvc.Helper;
+using api_csvc.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -17,7 +18,11 @@ namespace api_csvc.Controllers
     public class QuanLyMuonTraAPIController : ApiController
     {
         csvcapiEntities1 db = new csvcapiEntities1();
-
+        private Account user;
+        public QuanLyMuonTraAPIController()
+        {
+            user = SessionHelper.GetUser();
+        }
         [HttpGet]
         [Route("drop-list-thiet-bi")]
         public async Task<IHttpActionResult> drop_list_thiet_bi()
@@ -47,15 +52,42 @@ namespace api_csvc.Controllers
         [Route("user_muon_thiet_bi")]
         public async Task<IHttpActionResult> create_muon_thiet_bi(UserMuonThietBi muonThietBi)
         {
-
             DateTime now = DateTime.UtcNow;
             int unixTimestamp = (int)(now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
-            var get_cbvc = await db.dblCBVCs.FirstOrDefaultAsync(x => x.email == muonThietBi.email);
+
+            string email = user?.email ?? muonThietBi.email;
+
+            if (string.IsNullOrEmpty(email))
+            {
+                return Ok(new { message = "Không xác định được người dùng", success = false });
+            }
+
+            var get_cbvc = await db.dblCBVCs.FirstOrDefaultAsync(x => x.email == email);
+            if (get_cbvc == null)
+            {
+                return Ok(new { message = "Không tìm thấy CBVC", success = false });
+            }
+
             var get_phong_su_dung = await db.dblPhongHocs.FirstOrDefaultAsync(x => x.ten_phong_hoc == muonThietBi.ten_phong_hoc);
+            if (get_phong_su_dung == null)
+            {
+                return Ok(new { message = "Không tìm thấy phòng học", success = false });
+            }
+
             var get_thiet_bi = await db.dblThietBis.FirstOrDefaultAsync(x => x.ten_thiet_bi == muonThietBi.ten_thiet_bi);
+            if (get_thiet_bi == null)
+            {
+                return Ok(new { message = "Không tìm thấy thiết bị", success = false });
+            }
+
             if (muonThietBi.so_luong_muon > get_thiet_bi.so_luong)
             {
-                return Ok(new { message = "Số lượng mượn không hợp lệ" });
+                return Ok(new { message = "Số lượng mượn không hợp lệ", success = false });
+            }
+
+            if(get_thiet_bi.id_trang_thai == 4)
+            {
+                return Ok(new { message = "Cơ sở vật chất này đã hết", success = false });
             }
             var muon = new dblDanhSachMuon
             {
@@ -70,10 +102,13 @@ namespace api_csvc.Controllers
                 ngay_muon = null,
                 ngay_tra = null,
             };
+
             db.dblDanhSachMuons.Add(muon);
             await db.SaveChangesAsync();
-            return Ok(new { message = "Mượn thành công, chờ duyệt" });
+
+            return Ok(new { message = "Mượn thành công, chờ duyệt", success = true });
         }
+
 
         [HttpGet]
         [Route("get-full-thiet-bi-muon")]
@@ -82,7 +117,7 @@ namespace api_csvc.Controllers
             var check_danh_sach_muon = await db.dblDanhSachMuons.ToListAsync();
             if (!check_danh_sach_muon.Any())
             {
-                return Ok(new { message = "Không có thiết bị nào đang mượn" });
+                return Ok(new { message = "Không có thiết bị nào đang mượn", success = false });
             }
             else
             {
@@ -111,11 +146,12 @@ namespace api_csvc.Controllers
         [Route("get-full-thiet-bi-muon-by-cbvc")]
         public async Task<IHttpActionResult> get_thiet_bi_user(dblCBVC cBVC)
         {
-            var check_cbvc = await db.dblCBVCs.FirstOrDefaultAsync(x => x.email == cBVC.email);
+            string email = user?.email ?? cBVC.email;
+            var check_cbvc = await db.dblCBVCs.FirstOrDefaultAsync(x => x.email == email);
             var check_danh_sach_muon = await db.dblDanhSachMuons.Where(x => x.id_cbvc == check_cbvc.id_CBVC).ToListAsync();
             if (!check_danh_sach_muon.Any())
             {
-                return Ok(new { message = "Không có thiết bị nào đang mượn" });
+                return Ok(new { message = "Không có thiết bị nào đang mượn", success = false });
             }
             else
             {
@@ -148,7 +184,7 @@ namespace api_csvc.Controllers
             var check_danh_sach_muon = await db.dblDanhSachMuons.FirstOrDefaultAsync(x => x.id_danh_sach_muon == danhSachMuon.id_danh_sach_muon);
             if (check_danh_sach_muon.id_trang_thai == 6)
             {
-                return Ok(new { message = "Bạn đã hủy mượn thiết bị này" });
+                return Ok(new { message = "Bạn đã hủy mượn thiết bị này", success = false });
             }
             else
             {
@@ -156,7 +192,7 @@ namespace api_csvc.Controllers
                 check_danh_sach_muon.id_trang_thai = 6;
                 check_danh_sach_muon.ngay_huy = unixTimestamp;
                 await db.SaveChangesAsync();
-                return Ok(new { message = "Hủy mượn thành công" });
+                return Ok(new { message = "Hủy mượn thành công", success = true });
             }
         }
 
@@ -205,7 +241,7 @@ namespace api_csvc.Controllers
                 }
             }
             await db.SaveChangesAsync();
-            return Ok(new { message = "Cập nhật thành công" });
+            return Ok(new { message = "Cập nhật thành công", success = true });
         }
         [HttpPost]
         [Route("info-danh-sach-muon")]

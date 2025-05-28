@@ -24,7 +24,7 @@ namespace api_csvc.Controllers
             var check_thiet_bi = await db.dblThietBis.FirstOrDefaultAsync();
             if (check_thiet_bi == null)
             {
-                return Ok(new { message = "Không có dữ liệu" });
+                return Ok(new { message = "Không có dữ liệu" ,});
             }
             else
             {

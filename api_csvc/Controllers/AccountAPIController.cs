@@ -16,7 +16,6 @@ namespace api_csvc.Controllers
     public class AccountAPIController : ApiController
     {
         csvcapiEntities1 db = new csvcapiEntities1();
-
         [HttpPost]
         [Route("login-with-google")]
         public async Task<IHttpActionResult> LoginWithGoogle(Account ac)
@@ -26,6 +25,7 @@ namespace api_csvc.Controllers
             {
                 return Ok(new { Message = "Email đăng nhập không nằm trong danh sách CBVC của trường, vui lòng kiểm tra lại", success = false });
             }
+
             var existingAccount = await db.Accounts.FirstOrDefaultAsync(x => x.email == ac.email);
             if (existingAccount == null)
             {
@@ -40,11 +40,28 @@ namespace api_csvc.Controllers
             else
             {
                 existingAccount.name = isCbvcEmail.name_CBVC;
-                await db.SaveChangesAsync();
             }
-            SessionHelper.SetUser(existingAccount);
-            return Ok(new { idRole = existingAccount.id_role, Message = "Tài khoản đã được cập nhật thành công.", success = true });
+
+            await db.SaveChangesAsync();
+
+            var isFromMobile = Request.Headers.Contains("X-From-Mobile") &&
+                               Request.Headers.GetValues("X-From-Mobile").FirstOrDefault() == "true";
+
+            if (!isFromMobile)
+            {
+                SessionHelper.SetUser(existingAccount);
+            }
+
+            return Ok(new
+            {
+                idRole = existingAccount.id_role,
+                name = isCbvcEmail.name_CBVC,
+                email = isCbvcEmail.email,
+                Message = "Tài khoản đã được cập nhật thành công.",
+                success = true
+            });
         }
+
         [HttpGet]
         [Route("get_full_account")]
         public async Task<IHttpActionResult> get_full_account()
