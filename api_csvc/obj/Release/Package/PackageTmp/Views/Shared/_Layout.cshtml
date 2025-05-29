@@ -134,6 +134,7 @@
     <script src="~/Scripts/LoginWithGoogle.js"></script>
     <script>
         let BASE_URL = `/api/v1`;
+        const token = localStorage.getItem("access_token");
         $(document).ready(function () {
             $("input").attr("autocomplete", "off");
         })

@@ -1,4 +1,5 @@
-﻿using api_csvc.Models;
+﻿using api_csvc.Helper;
+using api_csvc.Models;
 using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace api_csvc.Controllers
         csvcapiEntities1 db = new csvcapiEntities1();
         [HttpGet]
         [Route("get_full_thiet_bi")]
+    
         public async Task<IHttpActionResult> load_full_thiet_bi()
         {
             var check_thiet_bi = await db.dblThietBis.FirstOrDefaultAsync();
@@ -151,7 +153,6 @@ namespace api_csvc.Controllers
         }
 
         [HttpPost]
-        [Route("sua-thiet-bi")]
         public async Task<IHttpActionResult> Suathietbi(ThemMoiThietBi thietBi)
         {
             var check_thiet_bi = await db.dblThietBis.FirstOrDefaultAsync(x => x.id_thiet_bi == thietBi.id_thiet_bi);
@@ -182,7 +183,6 @@ namespace api_csvc.Controllers
         }
 
         [HttpPost]
-        [Route("delete-thiet-bi")]
         public async Task<IHttpActionResult> delete_thiet_bi(dblThietBi items)
         {
             var check_dsm = await db.dblDanhSachMuons.Where(x => x.id_thiet_bi == items.id_thiet_bi).ToListAsync();

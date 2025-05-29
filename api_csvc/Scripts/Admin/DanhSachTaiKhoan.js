@@ -45,7 +45,10 @@ async function get_info(value) {
         contentType: 'application/json',
         data: JSON.stringify({
             id_account: value
-        })
+        }),
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
     });
 
     $("#ten-user-val").val(res.name).prop("readonly", true);
@@ -63,7 +66,10 @@ async function add_account() {
         data: JSON.stringify({
             email: email,
             ten_role: role,
-        })
+        }),
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
     });
     if (res.success) {
         load_data();
@@ -82,7 +88,10 @@ async function update_account(value) {
         data: JSON.stringify({
             id_account: value,
             ten_role: role,
-        })
+        }),
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
     });
     if (res.success) {
         load_data();
@@ -95,7 +104,10 @@ async function update_account(value) {
 async function load_data() {
     const res = await $.ajax({
         url: `${BASE_URL}/get_full_account`,
-        type: 'GET'
+        type: 'GET',
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
     });
     if ($.fn.DataTable.isDataTable('#data-table')) {
         $('#data-table').DataTable().clear().destroy();

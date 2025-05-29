@@ -56,14 +56,20 @@ $(document).on("click", "#btnDelete", function () {
     })
 });
 async function get_info(value) {
+    const token = localStorage.getItem("access_token");
+
     const res = await $.ajax({
         url: `${BASE_URL}/get-info-thiet-bi`,
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({
             id_thiet_bi: value
-        })
+        }),
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
     });
+
     $("#thiet-bi-val").val(res.ten_thiet_bi);
     $("#thong-so-val").val(res.thong_so);
     $("#so-luong-val").val(res.so_luong);

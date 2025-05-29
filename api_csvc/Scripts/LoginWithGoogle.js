@@ -29,11 +29,12 @@ async function Session_Login(email, fullname) {
         contentType: "application/x-www-form-urlencoded; charset=UTF-8",
         data: {
             email: email,
-            name: fullname,
-        },
+            name_CBVC: fullname,
+        }
     });
     if (res.success) {
         if (res.idRole == 2) {
+            localStorage.setItem("access_token", res.token);
             window.location.href = `/trang-chu-admin`;
         } else {
             const Toast = Swal.mixin({
@@ -86,4 +87,5 @@ function Logout_Session() {
 
 function logout() {
     Logout_Session();
+    localStorage.removeItem("access_token");
 }

@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -16,6 +17,7 @@ namespace api_csvc.Controllers
     public class AccountAPIController : ApiController
     {
         csvcapiEntities1 db = new csvcapiEntities1();
+
         [HttpPost]
         [Route("login-with-google")]
         public async Task<IHttpActionResult> LoginWithGoogle(Account ac)
@@ -51,9 +53,10 @@ namespace api_csvc.Controllers
             {
                 SessionHelper.SetUser(existingAccount);
             }
-
+            var token = JwtService.GenerateToken(existingAccount);
             return Ok(new
             {
+                token = token,
                 idRole = existingAccount.id_role,
                 name = isCbvcEmail.name_CBVC,
                 email = isCbvcEmail.email,
@@ -61,9 +64,43 @@ namespace api_csvc.Controllers
                 success = true
             });
         }
+        [HttpPost]
+        [Route("dang-nhap")]
+        public async Task<IHttpActionResult> JwtDangNhap(Account ac)
+        {
+            var check_user = await db.Accounts.FirstOrDefaultAsync(x => x.username == ac.username && x.password == ac.password);
+            
+            if (check_user != null)
+            {
+                var token = JwtService.GenerateToken(check_user);
+
+                return Ok(new 
+                { 
+                    token = token,
+                    user = new
+                    {
+                        check_user.id_account,
+                        check_user.username,
+                        check_user.id_role,
+                        check_user.name,
+                        check_user.email
+                    },
+                    message = "Đăng nhập thành công", 
+                    success = true 
+                });
+            }
+            else
+            {
+                return Ok(new { message = "Sai thông tin tài khoản hoặc mật khẩu", success = false });
+            }
+        }
+
+      
 
         [HttpGet]
         [Route("get_full_account")]
+        [JwtAuthentication]
+        [JwtAuthorize(2)]
         public async Task<IHttpActionResult> get_full_account()
         {
             var get_full = await db.Accounts
@@ -79,6 +116,8 @@ namespace api_csvc.Controllers
 
         [HttpGet]
         [Route("droplist_role")]
+        [JwtAuthentication]
+        [JwtAuthorize(2)]
         public async Task<IHttpActionResult> droplist_role()
         {
             var drop = await db.dblRoles
@@ -91,6 +130,8 @@ namespace api_csvc.Controllers
         }
         [HttpPost]
         [Route("info-account")]
+        [JwtAuthentication]
+        [JwtAuthorize(2)]
         public async Task<IHttpActionResult> Get_info_account(Account ac)
         {
             var check_items = await db.Accounts
@@ -106,6 +147,8 @@ namespace api_csvc.Controllers
         }
         [HttpPost]
         [Route("update-account")]
+        [JwtAuthentication]
+        [JwtAuthorize(2)]
         public IHttpActionResult Update_Account(UpdateAccount account)
         {
 
@@ -120,30 +163,6 @@ namespace api_csvc.Controllers
             return Ok(new { message = "Update tài khoản thành công", success = true });
         }
 
-        [HttpPost]
-        [Route("dang-nhap")]
-        public async Task<IHttpActionResult> dang_nhap(Account ac)
-        {
-            var check_user = await db.Accounts.FirstOrDefaultAsync(x => x.username == ac.username && x.password == ac.password);
-            var list_info = new List<dynamic>();
-            if (check_user != null)
-            {
-                list_info.Add(new
-                {
-                    check_user.id_account,
-                    check_user.username,
-                    check_user.password,
-                    check_user.id_role
-                });
-                SessionHelper.SetUser(check_user);
-                return Ok(new { data = list_info, message = "Đăng nhập thành công", success = true });
-            }
-            else
-            {
-                return Ok(new { message = "Sai thông tin tài khoản hoặc mật khẩu", success = false });
-            }
-          
-        }
         [HttpPost]
         [Route("create-account")]
         public async Task<IHttpActionResult> create_account_user(Account ac)
@@ -167,6 +186,8 @@ namespace api_csvc.Controllers
         }
         [HttpPost]
         [Route("create-account-email")]
+        [JwtAuthentication]
+        [JwtAuthorize(2)]
         public async Task<IHttpActionResult> create_account_email(UpdateAccount ac)
         {
             var check_role = await db.dblRoles.FirstOrDefaultAsync(x => x.ten_role == ac.ten_role);
