@@ -109,7 +109,6 @@ namespace api_csvc.Controllers
             return Ok(new { message = "Mượn thành công, chờ duyệt", success = true });
         }
 
-
         [HttpGet]
         [Route("get-full-thiet-bi-muon")]
         public async Task<IHttpActionResult> update_cho_muon_thiet_bi()
@@ -122,6 +121,7 @@ namespace api_csvc.Controllers
             else
             {
                 var get_all = check_danh_sach_muon
+                    .OrderByDescending(x=>x.id_danh_sach_muon)
                     .Select(x => new
                     {
                         x.id_danh_sach_muon,
@@ -156,6 +156,7 @@ namespace api_csvc.Controllers
             else
             {
                 var get_all = check_danh_sach_muon
+                    .OrderByDescending(x => x.id_danh_sach_muon)
                     .Select(x => new
                     {
                         x.id_danh_sach_muon,
@@ -226,18 +227,16 @@ namespace api_csvc.Controllers
                 check_danh_sach_muon.ly_do_huy = userMuonThietBi.ly_do_huy;
             }
             await db.SaveChangesAsync();
-            var check_thiet_bi_khac_0 = db.dblThietBis.FirstOrDefault(x => x.so_luong == 0);
-
-            if (check_thiet_bi_khac_0 != null)
+            var check_item = await db.dblThietBis.ToListAsync();
+            foreach(var items in check_item)
             {
-                check_thiet_bi_khac_0.id_trang_thai = 4;
-            }
-            else
-            {
-                var any_thiet_bi = db.dblThietBis.FirstOrDefault();
-                if (any_thiet_bi != null)
+                if(items.so_luong == 0)
                 {
-                    any_thiet_bi.id_trang_thai = 3;
+                    items.id_trang_thai = 4;
+                }
+                else
+                {
+                    items.id_trang_thai = 3;
                 }
             }
             await db.SaveChangesAsync();
