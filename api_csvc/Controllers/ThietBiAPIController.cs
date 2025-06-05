@@ -153,6 +153,7 @@ namespace api_csvc.Controllers
         }
 
         [HttpPost]
+        [Route("sua-thiet-bi")]
         public async Task<IHttpActionResult> Suathietbi(ThemMoiThietBi thietBi)
         {
             var check_thiet_bi = await db.dblThietBis.FirstOrDefaultAsync(x => x.id_thiet_bi == thietBi.id_thiet_bi);
@@ -183,6 +184,7 @@ namespace api_csvc.Controllers
         }
 
         [HttpPost]
+        [Route("delete-thiet-bi")]
         public async Task<IHttpActionResult> delete_thiet_bi(dblThietBi items)
         {
             var check_dsm = await db.dblDanhSachMuons.Where(x => x.id_thiet_bi == items.id_thiet_bi).ToListAsync();

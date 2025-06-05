@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\React Native\\DAMH\\project_api_csvc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\react native\\damh\\project_api_csvc\\api_csvc\\controllers\\quanlymuontraapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\controllers\\quanlymuontraapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|d:\\react native\\damh\\project_api_csvc\\api_csvc\\controllers\\thietbiapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72DB1A7C-B2C3-4E62-8440-DEDA1D0C104C}|api_csvc\\api_csvc.csproj|solutionrelative:api_csvc\\controllers\\thietbiapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,7 +13,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 252,
+          "DockedWidth": 233,
           "SelectedChildIndex": 1,
           "Children": [
             {
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "QuanLyMuonTraAPIController.cs",
-              "DocumentMoniker": "D:\\React Native\\DAMH\\project_api_csvc\\api_csvc\\Controllers\\QuanLyMuonTraAPIController.cs",
-              "RelativeDocumentMoniker": "api_csvc\\Controllers\\QuanLyMuonTraAPIController.cs",
-              "ToolTip": "D:\\React Native\\DAMH\\project_api_csvc\\api_csvc\\Controllers\\QuanLyMuonTraAPIController.cs",
-              "RelativeToolTip": "api_csvc\\Controllers\\QuanLyMuonTraAPIController.cs",
-              "ViewState": "AgIAAPUAAAAAAAAAAAAAwBQBAAAAAAAAAAAAAA==",
+              "Title": "ThietBiAPIController.cs",
+              "DocumentMoniker": "D:\\React Native\\DAMH\\project_api_csvc\\api_csvc\\Controllers\\ThietBiAPIController.cs",
+              "RelativeDocumentMoniker": "api_csvc\\Controllers\\ThietBiAPIController.cs",
+              "ToolTip": "D:\\React Native\\DAMH\\project_api_csvc\\api_csvc\\Controllers\\ThietBiAPIController.cs",
+              "RelativeToolTip": "api_csvc\\Controllers\\ThietBiAPIController.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAuwLoAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T01:33:35.155Z",
+              "WhenOpened": "2025-05-30T13:00:31.36Z",
               "EditorCaption": ""
             }
           ]
